@@ -25,11 +25,15 @@ def checkPGNFormat(pgn):
 
 
 # the below function is used to check if the moves are legal or not
-def validatePGN(pgn):
+def validateMoves(pgn):
+    if not checkPGNFormat(pgn):
+        return 2
     game = chess.pgn.read_game(io.StringIO(pgn))
     board = chess.Board()
-
+    print(game.mainline_moves())
     for move in game.mainline_moves():
-        if not board.is_legal(move):
-            return False
-    return True  
+        if board.is_legal(move):
+            board.push(move)
+        else:
+            return 1
+    return 0  
