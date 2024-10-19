@@ -25,7 +25,7 @@ def checkPGNFormat(pgn):
 
 
 # the below function is used to check if the moves are legal or not
-def validateMoves(pgn):
+def validatePGN(pgn):
     if not checkPGNFormat(pgn):
         return 2
     game = chess.pgn.read_game(io.StringIO(pgn))
@@ -37,3 +37,4 @@ def validateMoves(pgn):
         else:
             return 1
     return 0  
+

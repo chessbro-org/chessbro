@@ -6,12 +6,12 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/validateMoves', methods=['GET'])
-def validateMoves():
-    pgn = request.args.get('pgn')
-    state = main.validation.validateMoves(pgn)
+@app.route('/api/validate-pgn', methods=['POST'])
+def validatePGN():
+    pgn = request.get_json()['pgn']
+    state = main.validation.validatePGN(pgn)
     if state == 0:
-        return jsonify(True)
+        return jsonify(True, None)
     elif state == 1:
         return jsonify(False, "illegal")
     else:
