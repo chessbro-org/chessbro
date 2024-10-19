@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draggable Chessboard with Chess.js</title>
+
+  <!-- Include CSS for the board -->
+  <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+  
+  <!-- Include jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Include Chessboard.js -->
+  <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+
+  <!-- Include the browser-friendly version of Chess.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.12.0/chess.min.js"></script>
+
+  <!--My CSS-->
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="eval-bar">
+        <div id="eval-bar-top"><p>1.0</p></div>
+        <div id="eval-bar-bottom"><p>1.0</p></div>
+    </div>
+  <div id="myBoard"></div>
+
+  <script>
+    var chess = new Chess();
+
+    var onDrop = function(source, target) {
+      var move = chess.move({
+        from: source,
+        to: target,
+        promotion: 'q' 
+      });
+
+      if (move === null) return 'snapback';
+
+      console.log('Move made:', move);
+      board.position(chess.fen());
+    };
+
+    var board = Chessboard('myBoard', {
+      draggable: true,
+      position: 'start',
+      onDrop: onDrop
+    });
+  </script>
+</body>
+</html>
