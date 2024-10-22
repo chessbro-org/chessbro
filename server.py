@@ -10,12 +10,15 @@ CORS(app)
 def validatePGN():
     pgn = request.get_json()['pgn']
     state = main.validation.validatePGN(pgn)
-    if state == 0:
-        return jsonify(True, None)
-    elif state == 1:
-        return jsonify(False, "illegal")
-    else:
-        return jsonify(False, "format")
+    return jsonify(state)
+    
+@app.route('/api/to-fen', methods=['POST'])
+def toFEN():
+    pgn = request.get_json()['pgn']
+    move = request.get_json()['move']
+    fen = main.parser.toFEN(pgn, move)
+    return jsonify(fen)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
