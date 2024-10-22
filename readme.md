@@ -1,1 +1,2 @@
-# Real
+# ChessBro
+An application under development.
