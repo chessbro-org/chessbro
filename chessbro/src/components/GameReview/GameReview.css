@@ -1,0 +1,37 @@
+.game-review {
+  display: grid;
+  padding: 20px;
+  margin: 20px;
+  grid-template-columns: 50% 50%;
+}
+.chessboard-container {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  justify-self: end;
+  border: 2px solid var(--color);
+  width: 500px;
+  height: 500px;
+  background-color: var(--theme_1);
+}
+
+.review-panel-container {
+  background: var(--theme_1);
+  border: 1px solid white;
+  margin-left: 30px;
+  width: 23vw;
+  border-radius: 20px;
+  padding: 15px;
+  display: flex;
+  justify-content: left;
+  align-items: top;
+}
+
+.review-panel-container:hover {
+  border: 1px solid var(--theme_2);
+}
+.chessboard-container:hover{
+    border: 1px solid var(--theme_2);
+}
