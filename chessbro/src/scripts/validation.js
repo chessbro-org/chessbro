@@ -9,3 +9,7 @@ const validatePGN = async (pgn) => {
   const valid = await response.json();
   return valid;
 };
+
+export const invalidPGN = () => {};
+export const validPGN = () => {};
+export default validatePGN;

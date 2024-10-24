@@ -1,6 +1,7 @@
 import React from "react";
 import ChessboardComponent from "../ChessboardComponent/ChessboardComponent";
 import ReviewPanel from "../ReviewPanel/ReviewPanel";
+import Controls from "../Controls/Controls";
 import "./GameReview.css";
 const GameReview = () => {
   return (
@@ -10,6 +11,9 @@ const GameReview = () => {
       </div>
       <div className="review-panel-container">
         <ReviewPanel />
+        <div className="controls-container">
+          <Controls />
+        </div>
       </div>
     </div>
   );

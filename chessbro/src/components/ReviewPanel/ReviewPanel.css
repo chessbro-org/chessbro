@@ -1,6 +1,7 @@
 #review-panel {
   filter: none;
   width: 100%;
+  height: 250px;
 }
 #review-panel > hr {
   margin: 10px 0;
@@ -13,17 +14,20 @@
   color: white;
   font-size: 16px;
   border: 1px solid #f9f9f9;
-  width: 15vw;
   margin-right: 10px;
   border-radius: 5px;
   padding: 10px;
-  height: 2vw;
+  width: 300px;
+  height: 40px;
+  overflow: auto;
+  resize: none;
 }
 #game-input::placeholder {
   color: #f9f9f9a8;
 }
 #game-input-button {
   font-size: 22px;
+  border: 1px solid white;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -31,6 +35,10 @@
   color: white;
   margin-top: 30px;
   justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+#game-input-button > a {
+  margin-right: 3px;
 }
 #game-input-type {
   background-color: black;
@@ -42,13 +50,15 @@
   padding: 3px;
 }
 #game-input-box {
+  margin-top: 20px;
   background-color: #31a431;
   display: flex;
   justify-content: space-around;
   padding: 8px;
+  width: 380px;
   border-radius: 10px;
 }
-#game-input-button-container{
+#game-input-button-container {
   display: flex;
   justify-content: center;
 }
@@ -70,4 +80,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#img {
+  transition: all 1s ease-in-out;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+#game-input-button:hover #img {
+  transform: rotate(360deg);
+}
+#game-input-button:hover {
+  transform: scale(1.08);
 }

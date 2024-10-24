@@ -18,6 +18,8 @@
 }
 
 .review-panel-container {
+  display: grid !important;
+  grid-template-rows: 50% 50%;
   background: var(--theme_1);
   border: 2px solid white;
   margin-left: 30px;
@@ -26,12 +28,12 @@
   padding: 15px;
   display: flex;
   justify-content: center;
-  align-items: top;
 }
 
-.review-panel-container:hover {
-  border: 2px solid #ffe400 ;
-}
-.chessboard-container:hover {
-  border: 2px solid #ffe400 ;
+.controls-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 300px;
+  bottom: 0px;
 }

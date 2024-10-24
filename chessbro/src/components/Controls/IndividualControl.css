@@ -1,0 +1,12 @@
+.individual_controls {
+  font-size: 28px;
+  border: none;
+  padding: 2px;
+  margin: 16px;
+  cursor: pointer;
+  color: #31a431;
+  background-color: transparent;
+}
+.individual_controls:hover{
+    transform: scale(1.08);
+}
