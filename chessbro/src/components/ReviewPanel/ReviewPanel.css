@@ -1,28 +1,73 @@
 #review-panel {
   filter: none;
+  width: 100%;
 }
-
+#review-panel > hr {
+  margin: 10px 0;
+  border: 1px solid #1c5c1c;
+}
+#game-input {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border: 1px solid #f9f9f9;
+  width: 15vw;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  height: 2vw;
+}
+#game-input::placeholder {
+  color: #f9f9f9a8;
+}
+#game-input-button {
+  font-size: 22px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #31a431;
+  color: white;
+  margin-top: 30px;
+  justify-content: center;
+}
+#game-input-type {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border: 1px solid #f1f1f1;
+  margin-right: 10px;
+  border-radius: 5px;
+  padding: 3px;
+}
+#game-input-box {
+  background-color: #31a431;
+  display: flex;
+  justify-content: space-around;
+  padding: 8px;
+  border-radius: 10px;
+}
+#game-input-button-container{
+  display: flex;
+  justify-content: center;
+}
 #review-panel-header {
+  width: 70%;
+  justify-self: center;
   font-size: 14px;
+  font-family: monospace !important;
   background-color: #31a431;
   padding: 10px;
+  text-wrap: wrap;
   text-align: center;
   border: 4px solid #1c5c1c;
   border-radius: 8px;
   cursor: pointer;
 }
 
-#rook {
-  display: none;
-  height: 30px;
-  margin: 0;
-  padding: 0;
-}
 #review-panel-header > h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-#review-panel-header:hover #rook {
-  display: block;
 }

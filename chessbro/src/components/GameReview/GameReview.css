@@ -11,27 +11,27 @@
   justify-content: center;
   border-radius: 20px;
   justify-self: end;
-  border: 2px solid var(--color);
-  width: 500px;
-  height: 500px;
+  border: 2px solid white;
+  width: calc(600px);
+  height: calc(600px);
   background-color: var(--theme_1);
 }
 
 .review-panel-container {
   background: var(--theme_1);
-  border: 1px solid white;
+  border: 2px solid white;
   margin-left: 30px;
-  width: 23vw;
+  width: 400px;
   border-radius: 20px;
   padding: 15px;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: top;
 }
 
 .review-panel-container:hover {
-  border: 1px solid var(--theme_2);
+  border: 2px solid #ffe400 ;
 }
-.chessboard-container:hover{
-    border: 1px solid var(--theme_2);
+.chessboard-container:hover {
+  border: 2px solid #ffe400 ;
 }
