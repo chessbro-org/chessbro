@@ -10,13 +10,13 @@ import {
   faFastForward,  
 } from "@fortawesome/free-solid-svg-icons";
 
-const Controls = ({ save, start, previous, next, end, reverse }) => {
+const Controls = ({ save, firstMove, previous, next, lastMove, reverse }) => {
   return (
     <div className="controls">
       <IndividualControl name="save" onclick={save} fasfa={faFloppyDisk} />
       <IndividualControl
         name="first-move"
-        onclick={start}
+        onclick={firstMove}
         fasfa={faFastBackward}
       />
       <IndividualControl
@@ -25,7 +25,7 @@ const Controls = ({ save, start, previous, next, end, reverse }) => {
         fasfa={faBackward}
       />
       <IndividualControl name="next" onclick={next} fasfa={faForward} />
-      <IndividualControl name="last-move" onclick={end} fasfa={faFastForward} />
+      <IndividualControl name="last-move" onclick={lastMove} fasfa={faFastForward} />
       <IndividualControl name="reverse" onclick={reverse} fasfa={faRetweet} />
     </div>
   );

@@ -1,7 +1,5 @@
-import React from "react";
-import ChessboardComponent from "./components/ChessboardComponent/ChessboardComponent";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import ReviewPanel from "./components/ReviewPanel/ReviewPanel";
 import GameReview from "./components/GameReview/GameReview";
 
 const App = () => {

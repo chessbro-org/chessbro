@@ -6,6 +6,7 @@
   cursor: pointer;
   color: #31a431;
   background-color: transparent;
+  transition: all 0.3s ease-in-out;
 }
 .individual_controls:hover{
     transform: scale(1.08);

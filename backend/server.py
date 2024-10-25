@@ -12,13 +12,14 @@ def validatePGN():
     state = main.validation.validatePGN(pgn)
     return jsonify(state)
     
-@app.route('/api/to-fen', methods=['POST'])
+@app.route('/api/review-game', methods=['POST'])
 def toFEN():
     pgn = request.get_json()['pgn']
-    move = request.get_json()['move']
-    fen = main.parser.toFEN(pgn, move)
+    try:
+        fen = main.parser.toFEN(pgn, move)
+    except:
+        return jsonify(defaultFEN)
     return jsonify(fen)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
