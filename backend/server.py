@@ -15,11 +15,8 @@ def validatePGN():
 @app.route('/api/review-game', methods=['POST'])
 def toFEN():
     pgn = request.get_json()['pgn']
-    try:
-        fen = main.parser.toFEN(pgn, move)
-    except:
-        return jsonify(defaultFEN)
-    return jsonify(fen)
+    reviewed_game = main.gamereview.review_game(pgn)
+    return jsonify(reviewed_game)
 
 if __name__ == '__main__':
     app.run(debug=True)
