@@ -5,7 +5,7 @@ import requests
 import json
 from stockfish import Stockfish
 
-stockfish = Stockfish(path=r"stockfish\stockfish-windows-x86-64-avx2.exe", depth=16, parameters={"Threads": 1, "Minimum Thinking Time": 0, "Hash": 512, "Slow Mover": 30})
+stockfish = Stockfish(path=r"/usr/games/stockfish", depth=16, parameters={"Threads": 1, "Minimum Thinking Time": 0, "Hash": 512, "Slow Mover": 30})
 
 def getEngineAnalysis(FENs):
     response = []
@@ -17,11 +17,13 @@ def getEngineAnalysis(FENs):
         compiled = {'move_no': x, 'fen': FEN, 'best_move': bestmove, 'eval': eval}
         response.append(compiled)
         x+=1
+    response = convertEval(response)
     return response
 
-def convertEval(data):
-    print(data[1:10])
-
+def convertEval(infos):
+    for info in infos:
+        info['eval']['value']/=100
+    return infos
 def review_game (pgn):
     game = chess.pgn.read_game(io.StringIO(pgn))
     board = game.board()
@@ -31,8 +33,11 @@ def review_game (pgn):
         board.push(move)
         moves_fens.append(board.fen())
     review = getEngineAnalysis(moves_fens)
+    
 
 
 with open("response.json", "r") as file:
     review = json.load(file)
-convertEval(review)
+sigma = convertEval(review)
+with open("response.json", "w") as file:
+    json.dump(sigma, file, indent=4)

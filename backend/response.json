@@ -5,7 +5,7 @@
         "best_move": "d7d5",
         "eval": {
             "type": "cp",
-            "value": 29
+            "value": 0.29
         }
     },
     {
@@ -14,7 +14,7 @@
         "best_move": "c2c4",
         "eval": {
             "type": "cp",
-            "value": 28
+            "value": 0.28
         }
     },
     {
@@ -23,7 +23,7 @@
         "best_move": "c7c5",
         "eval": {
             "type": "cp",
-            "value": 19
+            "value": 0.19
         }
     },
     {
@@ -32,7 +32,7 @@
         "best_move": "g1f3",
         "eval": {
             "type": "cp",
-            "value": 15
+            "value": 0.15
         }
     },
     {
@@ -41,7 +41,7 @@
         "best_move": "e7e6",
         "eval": {
             "type": "cp",
-            "value": 15
+            "value": 0.15
         }
     },
     {
@@ -50,7 +50,7 @@
         "best_move": "g1f3",
         "eval": {
             "type": "cp",
-            "value": 28
+            "value": 0.28
         }
     },
     {
@@ -59,7 +59,7 @@
         "best_move": "f8g7",
         "eval": {
             "type": "cp",
-            "value": 26
+            "value": 0.26
         }
     },
     {
@@ -68,7 +68,7 @@
         "best_move": "h2h3",
         "eval": {
             "type": "cp",
-            "value": 27
+            "value": 0.27
         }
     },
     {
@@ -77,7 +77,7 @@
         "best_move": "e8g8",
         "eval": {
             "type": "cp",
-            "value": -9
+            "value": -0.09
         }
     },
     {
@@ -86,7 +86,7 @@
         "best_move": "b1c3",
         "eval": {
             "type": "cp",
-            "value": 42
+            "value": 0.42
         }
     },
     {
@@ -95,7 +95,7 @@
         "best_move": "e8g8",
         "eval": {
             "type": "cp",
-            "value": 42
+            "value": 0.42
         }
     },
     {
@@ -104,7 +104,7 @@
         "best_move": "d1b3",
         "eval": {
             "type": "cp",
-            "value": 44
+            "value": 0.44
         }
     },
     {
@@ -113,7 +113,7 @@
         "best_move": "d5c4",
         "eval": {
             "type": "cp",
-            "value": 40
+            "value": 0.4
         }
     },
     {
@@ -122,7 +122,7 @@
         "best_move": "f3g5",
         "eval": {
             "type": "cp",
-            "value": 59
+            "value": 0.59
         }
     },
     {
@@ -131,7 +131,7 @@
         "best_move": "d5c4",
         "eval": {
             "type": "cp",
-            "value": 5
+            "value": 0.05
         }
     },
     {
@@ -140,7 +140,7 @@
         "best_move": "f3g5",
         "eval": {
             "type": "cp",
-            "value": 144
+            "value": 1.44
         }
     },
     {
@@ -149,7 +149,7 @@
         "best_move": "d8b6",
         "eval": {
             "type": "cp",
-            "value": 47
+            "value": 0.47
         }
     },
     {
@@ -158,7 +158,7 @@
         "best_move": "c4c5",
         "eval": {
             "type": "cp",
-            "value": 245
+            "value": 2.45
         }
     },
     {
@@ -167,7 +167,7 @@
         "best_move": "b6c4",
         "eval": {
             "type": "cp",
-            "value": 199
+            "value": 1.99
         }
     },
     {
@@ -176,7 +176,7 @@
         "best_move": "b3b7",
         "eval": {
             "type": "cp",
-            "value": 244
+            "value": 2.44
         }
     },
     {
@@ -185,7 +185,7 @@
         "best_move": "f6h5",
         "eval": {
             "type": "cp",
-            "value": 253
+            "value": 2.53
         }
     },
     {
@@ -194,7 +194,7 @@
         "best_move": "b7c8",
         "eval": {
             "type": "cp",
-            "value": 264
+            "value": 2.64
         }
     },
     {
@@ -203,7 +203,7 @@
         "best_move": "a8c8",
         "eval": {
             "type": "cp",
-            "value": 268
+            "value": 2.68
         }
     },
     {
@@ -212,7 +212,7 @@
         "best_move": "b2b3",
         "eval": {
             "type": "cp",
-            "value": 345
+            "value": 3.45
         }
     },
     {
@@ -221,7 +221,7 @@
         "best_move": "c4a3",
         "eval": {
             "type": "cp",
-            "value": 339
+            "value": 3.39
         }
     },
     {
@@ -230,7 +230,7 @@
         "best_move": "e2a6",
         "eval": {
             "type": "cp",
-            "value": 424
+            "value": 4.24
         }
     },
     {
@@ -239,7 +239,7 @@
         "best_move": "f6h5",
         "eval": {
             "type": "cp",
-            "value": 239
+            "value": 2.39
         }
     },
     {
@@ -248,7 +248,7 @@
         "best_move": "c3e4",
         "eval": {
             "type": "cp",
-            "value": 247
+            "value": 2.47
         }
     },
     {
@@ -257,7 +257,7 @@
         "best_move": "d5e4",
         "eval": {
             "type": "cp",
-            "value": 245
+            "value": 2.45
         }
     },
     {
@@ -266,7 +266,7 @@
         "best_move": "e2a6",
         "eval": {
             "type": "cp",
-            "value": 223
+            "value": 2.23
         }
     },
     {
@@ -275,7 +275,7 @@
         "best_move": "c8f8",
         "eval": {
             "type": "cp",
-            "value": 249
+            "value": 2.49
         }
     },
     {
@@ -284,7 +284,7 @@
         "best_move": "a1b1",
         "eval": {
             "type": "cp",
-            "value": 264
+            "value": 2.64
         }
     },
     {
@@ -293,7 +293,7 @@
         "best_move": "g7e5",
         "eval": {
             "type": "cp",
-            "value": 176
+            "value": 1.76
         }
     },
     {
@@ -302,7 +302,7 @@
         "best_move": "f4e5",
         "eval": {
             "type": "cp",
-            "value": 228
+            "value": 2.28
         }
     },
     {
@@ -311,7 +311,7 @@
         "best_move": "e6c4",
         "eval": {
             "type": "cp",
-            "value": 185
+            "value": 1.85
         }
     },
     {
@@ -320,7 +320,7 @@
         "best_move": "a6b7",
         "eval": {
             "type": "cp",
-            "value": 290
+            "value": 2.9
         }
     },
     {
@@ -329,7 +329,7 @@
         "best_move": "c4a3",
         "eval": {
             "type": "cp",
-            "value": 271
+            "value": 2.71
         }
     },
     {
@@ -338,7 +338,7 @@
         "best_move": "a2a4",
         "eval": {
             "type": "cp",
-            "value": 351
+            "value": 3.51
         }
     },
     {
@@ -347,7 +347,7 @@
         "best_move": "c4b2",
         "eval": {
             "type": "cp",
-            "value": 311
+            "value": 3.11
         }
     },
     {
@@ -356,7 +356,7 @@
         "best_move": "b4b5",
         "eval": {
             "type": "cp",
-            "value": 372
+            "value": 3.72
         }
     },
     {
@@ -365,7 +365,7 @@
         "best_move": "a3b5",
         "eval": {
             "type": "cp",
-            "value": 269
+            "value": 2.69
         }
     },
     {
@@ -374,7 +374,7 @@
         "best_move": "c3c1",
         "eval": {
             "type": "cp",
-            "value": 243
+            "value": 2.43
         }
     },
     {
@@ -383,7 +383,7 @@
         "best_move": "c6b5",
         "eval": {
             "type": "cp",
-            "value": 240
+            "value": 2.4
         }
     },
     {
@@ -392,7 +392,7 @@
         "best_move": "c5c6",
         "eval": {
             "type": "cp",
-            "value": 238
+            "value": 2.38
         }
     },
     {
@@ -401,7 +401,7 @@
         "best_move": "d8c8",
         "eval": {
             "type": "cp",
-            "value": 115
+            "value": 1.15
         }
     },
     {
@@ -410,7 +410,7 @@
         "best_move": "c3a3",
         "eval": {
             "type": "cp",
-            "value": 235
+            "value": 2.35
         }
     },
     {
@@ -419,7 +419,7 @@
         "best_move": "a7a5",
         "eval": {
             "type": "cp",
-            "value": 118
+            "value": 1.18
         }
     },
     {
@@ -428,7 +428,7 @@
         "best_move": "c5c6",
         "eval": {
             "type": "cp",
-            "value": 270
+            "value": 2.7
         }
     },
     {
@@ -437,7 +437,7 @@
         "best_move": "d8c8",
         "eval": {
             "type": "cp",
-            "value": 137
+            "value": 1.37
         }
     },
     {
@@ -446,7 +446,7 @@
         "best_move": "f2f3",
         "eval": {
             "type": "cp",
-            "value": 238
+            "value": 2.38
         }
     },
     {
@@ -455,7 +455,7 @@
         "best_move": "d8c8",
         "eval": {
             "type": "cp",
-            "value": 202
+            "value": 2.02
         }
     },
     {
@@ -464,7 +464,7 @@
         "best_move": "c7e5",
         "eval": {
             "type": "cp",
-            "value": 229
+            "value": 2.29
         }
     },
     {
@@ -473,7 +473,7 @@
         "best_move": "c4d5",
         "eval": {
             "type": "cp",
-            "value": 146
+            "value": 1.46
         }
     },
     {
@@ -482,7 +482,7 @@
         "best_move": "c3c4",
         "eval": {
             "type": "cp",
-            "value": 244
+            "value": 2.44
         }
     },
     {
@@ -491,7 +491,7 @@
         "best_move": "c4d5",
         "eval": {
             "type": "cp",
-            "value": 162
+            "value": 1.62
         }
     },
     {
@@ -500,7 +500,7 @@
         "best_move": "f3e4",
         "eval": {
             "type": "cp",
-            "value": 298
+            "value": 2.98
         }
     },
     {
@@ -509,7 +509,7 @@
         "best_move": "f5e4",
         "eval": {
             "type": "cp",
-            "value": 308
+            "value": 3.08
         }
     },
     {
@@ -518,7 +518,7 @@
         "best_move": "c3c2",
         "eval": {
             "type": "cp",
-            "value": 273
+            "value": 2.73
         }
     },
     {
@@ -527,7 +527,7 @@
         "best_move": "c4a2",
         "eval": {
             "type": "cp",
-            "value": -364
+            "value": -3.64
         }
     },
     {
@@ -536,7 +536,7 @@
         "best_move": "a2f2",
         "eval": {
             "type": "cp",
-            "value": 342
+            "value": 3.42
         }
     },
     {
@@ -545,7 +545,7 @@
         "best_move": "c6c8",
         "eval": {
             "type": "cp",
-            "value": 345
+            "value": 3.45
         }
     },
     {
@@ -554,7 +554,7 @@
         "best_move": "f2f8",
         "eval": {
             "type": "cp",
-            "value": 372
+            "value": 3.72
         }
     },
     {
@@ -563,7 +563,7 @@
         "best_move": "g8g7",
         "eval": {
             "type": "cp",
-            "value": 358
+            "value": 3.58
         }
     },
     {
@@ -572,7 +572,7 @@
         "best_move": "f8b8",
         "eval": {
             "type": "cp",
-            "value": 380
+            "value": 3.8
         }
     },
     {
@@ -581,7 +581,7 @@
         "best_move": "d7f7",
         "eval": {
             "type": "cp",
-            "value": 386
+            "value": 3.86
         }
     },
     {
@@ -590,7 +590,7 @@
         "best_move": "d6e5",
         "eval": {
             "type": "cp",
-            "value": 400
+            "value": 4.0
         }
     },
     {
@@ -599,7 +599,7 @@
         "best_move": "g7h6",
         "eval": {
             "type": "cp",
-            "value": 353
+            "value": 3.53
         }
     },
     {
@@ -608,7 +608,7 @@
         "best_move": "c3c1",
         "eval": {
             "type": "cp",
-            "value": 378
+            "value": 3.78
         }
     },
     {
@@ -617,7 +617,7 @@
         "best_move": "h6h5",
         "eval": {
             "type": "cp",
-            "value": 404
+            "value": 4.04
         }
     },
     {
@@ -626,7 +626,7 @@
         "best_move": "h2h3",
         "eval": {
             "type": "cp",
-            "value": 381
+            "value": 3.81
         }
     },
     {
@@ -635,7 +635,7 @@
         "best_move": "f7f4",
         "eval": {
             "type": "cp",
-            "value": 248
+            "value": 2.48
         }
     },
     {
@@ -644,7 +644,7 @@
         "best_move": "h2h3",
         "eval": {
             "type": "cp",
-            "value": 380
+            "value": 3.8
         }
     },
     {
@@ -653,7 +653,7 @@
         "best_move": "g4h4",
         "eval": {
             "type": "cp",
-            "value": 404
+            "value": 4.04
         }
     },
     {
@@ -662,7 +662,7 @@
         "best_move": "g2g4",
         "eval": {
             "type": "cp",
-            "value": 740
+            "value": 7.4
         }
     },
     {
@@ -671,7 +671,7 @@
         "best_move": "f5f6",
         "eval": {
             "type": "cp",
-            "value": 736
+            "value": 7.36
         }
     },
     {
@@ -680,7 +680,7 @@
         "best_move": "g4g5",
         "eval": {
             "type": "cp",
-            "value": 670
+            "value": 6.7
         }
     },
     {
@@ -689,7 +689,7 @@
         "best_move": "f6f5",
         "eval": {
             "type": "cp",
-            "value": 559
+            "value": 5.59
         }
     },
     {
@@ -698,7 +698,7 @@
         "best_move": "g1h2",
         "eval": {
             "type": "cp",
-            "value": 558
+            "value": 5.58
         }
     },
     {
@@ -707,7 +707,7 @@
         "best_move": "h7h6",
         "eval": {
             "type": "cp",
-            "value": 464
+            "value": 4.64
         }
     },
     {
@@ -716,7 +716,7 @@
         "best_move": "c1c2",
         "eval": {
             "type": "cp",
-            "value": 601
+            "value": 6.01
         }
     },
     {
@@ -725,7 +725,7 @@
         "best_move": "g6g5",
         "eval": {
             "type": "cp",
-            "value": 506
+            "value": 5.06
         }
     },
     {
@@ -734,7 +734,7 @@
         "best_move": "f4e5",
         "eval": {
             "type": "cp",
-            "value": 489
+            "value": 4.89
         }
     },
     {
@@ -743,7 +743,7 @@
         "best_move": "f5g6",
         "eval": {
             "type": "cp",
-            "value": 489
+            "value": 4.89
         }
     },
     {
@@ -752,7 +752,7 @@
         "best_move": "c1g1",
         "eval": {
             "type": "cp",
-            "value": 561
+            "value": 5.61
         }
     },
     {
@@ -761,7 +761,7 @@
         "best_move": "f5g6",
         "eval": {
             "type": "cp",
-            "value": 524
+            "value": 5.24
         }
     },
     {
@@ -770,7 +770,7 @@
         "best_move": "g2h2",
         "eval": {
             "type": "cp",
-            "value": 542
+            "value": 5.42
         }
     },
     {
@@ -779,7 +779,7 @@
         "best_move": "g6h5",
         "eval": {
             "type": "cp",
-            "value": 462
+            "value": 4.62
         }
     },
     {
@@ -788,7 +788,7 @@
         "best_move": "f6f8",
         "eval": {
             "type": "cp",
-            "value": 482
+            "value": 4.82
         }
     },
     {
@@ -797,7 +797,7 @@
         "best_move": "h5h4",
         "eval": {
             "type": "cp",
-            "value": 489
+            "value": 4.89
         }
     },
     {
@@ -806,7 +806,7 @@
         "best_move": "g2h3",
         "eval": {
             "type": "cp",
-            "value": 733
+            "value": 7.33
         }
     },
     {
@@ -815,7 +815,7 @@
         "best_move": "c4e2",
         "eval": {
             "type": "cp",
-            "value": 395
+            "value": 3.95
         }
     },
     {
@@ -824,7 +824,7 @@
         "best_move": "f6h6",
         "eval": {
             "type": "cp",
-            "value": 401
+            "value": 4.01
         }
     },
     {
@@ -833,7 +833,7 @@
         "best_move": "h5h6",
         "eval": {
             "type": "cp",
-            "value": 400
+            "value": 4.0
         }
     },
     {
@@ -842,7 +842,7 @@
         "best_move": "h1h4",
         "eval": {
             "type": "cp",
-            "value": 401
+            "value": 4.01
         }
     },
     {
@@ -851,7 +851,7 @@
         "best_move": "h6g6",
         "eval": {
             "type": "cp",
-            "value": 378
+            "value": 3.78
         }
     },
     {
@@ -860,7 +860,7 @@
         "best_move": "g2g3",
         "eval": {
             "type": "cp",
-            "value": 435
+            "value": 4.35
         }
     },
     {
@@ -869,7 +869,7 @@
         "best_move": "c4d5",
         "eval": {
             "type": "cp",
-            "value": -460
+            "value": -4.6
         }
     },
     {
@@ -878,7 +878,7 @@
         "best_move": "e5d6",
         "eval": {
             "type": "cp",
-            "value": -495
+            "value": -4.95
         }
     },
     {
@@ -887,7 +887,7 @@
         "best_move": "g5f5",
         "eval": {
             "type": "cp",
-            "value": -476
+            "value": -4.76
         }
     },
     {
@@ -896,7 +896,7 @@
         "best_move": "f3e4",
         "eval": {
             "type": "cp",
-            "value": 615
+            "value": 6.15
         }
     },
     {
@@ -905,7 +905,7 @@
         "best_move": "c6c8",
         "eval": {
             "type": "cp",
-            "value": 565
+            "value": 5.65
         }
     },
     {
@@ -914,7 +914,7 @@
         "best_move": "d4d5",
         "eval": {
             "type": "cp",
-            "value": 609
+            "value": 6.09
         }
     },
     {
@@ -923,7 +923,7 @@
         "best_move": "e6d5",
         "eval": {
             "type": "cp",
-            "value": 637
+            "value": 6.37
         }
     },
     {
@@ -932,7 +932,7 @@
         "best_move": "e4d5",
         "eval": {
             "type": "cp",
-            "value": 616
+            "value": 6.16
         }
     },
     {
@@ -941,7 +941,7 @@
         "best_move": "c6c8",
         "eval": {
             "type": "cp",
-            "value": 632
+            "value": 6.32
         }
     },
     {
@@ -950,7 +950,7 @@
         "best_move": "c5c6",
         "eval": {
             "type": "cp",
-            "value": 600
+            "value": 6.0
         }
     },
     {
@@ -959,7 +959,7 @@
         "best_move": "g6g8",
         "eval": {
             "type": "cp",
-            "value": 641
+            "value": 6.41
         }
     },
     {
@@ -968,7 +968,7 @@
         "best_move": "c5c6",
         "eval": {
             "type": "cp",
-            "value": 612
+            "value": 6.12
         }
     },
     {
@@ -977,7 +977,7 @@
         "best_move": "g6g5",
         "eval": {
             "type": "cp",
-            "value": 634
+            "value": 6.34
         }
     },
     {
@@ -986,7 +986,7 @@
         "best_move": "e4e5",
         "eval": {
             "type": "cp",
-            "value": 641
+            "value": 6.41
         }
     },
     {
@@ -995,7 +995,7 @@
         "best_move": "g5g7",
         "eval": {
             "type": "cp",
-            "value": 655
+            "value": 6.55
         }
     },
     {
@@ -1004,7 +1004,7 @@
         "best_move": "c5c6",
         "eval": {
             "type": "cp",
-            "value": 650
+            "value": 6.5
         }
     },
     {
@@ -1013,7 +1013,7 @@
         "best_move": "g5g8",
         "eval": {
             "type": "cp",
-            "value": 700
+            "value": 7.0
         }
     },
     {
@@ -1022,7 +1022,7 @@
         "best_move": "c6c7",
         "eval": {
             "type": "cp",
-            "value": 801
+            "value": 8.01
         }
     },
     {
@@ -1031,7 +1031,7 @@
         "best_move": "g4g8",
         "eval": {
             "type": "cp",
-            "value": 743
+            "value": 7.43
         }
     },
     {
@@ -1040,7 +1040,7 @@
         "best_move": "d6c5",
         "eval": {
             "type": "cp",
-            "value": 875
+            "value": 8.75
         }
     },
     {
@@ -1049,7 +1049,7 @@
         "best_move": "e2f3",
         "eval": {
             "type": "cp",
-            "value": 865
+            "value": 8.65
         }
     },
     {
@@ -1058,7 +1058,7 @@
         "best_move": "c7c8q",
         "eval": {
             "type": "cp",
-            "value": 951
+            "value": 9.51
         }
     },
     {
@@ -1067,7 +1067,7 @@
         "best_move": "c4h4",
         "eval": {
             "type": "cp",
-            "value": 984
+            "value": 9.84
         }
     },
     {
@@ -1076,7 +1076,7 @@
         "best_move": "d5c6",
         "eval": {
             "type": "cp",
-            "value": 954
+            "value": 9.54
         }
     },
     {
@@ -1085,7 +1085,7 @@
         "best_move": "c3b4",
         "eval": {
             "type": "cp",
-            "value": 860
+            "value": 8.6
         }
     },
     {
@@ -1094,7 +1094,7 @@
         "best_move": "d4c5",
         "eval": {
             "type": "cp",
-            "value": 927
+            "value": 9.27
         }
     },
     {
@@ -1103,7 +1103,7 @@
         "best_move": "b5c4",
         "eval": {
             "type": "cp",
-            "value": 1066
+            "value": 10.66
         }
     },
     {
@@ -1112,7 +1112,7 @@
         "best_move": "e5e6",
         "eval": {
             "type": "cp",
-            "value": 871
+            "value": 8.71
         }
     },
     {
@@ -1121,7 +1121,7 @@
         "best_move": "b3b4",
         "eval": {
             "type": "cp",
-            "value": 1009
+            "value": 10.09
         }
     },
     {
@@ -1130,7 +1130,7 @@
         "best_move": "e6e7",
         "eval": {
             "type": "cp",
-            "value": 863
+            "value": 8.63
         }
     },
     {
@@ -1139,7 +1139,7 @@
         "best_move": "c4c3",
         "eval": {
             "type": "cp",
-            "value": 1027
+            "value": 10.27
         }
     },
     {
@@ -1148,7 +1148,7 @@
         "best_move": "d5c4",
         "eval": {
             "type": "mate",
-            "value": 4
+            "value": 0.04
         }
     },
     {
@@ -1157,7 +1157,7 @@
         "best_move": "a5b4",
         "eval": {
             "type": "mate",
-            "value": 4
+            "value": 0.04
         }
     },
     {
@@ -1166,7 +1166,7 @@
         "best_move": "e8e1",
         "eval": {
             "type": "mate",
-            "value": 3
+            "value": 0.03
         }
     },
     {
@@ -1175,7 +1175,7 @@
         "best_move": "b4a3",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1184,7 +1184,7 @@
         "best_move": "d5c4",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1193,7 +1193,7 @@
         "best_move": "a3a4",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1202,7 +1202,7 @@
         "best_move": "d5c4",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1211,7 +1211,7 @@
         "best_move": "a6a5",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1220,7 +1220,7 @@
         "best_move": "b2a2",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1229,7 +1229,7 @@
         "best_move": "a4b5",
         "eval": {
             "type": "mate",
-            "value": 3
+            "value": 0.03
         }
     },
     {
@@ -1238,7 +1238,7 @@
         "best_move": "c2b2",
         "eval": {
             "type": "mate",
-            "value": 3
+            "value": 0.03
         }
     },
     {
@@ -1247,7 +1247,7 @@
         "best_move": "b5a6",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1256,7 +1256,7 @@
         "best_move": "b2a2",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1265,7 +1265,7 @@
         "best_move": "a4b5",
         "eval": {
             "type": "mate",
-            "value": 1
+            "value": 0.01
         }
     },
     {
@@ -1274,7 +1274,7 @@
         "best_move": "a2a5",
         "eval": {
             "type": "mate",
-            "value": 1
+            "value": 0.01
         }
     },
     {
@@ -1283,7 +1283,7 @@
         "best_move": "b5b6",
         "eval": {
             "type": "mate",
-            "value": 4
+            "value": 0.04
         }
     },
     {
@@ -1292,7 +1292,7 @@
         "best_move": "c4c6",
         "eval": {
             "type": "mate",
-            "value": 4
+            "value": 0.04
         }
     },
     {
@@ -1301,7 +1301,7 @@
         "best_move": "b6a7",
         "eval": {
             "type": "mate",
-            "value": 3
+            "value": 0.03
         }
     },
     {
@@ -1310,7 +1310,7 @@
         "best_move": "c6c7",
         "eval": {
             "type": "mate",
-            "value": 3
+            "value": 0.03
         }
     },
     {
@@ -1319,7 +1319,7 @@
         "best_move": "a7b8",
         "eval": {
             "type": "mate",
-            "value": 4
+            "value": 0.04
         }
     },
     {
@@ -1328,7 +1328,7 @@
         "best_move": "c6e8",
         "eval": {
             "type": "mate",
-            "value": 3
+            "value": 0.03
         }
     },
     {
@@ -1337,7 +1337,7 @@
         "best_move": "b8a7",
         "eval": {
             "type": "mate",
-            "value": 3
+            "value": 0.03
         }
     },
     {
@@ -1346,7 +1346,7 @@
         "best_move": "c6c8",
         "eval": {
             "type": "mate",
-            "value": 3
+            "value": 0.03
         }
     },
     {
@@ -1355,7 +1355,7 @@
         "best_move": "a7a6",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1364,7 +1364,7 @@
         "best_move": "e5d4",
         "eval": {
             "type": "mate",
-            "value": 2
+            "value": 0.02
         }
     },
     {
@@ -1373,7 +1373,7 @@
         "best_move": "a5a4",
         "eval": {
             "type": "mate",
-            "value": 1
+            "value": 0.01
         }
     },
     {
@@ -1382,7 +1382,7 @@
         "best_move": "c7b6",
         "eval": {
             "type": "mate",
-            "value": 1
+            "value": 0.01
         }
     },
     {
@@ -1391,7 +1391,7 @@
         "best_move": null,
         "eval": {
             "type": "mate",
-            "value": 0
+            "value": 0.0
         }
     }
 ]
