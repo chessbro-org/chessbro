@@ -1,627 +1,1397 @@
 [
     {
-        "text": "Move e7 → e5 (e5): [0.26]. The game is balanced. Depth 12.",
-        "captured": false,
-        "promotion": false,
-        "isCapture": false,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "e7e5",
-        "eval": 0.26,
-        "centipawns": 26,
-        "mate": null,
-        "continuationArr": [
-            "g1f3",
-            "b8c6",
-            "f1c4",
-            "g8f6",
-            "d2d3",
-            "f8c5",
-            "c2c3",
-            "d7d6",
-            "e1g1",
-            "c5b6",
-            "b2b4",
-            "c8g4",
-            "a2a4"
-        ],
-        "debug": "info depth 12 seldepth 27 multipv 1 score cp -26 nodes 372587 nps 31048916 hashfull 44 tbhits 0 time 12 pv e7e5 g1f3 b8c6 f1c4 g8f6 d2d3 f8c5 c2c3 d7d6 e1g1 c5b6 b2b4 c8g4 a2a4",
-        "winChance": 52.39152574834706,
-        "taskId": "j7ze4kohg",
-        "turn": "b",
-        "color": "b",
-        "piece": "p",
-        "from": "e7",
-        "to": "e5",
-        "san": "e5",
-        "flags": "b",
-        "lan": "e7e5",
-        "fromNumeric": "57",
-        "toNumeric": "55",
-        "continuation": [
-            {
-                "from": "g1",
-                "to": "f3",
-                "fromNumeric": "71",
-                "toNumeric": "63"
-            },
-            {
-                "from": "b8",
-                "to": "c6",
-                "fromNumeric": "28",
-                "toNumeric": "36"
-            }
-        ]
+        "move_no": 1,
+        "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1",
+        "best_move": "d7d5",
+        "eval": {
+            "type": "cp",
+            "value": 29
+        }
     },
     {
-        "text": "Move e4 → d5 (exd5): [0.73]. White is winning. Depth 12.",
-        "captured": "p",
-        "promotion": false,
-        "isCapture": true,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "e4d5",
-        "eval": 0.73,
-        "centipawns": "73",
-        "mate": null,
-        "continuationArr": [
-            "g8f6",
-            "g1f3",
-            "f6d5",
-            "d2d4",
-            "e7e6",
-            "c2c4",
-            "d5f6",
-            "b1c3",
-            "c7c5",
-            "d4d5",
-            "f8e7",
-            "c1f4",
-            "e7d6",
-            "f4g5",
-            "e8g8",
-            "f1e2",
-            "e6d5",
-            "c3d5",
-            "b8c6",
-            "e1g1",
-            "f8e8",
-            "g5f6",
-            "g7f6",
-            "f1e1"
-        ],
-        "debug": "info depth 12 seldepth 26 multipv 1 score cp 73 nodes 221677 nps 31668142 hashfull 41 tbhits 0 time 7 pv e4d5 g8f6 g1f3 f6d5 d2d4 e7e6 c2c4 d5f6 b1c3 c7c5 d4d5 f8e7 c1f4 e7d6 f4g5 e8g8 f1e2 e6d5 c3d5 b8c6 e1g1 f8e8 g5f6 g7f6 f1e1",
-        "winChance": 56.67962794387496,
-        "taskId": "k67y5j7v4",
-        "turn": "w",
-        "color": "w",
-        "piece": "p",
-        "from": "e4",
-        "to": "d5",
-        "san": "exd5",
-        "flags": "c",
-        "lan": "e4d5",
-        "fromNumeric": "54",
-        "toNumeric": "45",
-        "continuation": [
-            {
-                "from": "g8",
-                "to": "f6",
-                "fromNumeric": "78",
-                "toNumeric": "66"
-            },
-            {
-                "from": "g1",
-                "to": "f3",
-                "fromNumeric": "71",
-                "toNumeric": "63"
-            }
-        ]
+        "move_no": 2,
+        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 0 2",
+        "best_move": "c2c4",
+        "eval": {
+            "type": "cp",
+            "value": 28
+        }
     },
     {
-        "text": "Move g8 → f6 (Nf6): [0.71]. White is winning. Depth 12.",
-        "captured": false,
-        "promotion": false,
-        "isCapture": false,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "g8f6",
-        "eval": 0.71,
-        "centipawns": 71,
-        "mate": null,
-        "continuationArr": [
-            "g1f3",
-            "f6d5",
-            "d2d4",
-            "e7e6",
-            "c2c4",
-            "d5f6",
-            "b1c3",
-            "c7c5",
-            "f1e2",
-            "c5d4",
-            "d1d4",
-            "d8d4",
-            "f3d4",
-            "a7a6",
-            "c1e3",
-            "e6e5",
-            "d4b3",
-            "b8c6",
-            "e1c1",
-            "c8e6",
-            "b3c5",
-            "f8c5",
-            "e3c5",
-            "f6d7",
-            "c5d6",
-            "e8c8"
-        ],
-        "debug": "info depth 12 seldepth 28 multipv 1 score cp -71 nodes 855518 nps 30554214 hashfull 50 tbhits 0 time 28 pv g8f6 g1f3 f6d5 d2d4 e7e6 c2c4 d5f6 b1c3 c7c5 f1e2 c5d4 d1d4 d8d4 f3d4 a7a6 c1e3 e6e5 d4b3 b8c6 e1c1 c8e6 b3c5 f8c5 e3c5 f6d7 c5d6 e8c8",
-        "winChance": 56.49872147270768,
-        "taskId": "va9p2mxux",
-        "turn": "b",
-        "color": "b",
-        "piece": "n",
-        "from": "g8",
-        "to": "f6",
-        "san": "Nf6",
-        "flags": "n",
-        "lan": "g8f6",
-        "fromNumeric": "78",
-        "toNumeric": "66",
-        "continuation": [
-            {
-                "from": "g1",
-                "to": "f3",
-                "fromNumeric": "71",
-                "toNumeric": "63"
-            },
-            {
-                "from": "f6",
-                "to": "d5",
-                "fromNumeric": "66",
-                "toNumeric": "45"
-            }
-        ]
+        "move_no": 3,
+        "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq - 1 2",
+        "best_move": "c7c5",
+        "eval": {
+            "type": "cp",
+            "value": 19
+        }
     },
     {
-        "text": "Move b1 → c3 (Nc3): [0.81]. White is winning. Depth 12.",
-        "captured": false,
-        "promotion": false,
-        "isCapture": false,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "rnb1kbnr/ppp1pppp/8/3q4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "b1c3",
-        "eval": 0.81,
-        "centipawns": "81",
-        "mate": null,
-        "continuationArr": [
-            "d5d8",
-            "d2d4",
-            "e7e6",
-            "f1d3",
-            "g8f6",
-            "g1f3",
-            "f8e7",
-            "c1e3",
-            "e8g8",
-            "d1e2"
-        ],
-        "debug": "info depth 12 seldepth 25 multipv 1 score cp 81 nodes 346588 nps 26660615 hashfull 35 tbhits 0 time 13 pv b1c3 d5d8 d2d4 e7e6 f1d3 g8f6 g1f3 f8e7 c1e3 e8g8 d1e2",
-        "winChance": 57.401428746326545,
-        "taskId": "xqwh11pm3",
-        "turn": "w",
-        "color": "w",
-        "piece": "n",
-        "from": "b1",
-        "to": "c3",
-        "san": "Nc3",
-        "flags": "n",
-        "lan": "b1c3",
-        "fromNumeric": "21",
-        "toNumeric": "33",
-        "continuation": [
-            {
-                "from": "d5",
-                "to": "d8",
-                "fromNumeric": "45",
-                "toNumeric": "48"
-            },
-            {
-                "from": "d2",
-                "to": "d4",
-                "fromNumeric": "42",
-                "toNumeric": "44"
-            }
-        ]
+        "move_no": 4,
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR w KQkq - 2 3",
+        "best_move": "g1f3",
+        "eval": {
+            "type": "cp",
+            "value": 15
+        }
     },
     {
-        "text": "Move c8 → g4 (Bg4): [0.31]. The game is balanced. Depth 12.",
-        "captured": false,
-        "promotion": false,
-        "isCapture": false,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "rnb1kbnr/ppp1pppp/8/3q4/8/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 3",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "c8g4",
-        "eval": 0.31,
-        "centipawns": 31,
-        "mate": null,
-        "continuationArr": [
-            "f1e2",
-            "b8c6",
-            "e1g1",
-            "e8c8",
-            "h2h3",
-            "g4h5",
-            "b1c3",
-            "d5d7",
-            "e2b5",
-            "a7a6",
-            "b5c6",
-            "d7c6",
-            "f3e5",
-            "h5d1",
-            "e5c6",
-            "b7c6",
-            "f1d1",
-            "g8f6",
-            "c3a4",
-            "e7e6",
-            "d2d3",
-            "f6d5",
-            "c1d2",
-            "c6c5",
-            "b2b3"
-        ],
-        "debug": "info depth 12 seldepth 28 multipv 1 score cp -31 nodes 564862 nps 33227176 hashfull 28 tbhits 0 time 17 pv c8g4 f1e2 b8c6 e1g1 e8c8 h2h3 g4h5 b1c3 d5d7 e2b5 a7a6 b5c6 d7c6 f3e5 h5d1 e5c6 b7c6 f1d1 g8f6 c3a4 e7e6 d2d3 f6d5 c1d2 c6c5 b2b3",
-        "winChance": 52.85051773118132,
-        "taskId": "hwexavyoa",
-        "turn": "b",
-        "color": "b",
-        "piece": "b",
-        "from": "c8",
-        "to": "g4",
-        "san": "Bg4",
-        "flags": "n",
-        "lan": "c8g4",
-        "fromNumeric": "38",
-        "toNumeric": "74",
-        "continuation": [
-            {
-                "from": "f1",
-                "to": "e2",
-                "fromNumeric": "61",
-                "toNumeric": "52"
-            },
-            {
-                "from": "b8",
-                "to": "c6",
-                "fromNumeric": "28",
-                "toNumeric": "36"
-            }
-        ]
+        "move_no": 5,
+        "fen": "rnbqkb1r/ppp1pppp/5n2/3p4/3P1B2/4P3/PPP2PPP/RN1QKBNR b KQkq - 0 3",
+        "best_move": "e7e6",
+        "eval": {
+            "type": "cp",
+            "value": 15
+        }
     },
     {
-        "text": "Move b1 → c3 (Nc3): [1.01]. White is winning. Depth 12.",
-        "captured": false,
-        "promotion": false,
-        "isCapture": false,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "r1b1kbnr/ppp1pppp/2n5/3q4/8/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 4",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "b1c3",
-        "eval": 1.01,
-        "centipawns": "101",
-        "mate": null,
-        "continuationArr": [
-            "d5d8",
-            "f1b5",
-            "c8d7",
-            "d2d4",
-            "g8f6",
-            "d1e2",
-            "a7a6",
-            "b5c4",
-            "c6a5",
-            "c4d3",
-            "d7g4",
-            "h2h3",
-            "g4f3",
-            "e2f3",
-            "d8d4",
-            "c1e3"
-        ],
-        "debug": "info depth 12 seldepth 21 multipv 1 score cp 101 nodes 165014 nps 27502333 hashfull 13 tbhits 0 time 6 pv b1c3 d5d8 f1b5 c8d7 d2d4 g8f6 d1e2 a7a6 b5c4 c6a5 c4d3 d7g4 h2h3 g4f3 e2f3 d8d4 c1e3",
-        "winChance": 59.1915609324709,
-        "taskId": "fsstfwkod",
-        "turn": "w",
-        "color": "w",
-        "piece": "n",
-        "from": "b1",
-        "to": "c3",
-        "san": "Nc3",
-        "flags": "n",
-        "lan": "b1c3",
-        "fromNumeric": "21",
-        "toNumeric": "33",
-        "continuation": [
-            {
-                "from": "d5",
-                "to": "d8",
-                "fromNumeric": "45",
-                "toNumeric": "48"
-            },
-            {
-                "from": "f1",
-                "to": "b5",
-                "fromNumeric": "61",
-                "toNumeric": "25"
-            }
-        ]
+        "move_no": 6,
+        "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/3P1B2/4P3/PPP2PPP/RN1QKBNR w KQkq - 0 4",
+        "best_move": "g1f3",
+        "eval": {
+            "type": "cp",
+            "value": 28
+        }
     },
     {
-        "text": "Move d5 → d6 (Qd6): [0.99]. White is winning. Depth 12.",
-        "captured": false,
-        "promotion": false,
-        "isCapture": false,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "r1b1kbnr/ppp1pppp/2n5/3q4/8/2N2N2/PPPP1PPP/R1BQKB1R b KQkq - 3 4",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "d5d6",
-        "eval": 0.99,
-        "centipawns": 99,
-        "mate": null,
-        "continuationArr": [
-            "d2d4",
-            "g8f6",
-            "d4d5",
-            "c6b4",
-            "c3b5",
-            "d6d8",
-            "c2c4",
-            "c7c6",
-            "d5c6",
-            "b7c6",
-            "d1d8",
-            "e8d8",
-            "c1d2",
-            "b4c2",
-            "e1d1",
-            "c6b5",
-            "d1c2"
-        ],
-        "debug": "info depth 12 seldepth 23 multipv 1 score cp -99 nodes 446392 nps 31885142 hashfull 14 tbhits 0 time 14 pv d5d6 d2d4 g8f6 d4d5 c6b4 c3b5 d6d8 c2c4 c7c6 d5c6 b7c6 d1d8 e8d8 c1d2 b4c2 e1d1 c6b5 d1c2",
-        "winChance": 59.01355884591462,
-        "taskId": "75xda9r74",
-        "turn": "b",
-        "color": "b",
-        "piece": "q",
-        "from": "d5",
-        "to": "d6",
-        "san": "Qd6",
-        "flags": "n",
-        "lan": "d5d6",
-        "fromNumeric": "45",
-        "toNumeric": "46",
-        "continuation": [
-            {
-                "from": "d2",
-                "to": "d4",
-                "fromNumeric": "42",
-                "toNumeric": "44"
-            },
-            {
-                "from": "g8",
-                "to": "f6",
-                "fromNumeric": "78",
-                "toNumeric": "66"
-            }
-        ]
+        "move_no": 7,
+        "fen": "rnbqkb1r/ppp1pp1p/5np1/3p4/3P1B2/4PN2/PPP2PPP/RN1QKB1R b KQkq - 1 4",
+        "best_move": "f8g7",
+        "eval": {
+            "type": "cp",
+            "value": 26
+        }
     },
     {
-        "text": "Move d2 → d4 (d4): [0.96]. White is winning. Depth 12.",
-        "captured": false,
-        "promotion": false,
-        "isCapture": false,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "r1b1kbnr/ppp1pppp/2n5/q7/8/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4 5",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "d2d4",
-        "eval": 0.96,
-        "centipawns": "96",
-        "mate": null,
-        "continuationArr": [
-            "c8g4",
-            "f1b5",
-            "e8c8",
-            "b5c6",
-            "b7c6",
-            "d1d3",
-            "c6c5",
-            "e1g1",
-            "g4f3",
-            "d3f3",
-            "c5d4",
-            "a2a4",
-            "a7a6",
-            "f1d1",
-            "e7e5",
-            "f3f7",
-            "g8f6",
-            "c1g5",
-            "a5b6",
-            "c3d5",
-            "d8d5",
-            "g5f6"
-        ],
-        "debug": "info depth 12 seldepth 25 multipv 1 score cp 96 nodes 482046 nps 32136400 hashfull 15 tbhits 0 time 15 pv d2d4 c8g4 f1b5 e8c8 b5c6 b7c6 d1d3 c6c5 e1g1 g4f3 d3f3 c5d4 a2a4 a7a6 f1d1 e7e5 f3f7 g8f6 c1g5 a5b6 c3d5 d8d5 g5f6",
-        "winChance": 58.746113715199876,
-        "taskId": "wdtcc5edd",
-        "turn": "w",
-        "color": "w",
-        "piece": "p",
-        "from": "d2",
-        "to": "d4",
-        "san": "d4",
-        "flags": "b",
-        "lan": "d2d4",
-        "fromNumeric": "42",
-        "toNumeric": "44",
-        "continuation": [
-            {
-                "from": "c8",
-                "to": "g4",
-                "fromNumeric": "38",
-                "toNumeric": "74"
-            },
-            {
-                "from": "f1",
-                "to": "b5",
-                "fromNumeric": "61",
-                "toNumeric": "25"
-            }
-        ]
+        "move_no": 8,
+        "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/3P1B2/4PN2/PPP2PPP/RN1QKB1R w KQkq - 2 5",
+        "best_move": "h2h3",
+        "eval": {
+            "type": "cp",
+            "value": 27
+        }
     },
     {
-        "text": "Move c6 → b4 (Nxb4): [-0.08]. The game is balanced. Depth 12.",
-        "captured": "p",
-        "promotion": false,
-        "isCapture": true,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "r1b1kbnr/ppp1pppp/2n5/q7/1P6/2N2N2/P1PP1PPP/R1BQKB1R b KQkq - 0 5",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "c6b4",
-        "eval": -0.08,
-        "centipawns": -8,
-        "mate": null,
-        "continuationArr": [
-            "f1c4",
-            "g8f6",
-            "e1g1",
-            "e7e6",
-            "f1e1",
-            "f8d6",
-            "d2d4",
-            "e8g8",
-            "c3b5",
-            "d6e7",
-            "a2a3",
-            "b4d5",
-            "c4d5",
-            "e6d5",
-            "c1f4",
-            "a5b5",
-            "e1e7",
-            "c8f5",
-            "e7c7",
-            "f8c8",
-            "a1b1"
-        ],
-        "debug": "info depth 12 seldepth 24 multipv 1 score cp 8 nodes 294861 nps 32762333 hashfull 36 tbhits 0 time 9 pv c6b4 f1c4 g8f6 e1g1 e7e6 f1e1 f8d6 d2d4 e8g8 c3b5 d6e7 a2a3 b4d5 c4d5 e6d5 c1f4 a5b5 e1e7 c8f5 e7c7 f8c8 a1b1",
-        "winChance": 49.26363724400337,
-        "taskId": "7hg2e0842",
-        "turn": "b",
-        "color": "b",
-        "piece": "n",
-        "from": "c6",
-        "to": "b4",
-        "san": "Nxb4",
-        "flags": "c",
-        "lan": "c6b4",
-        "fromNumeric": "36",
-        "toNumeric": "24",
-        "continuation": [
-            {
-                "from": "f1",
-                "to": "c4",
-                "fromNumeric": "61",
-                "toNumeric": "34"
-            },
-            {
-                "from": "g8",
-                "to": "f6",
-                "fromNumeric": "78",
-                "toNumeric": "66"
-            }
-        ]
+        "move_no": 9,
+        "fen": "rnbqk2r/ppp1ppbp/5np1/3p4/2PP1B2/4PN2/PP3PPP/RN1QKB1R b KQkq - 0 5",
+        "best_move": "e8g8",
+        "eval": {
+            "type": "cp",
+            "value": -9
+        }
     },
     {
-        "text": "Move a1 → b1 (Rb1): [0.5]. The game is balanced. Depth 12.",
-        "captured": false,
-        "promotion": false,
-        "isCapture": false,
-        "isPromotion": false,
-        "isCastling": false,
-        "fen": "r1b1kbnr/ppp1pppp/2n5/8/1q6/2N2N2/P1PP1PPP/R1BQKB1R w KQkq - 0 6",
-        "type": "bestmove",
-        "depth": 12,
-        "move": "a1b1",
-        "eval": 0.5,
-        "centipawns": "50",
-        "mate": null,
-        "continuationArr": [
-            "b4d6",
-            "d2d4",
-            "e7e6",
-            "f1d3",
-            "c6b4",
-            "e1g1",
-            "b4d3",
-            "d1d3",
-            "g8f6",
-            "c3b5",
-            "d6d8"
-        ],
-        "debug": "info depth 12 seldepth 25 multipv 1 score cp 50 nodes 196878 nps 32813000 hashfull 29 tbhits 0 time 6 pv a1b1 b4d6 d2d4 e7e6 f1d3 c6b4 e1g1 b4d3 d1d3 g8f6 c3b5 d6d8",
-        "winChance": 54.5896437602999,
-        "taskId": "qgg8bevnx",
-        "turn": "w",
-        "color": "w",
-        "piece": "r",
-        "from": "a1",
-        "to": "b1",
-        "san": "Rb1",
-        "flags": "n",
-        "lan": "a1b1",
-        "fromNumeric": "11",
-        "toNumeric": "21",
-        "continuation": [
-            {
-                "from": "b4",
-                "to": "d6",
-                "fromNumeric": "24",
-                "toNumeric": "46"
-            },
-            {
-                "from": "d2",
-                "to": "d4",
-                "fromNumeric": "42",
-                "toNumeric": "44"
-            }
-        ]
+        "move_no": 10,
+        "fen": "rnbqk2r/pp2ppbp/2p2np1/3p4/2PP1B2/4PN2/PP3PPP/RN1QKB1R w KQkq - 0 6",
+        "best_move": "b1c3",
+        "eval": {
+            "type": "cp",
+            "value": 42
+        }
+    },
+    {
+        "move_no": 11,
+        "fen": "rnbqk2r/pp2ppbp/2p2np1/3p4/2PP1B2/2N1PN2/PP3PPP/R2QKB1R b KQkq - 1 6",
+        "best_move": "e8g8",
+        "eval": {
+            "type": "cp",
+            "value": 42
+        }
+    },
+    {
+        "move_no": 12,
+        "fen": "rnbq1rk1/pp2ppbp/2p2np1/3p4/2PP1B2/2N1PN2/PP3PPP/R2QKB1R w KQ - 2 7",
+        "best_move": "d1b3",
+        "eval": {
+            "type": "cp",
+            "value": 44
+        }
+    },
+    {
+        "move_no": 13,
+        "fen": "rnbq1rk1/pp2ppbp/2p2np1/3p4/2PP1B2/2N1PN2/PP2BPPP/R2QK2R b KQ - 3 7",
+        "best_move": "d5c4",
+        "eval": {
+            "type": "cp",
+            "value": 40
+        }
+    },
+    {
+        "move_no": 14,
+        "fen": "rn1q1rk1/pp2ppbp/2p1bnp1/3p4/2PP1B2/2N1PN2/PP2BPPP/R2QK2R w KQ - 4 8",
+        "best_move": "f3g5",
+        "eval": {
+            "type": "cp",
+            "value": 59
+        }
+    },
+    {
+        "move_no": 15,
+        "fen": "rn1q1rk1/pp2ppbp/2p1bnp1/3p4/2PP1B2/2N1PN2/PP2BPPP/R2Q1RK1 b - - 5 8",
+        "best_move": "d5c4",
+        "eval": {
+            "type": "cp",
+            "value": 5
+        }
+    },
+    {
+        "move_no": 16,
+        "fen": "r2q1rk1/pp1nppbp/2p1bnp1/3p4/2PP1B2/2N1PN2/PP2BPPP/R2Q1RK1 w - - 6 9",
+        "best_move": "f3g5",
+        "eval": {
+            "type": "cp",
+            "value": 144
+        }
+    },
+    {
+        "move_no": 17,
+        "fen": "r2q1rk1/pp1nppbp/2p1bnp1/3p4/2PP1B2/1QN1PN2/PP2BPPP/R4RK1 b - - 7 9",
+        "best_move": "d8b6",
+        "eval": {
+            "type": "cp",
+            "value": 47
+        }
+    },
+    {
+        "move_no": 18,
+        "fen": "r2q1rk1/pp2ppbp/1np1bnp1/3p4/2PP1B2/1QN1PN2/PP2BPPP/R4RK1 w - - 8 10",
+        "best_move": "c4c5",
+        "eval": {
+            "type": "cp",
+            "value": 245
+        }
+    },
+    {
+        "move_no": 19,
+        "fen": "r2q1rk1/pp2ppbp/1np1bnp1/2Pp4/3P1B2/1QN1PN2/PP2BPPP/R4RK1 b - - 0 10",
+        "best_move": "b6c4",
+        "eval": {
+            "type": "cp",
+            "value": 199
+        }
+    },
+    {
+        "move_no": 20,
+        "fen": "r2q1rk1/pp2ppbp/2p1bnp1/2Pp4/2nP1B2/1QN1PN2/PP2BPPP/R4RK1 w - - 1 11",
+        "best_move": "b3b7",
+        "eval": {
+            "type": "cp",
+            "value": 244
+        }
+    },
+    {
+        "move_no": 21,
+        "fen": "r2q1rk1/pQ2ppbp/2p1bnp1/2Pp4/2nP1B2/2N1PN2/PP2BPPP/R4RK1 b - - 0 11",
+        "best_move": "f6h5",
+        "eval": {
+            "type": "cp",
+            "value": 253
+        }
+    },
+    {
+        "move_no": 22,
+        "fen": "r1q2rk1/pQ2ppbp/2p1bnp1/2Pp4/2nP1B2/2N1PN2/PP2BPPP/R4RK1 w - - 1 12",
+        "best_move": "b7c8",
+        "eval": {
+            "type": "cp",
+            "value": 264
+        }
+    },
+    {
+        "move_no": 23,
+        "fen": "r1Q2rk1/p3ppbp/2p1bnp1/2Pp4/2nP1B2/2N1PN2/PP2BPPP/R4RK1 b - - 0 12",
+        "best_move": "a8c8",
+        "eval": {
+            "type": "cp",
+            "value": 268
+        }
+    },
+    {
+        "move_no": 24,
+        "fen": "r1r3k1/p3ppbp/2p1bnp1/2Pp4/2nP1B2/2N1PN2/PP2BPPP/R4RK1 w - - 0 13",
+        "best_move": "b2b3",
+        "eval": {
+            "type": "cp",
+            "value": 345
+        }
+    },
+    {
+        "move_no": 25,
+        "fen": "r1r3k1/p3ppbp/2p1bnp1/2Pp4/2nP1B2/1PN1PN2/P3BPPP/R4RK1 b - - 0 13",
+        "best_move": "c4a3",
+        "eval": {
+            "type": "cp",
+            "value": 339
+        }
+    },
+    {
+        "move_no": 26,
+        "fen": "r1r3k1/p3ppbp/2p1bnp1/n1Pp4/3P1B2/1PN1PN2/P3BPPP/R4RK1 w - - 1 14",
+        "best_move": "e2a6",
+        "eval": {
+            "type": "cp",
+            "value": 424
+        }
+    },
+    {
+        "move_no": 27,
+        "fen": "r1r3k1/p3ppbp/2p1bnp1/n1PpN3/3P1B2/1PN1P3/P3BPPP/R4RK1 b - - 2 14",
+        "best_move": "f6h5",
+        "eval": {
+            "type": "cp",
+            "value": 239
+        }
+    },
+    {
+        "move_no": 28,
+        "fen": "r1r3k1/p3ppbp/2p1b1p1/n1PpN3/3PnB2/1PN1P3/P3BPPP/R4RK1 w - - 3 15",
+        "best_move": "c3e4",
+        "eval": {
+            "type": "cp",
+            "value": 247
+        }
+    },
+    {
+        "move_no": 29,
+        "fen": "r1r3k1/p3ppbp/2p1b1p1/n1PpN3/3PNB2/1P2P3/P3BPPP/R4RK1 b - - 0 15",
+        "best_move": "d5e4",
+        "eval": {
+            "type": "cp",
+            "value": 245
+        }
+    },
+    {
+        "move_no": 30,
+        "fen": "r1r3k1/p3ppbp/2p1b1p1/n1P1N3/3PpB2/1P2P3/P3BPPP/R4RK1 w - - 0 16",
+        "best_move": "e2a6",
+        "eval": {
+            "type": "cp",
+            "value": 223
+        }
+    },
+    {
+        "move_no": 31,
+        "fen": "r1r3k1/p3ppbp/B1p1b1p1/n1P1N3/3PpB2/1P2P3/P4PPP/R4RK1 b - - 1 16",
+        "best_move": "c8f8",
+        "eval": {
+            "type": "cp",
+            "value": 249
+        }
+    },
+    {
+        "move_no": 32,
+        "fen": "r2r2k1/p3ppbp/B1p1b1p1/n1P1N3/3PpB2/1P2P3/P4PPP/R4RK1 w - - 2 17",
+        "best_move": "a1b1",
+        "eval": {
+            "type": "cp",
+            "value": 264
+        }
+    },
+    {
+        "move_no": 33,
+        "fen": "r2r2k1/p3ppbp/B1p1b1p1/n1P1N3/1P1PpB2/4P3/P4PPP/R4RK1 b - - 0 17",
+        "best_move": "g7e5",
+        "eval": {
+            "type": "cp",
+            "value": 176
+        }
+    },
+    {
+        "move_no": 34,
+        "fen": "r2r2k1/p3pp1p/B1p1b1p1/n1P1b3/1P1PpB2/4P3/P4PPP/R4RK1 w - - 0 18",
+        "best_move": "f4e5",
+        "eval": {
+            "type": "cp",
+            "value": 228
+        }
+    },
+    {
+        "move_no": 35,
+        "fen": "r2r2k1/p3pp1p/B1p1b1p1/n1P1B3/1P1Pp3/4P3/P4PPP/R4RK1 b - - 0 18",
+        "best_move": "e6c4",
+        "eval": {
+            "type": "cp",
+            "value": 185
+        }
+    },
+    {
+        "move_no": 36,
+        "fen": "r2r2k1/p3pp1p/B1p1b1p1/2P1B3/1PnPp3/4P3/P4PPP/R4RK1 w - - 1 19",
+        "best_move": "a6b7",
+        "eval": {
+            "type": "cp",
+            "value": 290
+        }
+    },
+    {
+        "move_no": 37,
+        "fen": "r2r2k1/p3pp1p/B1p1b1p1/2P5/1PnPp3/4P1B1/P4PPP/R4RK1 b - - 2 19",
+        "best_move": "c4a3",
+        "eval": {
+            "type": "cp",
+            "value": 271
+        }
+    },
+    {
+        "move_no": 38,
+        "fen": "r2r2k1/p3pp1p/B1p3p1/2Pb4/1PnPp3/4P1B1/P4PPP/R4RK1 w - - 3 20",
+        "best_move": "a2a4",
+        "eval": {
+            "type": "cp",
+            "value": 351
+        }
+    },
+    {
+        "move_no": 39,
+        "fen": "r2r2k1/p3pp1p/B1p3p1/2Pb4/1PnPp3/4P1B1/P4PPP/2R2RK1 b - - 4 20",
+        "best_move": "c4b2",
+        "eval": {
+            "type": "cp",
+            "value": 311
+        }
+    },
+    {
+        "move_no": 40,
+        "fen": "r2r2k1/p3pp1p/B1p3p1/2Pb4/1P1Pp3/n3P1B1/P4PPP/2R2RK1 w - - 5 21",
+        "best_move": "b4b5",
+        "eval": {
+            "type": "cp",
+            "value": 372
+        }
+    },
+    {
+        "move_no": 41,
+        "fen": "r2r2k1/p3pp1p/B1p3p1/2Pb4/1P1Pp3/n1R1P1B1/P4PPP/5RK1 b - - 6 21",
+        "best_move": "a3b5",
+        "eval": {
+            "type": "cp",
+            "value": 269
+        }
+    },
+    {
+        "move_no": 42,
+        "fen": "r2r2k1/p3pp1p/B1p3p1/1nPb4/1P1Pp3/2R1P1B1/P4PPP/5RK1 w - - 7 22",
+        "best_move": "c3c1",
+        "eval": {
+            "type": "cp",
+            "value": 243
+        }
+    },
+    {
+        "move_no": 43,
+        "fen": "r2r2k1/p3pp1p/2p3p1/1BPb4/1P1Pp3/2R1P1B1/P4PPP/5RK1 b - - 0 22",
+        "best_move": "c6b5",
+        "eval": {
+            "type": "cp",
+            "value": 240
+        }
+    },
+    {
+        "move_no": 44,
+        "fen": "r2r2k1/p3pp1p/6p1/1pPb4/1P1Pp3/2R1P1B1/P4PPP/5RK1 w - - 0 23",
+        "best_move": "c5c6",
+        "eval": {
+            "type": "cp",
+            "value": 238
+        }
+    },
+    {
+        "move_no": 45,
+        "fen": "r2r2k1/p3pp1p/6p1/1pPb4/1P1Pp3/2R1P1B1/P4PPP/R5K1 b - - 1 23",
+        "best_move": "d8c8",
+        "eval": {
+            "type": "cp",
+            "value": 115
+        }
+    },
+    {
+        "move_no": 46,
+        "fen": "r2r2k1/p4p1p/4p1p1/1pPb4/1P1Pp3/2R1P1B1/P4PPP/R5K1 w - - 0 24",
+        "best_move": "c3a3",
+        "eval": {
+            "type": "cp",
+            "value": 235
+        }
+    },
+    {
+        "move_no": 47,
+        "fen": "r2r2k1/p4p1p/4p1p1/1pPb4/PP1Pp3/2R1P1B1/5PPP/R5K1 b - - 0 24",
+        "best_move": "a7a5",
+        "eval": {
+            "type": "cp",
+            "value": 118
+        }
+    },
+    {
+        "move_no": 48,
+        "fen": "r2r2k1/5p1p/p3p1p1/1pPb4/PP1Pp3/2R1P1B1/5PPP/R5K1 w - - 0 25",
+        "best_move": "c5c6",
+        "eval": {
+            "type": "cp",
+            "value": 270
+        }
+    },
+    {
+        "move_no": 49,
+        "fen": "r2r2k1/5p1p/p3p1p1/PpPb4/1P1Pp3/2R1P1B1/5PPP/R5K1 b - - 0 25",
+        "best_move": "d8c8",
+        "eval": {
+            "type": "cp",
+            "value": 137
+        }
+    },
+    {
+        "move_no": 50,
+        "fen": "r2r2k1/5p1p/p3p1p1/PpP5/1PbPp3/2R1P1B1/5PPP/R5K1 w - - 1 26",
+        "best_move": "f2f3",
+        "eval": {
+            "type": "cp",
+            "value": 238
+        }
+    },
+    {
+        "move_no": 51,
+        "fen": "r2r2k1/2B2p1p/p3p1p1/PpP5/1PbPp3/2R1P3/5PPP/R5K1 b - - 2 26",
+        "best_move": "d8c8",
+        "eval": {
+            "type": "cp",
+            "value": 202
+        }
+    },
+    {
+        "move_no": 52,
+        "fen": "r1r3k1/2B2p1p/p3p1p1/PpP5/1PbPp3/2R1P3/5PPP/R5K1 w - - 3 27",
+        "best_move": "c7e5",
+        "eval": {
+            "type": "cp",
+            "value": 229
+        }
+    },
+    {
+        "move_no": 53,
+        "fen": "r1r3k1/5p1p/p2Bp1p1/PpP5/1PbPp3/2R1P3/5PPP/R5K1 b - - 4 27",
+        "best_move": "c4d5",
+        "eval": {
+            "type": "cp",
+            "value": 146
+        }
+    },
+    {
+        "move_no": 54,
+        "fen": "r5k1/5p1p/p1rBp1p1/PpP5/1PbPp3/2R1P3/5PPP/R5K1 w - - 5 28",
+        "best_move": "c3c4",
+        "eval": {
+            "type": "cp",
+            "value": 244
+        }
+    },
+    {
+        "move_no": 55,
+        "fen": "r5k1/5p1p/p1rBp1p1/PpP5/1PbPp3/2R1PP2/6PP/R5K1 b - - 0 28",
+        "best_move": "c4d5",
+        "eval": {
+            "type": "cp",
+            "value": 162
+        }
+    },
+    {
+        "move_no": 56,
+        "fen": "r5k1/7p/p1rBp1p1/PpP2p2/1PbPp3/2R1PP2/6PP/R5K1 w - - 0 29",
+        "best_move": "f3e4",
+        "eval": {
+            "type": "cp",
+            "value": 298
+        }
+    },
+    {
+        "move_no": 57,
+        "fen": "r5k1/7p/p1rBp1p1/PpP2p2/1PbPP3/2R1P3/6PP/R5K1 b - - 0 29",
+        "best_move": "f5e4",
+        "eval": {
+            "type": "cp",
+            "value": 308
+        }
+    },
+    {
+        "move_no": 58,
+        "fen": "r5k1/7p/p1rBp1p1/PpP5/1PbPp3/2R1P3/6PP/R5K1 w - - 0 30",
+        "best_move": "c3c2",
+        "eval": {
+            "type": "cp",
+            "value": 273
+        }
+    },
+    {
+        "move_no": 59,
+        "fen": "r5k1/7p/p1rBp1p1/PpP5/1PbPp3/2R1P3/R5PP/6K1 b - - 1 30",
+        "best_move": "c4a2",
+        "eval": {
+            "type": "cp",
+            "value": -364
+        }
+    },
+    {
+        "move_no": 60,
+        "fen": "3r2k1/7p/p1rBp1p1/PpP5/1PbPp3/2R1P3/R5PP/6K1 w - - 2 31",
+        "best_move": "a2f2",
+        "eval": {
+            "type": "cp",
+            "value": 342
+        }
+    },
+    {
+        "move_no": 61,
+        "fen": "3r2k1/7p/p1rBp1p1/PpP5/1PbPp3/2R1P3/5RPP/6K1 b - - 3 31",
+        "best_move": "c6c8",
+        "eval": {
+            "type": "cp",
+            "value": 345
+        }
+    },
+    {
+        "move_no": 62,
+        "fen": "6k1/3r3p/p1rBp1p1/PpP5/1PbPp3/2R1P3/5RPP/6K1 w - - 4 32",
+        "best_move": "f2f8",
+        "eval": {
+            "type": "cp",
+            "value": 372
+        }
+    },
+    {
+        "move_no": 63,
+        "fen": "5Rk1/3r3p/p1rBp1p1/PpP5/1PbPp3/2R1P3/6PP/6K1 b - - 5 32",
+        "best_move": "g8g7",
+        "eval": {
+            "type": "cp",
+            "value": 358
+        }
+    },
+    {
+        "move_no": 64,
+        "fen": "5R2/3r2kp/p1rBp1p1/PpP5/1PbPp3/2R1P3/6PP/6K1 w - - 6 33",
+        "best_move": "f8b8",
+        "eval": {
+            "type": "cp",
+            "value": 380
+        }
+    },
+    {
+        "move_no": 65,
+        "fen": "4R3/3r2kp/p1rBp1p1/PpP5/1PbPp3/2R1P3/6PP/6K1 b - - 7 33",
+        "best_move": "d7f7",
+        "eval": {
+            "type": "cp",
+            "value": 386
+        }
+    },
+    {
+        "move_no": 66,
+        "fen": "4R3/5rkp/p1rBp1p1/PpP5/1PbPp3/2R1P3/6PP/6K1 w - - 8 34",
+        "best_move": "d6e5",
+        "eval": {
+            "type": "cp",
+            "value": 400
+        }
+    },
+    {
+        "move_no": 67,
+        "fen": "4R3/5rkp/p1r1p1p1/PpP1B3/1PbPp3/2R1P3/6PP/6K1 b - - 9 34",
+        "best_move": "g7h6",
+        "eval": {
+            "type": "cp",
+            "value": 353
+        }
+    },
+    {
+        "move_no": 68,
+        "fen": "4R3/5r1p/p1r1p1pk/PpP1B3/1PbPp3/2R1P3/6PP/6K1 w - - 10 35",
+        "best_move": "c3c1",
+        "eval": {
+            "type": "cp",
+            "value": 378
+        }
+    },
+    {
+        "move_no": 69,
+        "fen": "4R3/5r1p/p1r1p1pk/PpP1B3/1PbPp3/4P3/6PP/2R3K1 b - - 11 35",
+        "best_move": "h6h5",
+        "eval": {
+            "type": "cp",
+            "value": 404
+        }
+    },
+    {
+        "move_no": 70,
+        "fen": "4R3/5r1p/p1r1p1p1/PpP1B1k1/1PbPp3/4P3/6PP/2R3K1 w - - 12 36",
+        "best_move": "h2h3",
+        "eval": {
+            "type": "cp",
+            "value": 381
+        }
+    },
+    {
+        "move_no": 71,
+        "fen": "4R3/5r1p/p1r1p1p1/PpP3k1/1PbPpB2/4P3/6PP/2R3K1 b - - 13 36",
+        "best_move": "f7f4",
+        "eval": {
+            "type": "cp",
+            "value": 248
+        }
+    },
+    {
+        "move_no": 72,
+        "fen": "4R3/5r1p/p1r1p1p1/PpP5/1PbPpBk1/4P3/6PP/2R3K1 w - - 14 37",
+        "best_move": "h2h3",
+        "eval": {
+            "type": "cp",
+            "value": 380
+        }
+    },
+    {
+        "move_no": 73,
+        "fen": "4R3/5r1p/p1r1p1p1/PpP5/1PbPpBk1/4P2P/6P1/2R3K1 b - - 0 37",
+        "best_move": "g4h4",
+        "eval": {
+            "type": "cp",
+            "value": 404
+        }
+    },
+    {
+        "move_no": 74,
+        "fen": "4R3/5r1p/p1r1p1p1/PpP2k2/1PbPpB2/4P2P/6P1/2R3K1 w - - 1 38",
+        "best_move": "g2g4",
+        "eval": {
+            "type": "cp",
+            "value": 740
+        }
+    },
+    {
+        "move_no": 75,
+        "fen": "4R3/5r1p/p1r1p1p1/PpP2k2/1PbPpBP1/4P2P/8/2R3K1 b - - 0 38",
+        "best_move": "f5f6",
+        "eval": {
+            "type": "cp",
+            "value": 736
+        }
+    },
+    {
+        "move_no": 76,
+        "fen": "4R3/5r1p/p1r1pkp1/PpP5/1PbPpBP1/4P2P/8/2R3K1 w - - 1 39",
+        "best_move": "g4g5",
+        "eval": {
+            "type": "cp",
+            "value": 670
+        }
+    },
+    {
+        "move_no": 77,
+        "fen": "4R3/5r1p/p1r1pkp1/PpP3P1/1PbPpB2/4P2P/8/2R3K1 b - - 0 39",
+        "best_move": "f6f5",
+        "eval": {
+            "type": "cp",
+            "value": 559
+        }
+    },
+    {
+        "move_no": 78,
+        "fen": "4R3/5r1p/p1r1p1p1/PpP2kP1/1PbPpB2/4P2P/8/2R3K1 w - - 1 40",
+        "best_move": "g1h2",
+        "eval": {
+            "type": "cp",
+            "value": 558
+        }
+    },
+    {
+        "move_no": 79,
+        "fen": "4R3/5r1p/p1r1p1p1/PpP2kP1/1PbPpB2/4P2P/6K1/2R5 b - - 2 40",
+        "best_move": "h7h6",
+        "eval": {
+            "type": "cp",
+            "value": 464
+        }
+    },
+    {
+        "move_no": 80,
+        "fen": "4R3/5r2/p1r1p1p1/PpP2kPp/1PbPpB2/4P2P/6K1/2R5 w - h6 0 41",
+        "best_move": "c1c2",
+        "eval": {
+            "type": "cp",
+            "value": 601
+        }
+    },
+    {
+        "move_no": 81,
+        "fen": "4R3/5r2/p1r1p1pP/PpP2k2/1PbPpB2/4P2P/6K1/2R5 b - - 0 41",
+        "best_move": "g6g5",
+        "eval": {
+            "type": "cp",
+            "value": 506
+        }
+    },
+    {
+        "move_no": 82,
+        "fen": "4R3/5r2/p1r1p2P/PpP2kp1/1PbPpB2/4P2P/6K1/2R5 w - - 0 42",
+        "best_move": "f4e5",
+        "eval": {
+            "type": "cp",
+            "value": 489
+        }
+    },
+    {
+        "move_no": 83,
+        "fen": "4R3/5r2/p1r1p2P/PpP1Bkp1/1PbPp3/4P2P/6K1/2R5 b - - 1 42",
+        "best_move": "f5g6",
+        "eval": {
+            "type": "cp",
+            "value": 489
+        }
+    },
+    {
+        "move_no": 84,
+        "fen": "4R3/7r/p1r1p2P/PpP1Bkp1/1PbPp3/4P2P/6K1/2R5 w - - 2 43",
+        "best_move": "c1g1",
+        "eval": {
+            "type": "cp",
+            "value": 561
+        }
+    },
+    {
+        "move_no": 85,
+        "fen": "5R2/7r/p1r1p2P/PpP1Bkp1/1PbPp3/4P2P/6K1/2R5 b - - 3 43",
+        "best_move": "f5g6",
+        "eval": {
+            "type": "cp",
+            "value": 524
+        }
+    },
+    {
+        "move_no": 86,
+        "fen": "5R2/7r/p1r1p1kP/PpP1B1p1/1PbPp3/4P2P/6K1/2R5 w - - 4 44",
+        "best_move": "g2h2",
+        "eval": {
+            "type": "cp",
+            "value": 542
+        }
+    },
+    {
+        "move_no": 87,
+        "fen": "8/7r/p1r1pRkP/PpP1B1p1/1PbPp3/4P2P/6K1/2R5 b - - 5 44",
+        "best_move": "g6h5",
+        "eval": {
+            "type": "cp",
+            "value": 462
+        }
+    },
+    {
+        "move_no": 88,
+        "fen": "8/7r/p1r1pR1P/PpP1B1pk/1PbPp3/4P2P/6K1/2R5 w - - 6 45",
+        "best_move": "f6f8",
+        "eval": {
+            "type": "cp",
+            "value": 482
+        }
+    },
+    {
+        "move_no": 89,
+        "fen": "8/7r/p1r1pR1P/PpP1B1pk/1PbPp2P/4P3/6K1/2R5 b - - 0 45",
+        "best_move": "h5h4",
+        "eval": {
+            "type": "cp",
+            "value": 489
+        }
+    },
+    {
+        "move_no": 90,
+        "fen": "8/7r/p1r1pR1P/PpP1B2k/1PbPp2p/4P3/6K1/2R5 w - - 0 46",
+        "best_move": "g2h3",
+        "eval": {
+            "type": "cp",
+            "value": 733
+        }
+    },
+    {
+        "move_no": 91,
+        "fen": "8/7r/p1r1pR1P/PpP1B2k/1PbPp2p/4P3/6K1/7R b - - 1 46",
+        "best_move": "c4e2",
+        "eval": {
+            "type": "cp",
+            "value": 395
+        }
+    },
+    {
+        "move_no": 92,
+        "fen": "8/8/p1r1pR1r/PpP1B2k/1PbPp2p/4P3/6K1/7R w - - 0 47",
+        "best_move": "f6h6",
+        "eval": {
+            "type": "cp",
+            "value": 401
+        }
+    },
+    {
+        "move_no": 93,
+        "fen": "8/8/p1r1p2R/PpP1B2k/1PbPp2p/4P3/6K1/7R b - - 0 47",
+        "best_move": "h5h6",
+        "eval": {
+            "type": "cp",
+            "value": 400
+        }
+    },
+    {
+        "move_no": 94,
+        "fen": "8/8/p1r1p2k/PpP1B3/1PbPp2p/4P3/6K1/7R w - - 0 48",
+        "best_move": "h1h4",
+        "eval": {
+            "type": "cp",
+            "value": 401
+        }
+    },
+    {
+        "move_no": 95,
+        "fen": "8/8/p1r1p2k/PpP1B3/1PbPp2R/4P3/6K1/8 b - - 0 48",
+        "best_move": "h6g6",
+        "eval": {
+            "type": "cp",
+            "value": 378
+        }
+    },
+    {
+        "move_no": 96,
+        "fen": "8/8/p1r1p3/PpP1B1k1/1PbPp2R/4P3/6K1/8 w - - 1 49",
+        "best_move": "g2g3",
+        "eval": {
+            "type": "cp",
+            "value": 435
+        }
+    },
+    {
+        "move_no": 97,
+        "fen": "8/8/p1r1p3/PpP1B1k1/1PbPR3/4P3/6K1/8 b - - 0 49",
+        "best_move": "c4d5",
+        "eval": {
+            "type": "cp",
+            "value": -460
+        }
+    },
+    {
+        "move_no": 98,
+        "fen": "8/8/p1r1p3/PpPbB1k1/1P1PR3/4P3/6K1/8 w - - 1 50",
+        "best_move": "e5d6",
+        "eval": {
+            "type": "cp",
+            "value": -495
+        }
+    },
+    {
+        "move_no": 99,
+        "fen": "8/8/p1r1p3/PpPbB1k1/1P1PR3/4PK2/8/8 b - - 2 50",
+        "best_move": "g5f5",
+        "eval": {
+            "type": "cp",
+            "value": -476
+        }
+    },
+    {
+        "move_no": 100,
+        "fen": "8/8/p1r1p3/PpP1B1k1/1P1Pb3/4PK2/8/8 w - - 0 51",
+        "best_move": "f3e4",
+        "eval": {
+            "type": "cp",
+            "value": 615
+        }
+    },
+    {
+        "move_no": 101,
+        "fen": "8/8/p1r1p3/PpP1B1k1/1P1PK3/4P3/8/8 b - - 0 51",
+        "best_move": "c6c8",
+        "eval": {
+            "type": "cp",
+            "value": 565
+        }
+    },
+    {
+        "move_no": 102,
+        "fen": "8/8/p1r1p3/PpP1B3/1P1PK1k1/4P3/8/8 w - - 1 52",
+        "best_move": "d4d5",
+        "eval": {
+            "type": "cp",
+            "value": 609
+        }
+    },
+    {
+        "move_no": 103,
+        "fen": "8/8/p1r1p3/PpPPB3/1P2K1k1/4P3/8/8 b - - 0 52",
+        "best_move": "e6d5",
+        "eval": {
+            "type": "cp",
+            "value": 637
+        }
+    },
+    {
+        "move_no": 104,
+        "fen": "8/8/p1r5/PpPpB3/1P2K1k1/4P3/8/8 w - - 0 53",
+        "best_move": "e4d5",
+        "eval": {
+            "type": "cp",
+            "value": 616
+        }
+    },
+    {
+        "move_no": 105,
+        "fen": "8/8/p1r5/PpPKB3/1P4k1/4P3/8/8 b - - 0 53",
+        "best_move": "c6c8",
+        "eval": {
+            "type": "cp",
+            "value": 632
+        }
+    },
+    {
+        "move_no": 106,
+        "fen": "8/8/p5r1/PpPKB3/1P4k1/4P3/8/8 w - - 1 54",
+        "best_move": "c5c6",
+        "eval": {
+            "type": "cp",
+            "value": 600
+        }
+    },
+    {
+        "move_no": 107,
+        "fen": "8/8/p5r1/PpPKB3/1P2P1k1/8/8/8 b - - 0 54",
+        "best_move": "g6g8",
+        "eval": {
+            "type": "cp",
+            "value": 641
+        }
+    },
+    {
+        "move_no": 108,
+        "fen": "8/8/p5r1/PpPKB3/1P2P3/5k2/8/8 w - - 1 55",
+        "best_move": "c5c6",
+        "eval": {
+            "type": "cp",
+            "value": 612
+        }
+    },
+    {
+        "move_no": 109,
+        "fen": "8/8/p2B2r1/PpPK4/1P2P3/5k2/8/8 b - - 2 55",
+        "best_move": "g6g5",
+        "eval": {
+            "type": "cp",
+            "value": 634
+        }
+    },
+    {
+        "move_no": 110,
+        "fen": "8/8/p2B4/PpPK2r1/1P2P3/5k2/8/8 w - - 3 56",
+        "best_move": "e4e5",
+        "eval": {
+            "type": "cp",
+            "value": 641
+        }
+    },
+    {
+        "move_no": 111,
+        "fen": "8/8/p2B4/PpPKP1r1/1P6/5k2/8/8 b - - 0 56",
+        "best_move": "g5g7",
+        "eval": {
+            "type": "cp",
+            "value": 655
+        }
+    },
+    {
+        "move_no": 112,
+        "fen": "8/8/p2B4/PpPKP1r1/1P6/8/4k3/8 w - - 1 57",
+        "best_move": "c5c6",
+        "eval": {
+            "type": "cp",
+            "value": 650
+        }
+    },
+    {
+        "move_no": 113,
+        "fen": "8/8/p1PB4/Pp1KP1r1/1P6/8/4k3/8 b - - 0 57",
+        "best_move": "g5g8",
+        "eval": {
+            "type": "cp",
+            "value": 700
+        }
+    },
+    {
+        "move_no": 114,
+        "fen": "8/8/p1PB4/Pp1KP3/1P4r1/8/4k3/8 w - - 1 58",
+        "best_move": "c6c7",
+        "eval": {
+            "type": "cp",
+            "value": 801
+        }
+    },
+    {
+        "move_no": 115,
+        "fen": "8/2P5/p2B4/Pp1KP3/1P4r1/8/4k3/8 b - - 0 58",
+        "best_move": "g4g8",
+        "eval": {
+            "type": "cp",
+            "value": 743
+        }
+    },
+    {
+        "move_no": 116,
+        "fen": "8/2P5/p2B4/Pp1KP3/1Pr5/8/4k3/8 w - - 1 59",
+        "best_move": "d6c5",
+        "eval": {
+            "type": "cp",
+            "value": 875
+        }
+    },
+    {
+        "move_no": 117,
+        "fen": "8/2P5/p7/PpBKP3/1Pr5/8/4k3/8 b - - 2 59",
+        "best_move": "e2f3",
+        "eval": {
+            "type": "cp",
+            "value": 865
+        }
+    },
+    {
+        "move_no": 118,
+        "fen": "8/2P5/p7/PpBKP3/1Pr5/3k4/8/8 w - - 3 60",
+        "best_move": "c7c8q",
+        "eval": {
+            "type": "cp",
+            "value": 951
+        }
+    },
+    {
+        "move_no": 119,
+        "fen": "2Q5/8/p7/PpBKP3/1Pr5/3k4/8/8 b - - 0 60",
+        "best_move": "c4h4",
+        "eval": {
+            "type": "cp",
+            "value": 984
+        }
+    },
+    {
+        "move_no": 120,
+        "fen": "2Q5/8/p7/PpBKP3/1Pr5/2k5/8/8 w - - 1 61",
+        "best_move": "d5c6",
+        "eval": {
+            "type": "cp",
+            "value": 954
+        }
+    },
+    {
+        "move_no": 121,
+        "fen": "2Q5/8/p7/Pp1KP3/1PrB4/2k5/8/8 b - - 2 61",
+        "best_move": "c3b4",
+        "eval": {
+            "type": "cp",
+            "value": 860
+        }
+    },
+    {
+        "move_no": 122,
+        "fen": "2Q5/8/p7/Pp1KP3/1PrB4/1k6/8/8 w - - 3 62",
+        "best_move": "d4c5",
+        "eval": {
+            "type": "cp",
+            "value": 927
+        }
+    },
+    {
+        "move_no": 123,
+        "fen": "8/8/p7/Pp1KP3/1PQB4/1k6/8/8 b - - 0 62",
+        "best_move": "b5c4",
+        "eval": {
+            "type": "cp",
+            "value": 1066
+        }
+    },
+    {
+        "move_no": 124,
+        "fen": "8/8/p7/P2KP3/1PpB4/1k6/8/8 w - - 0 63",
+        "best_move": "e5e6",
+        "eval": {
+            "type": "cp",
+            "value": 871
+        }
+    },
+    {
+        "move_no": 125,
+        "fen": "8/8/p3P3/P2K4/1PpB4/1k6/8/8 b - - 0 63",
+        "best_move": "b3b4",
+        "eval": {
+            "type": "cp",
+            "value": 1009
+        }
+    },
+    {
+        "move_no": 126,
+        "fen": "8/8/p3P3/P2K4/1kpB4/8/8/8 w - - 0 64",
+        "best_move": "e6e7",
+        "eval": {
+            "type": "cp",
+            "value": 863
+        }
+    },
+    {
+        "move_no": 127,
+        "fen": "8/4P3/p7/P2K4/1kpB4/8/8/8 b - - 0 64",
+        "best_move": "c4c3",
+        "eval": {
+            "type": "cp",
+            "value": 1027
+        }
+    },
+    {
+        "move_no": 128,
+        "fen": "8/4P3/p7/k2K4/2pB4/8/8/8 w - - 0 65",
+        "best_move": "d5c4",
+        "eval": {
+            "type": "mate",
+            "value": 4
+        }
+    },
+    {
+        "move_no": 129,
+        "fen": "4Q3/8/p7/k2K4/2pB4/8/8/8 b - - 0 65",
+        "best_move": "a5b4",
+        "eval": {
+            "type": "mate",
+            "value": 4
+        }
+    },
+    {
+        "move_no": 130,
+        "fen": "4Q3/8/p7/3K4/1kpB4/8/8/8 w - - 1 66",
+        "best_move": "e8e1",
+        "eval": {
+            "type": "mate",
+            "value": 3
+        }
+    },
+    {
+        "move_no": 131,
+        "fen": "1Q6/8/p7/3K4/1kpB4/8/8/8 b - - 2 66",
+        "best_move": "b4a3",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 132,
+        "fen": "1Q6/8/p7/3K4/2pB4/k7/8/8 w - - 3 67",
+        "best_move": "d5c4",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 133,
+        "fen": "8/8/p7/3K4/2pB4/k7/1Q6/8 b - - 4 67",
+        "best_move": "a3a4",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 134,
+        "fen": "8/8/p7/3K4/k1pB4/8/1Q6/8 w - - 5 68",
+        "best_move": "d5c4",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 135,
+        "fen": "8/8/p7/3K4/k1p5/2B5/1Q6/8 b - - 6 68",
+        "best_move": "a6a5",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 136,
+        "fen": "8/8/8/p2K4/k1p5/2B5/1Q6/8 w - - 0 69",
+        "best_move": "b2a2",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 137,
+        "fen": "8/8/8/p2K4/k1p5/2B5/2Q5/8 b - - 1 69",
+        "best_move": "a4b5",
+        "eval": {
+            "type": "mate",
+            "value": 3
+        }
+    },
+    {
+        "move_no": 138,
+        "fen": "8/8/8/pk1K4/2p5/2B5/2Q5/8 w - - 2 70",
+        "best_move": "c2b2",
+        "eval": {
+            "type": "mate",
+            "value": 3
+        }
+    },
+    {
+        "move_no": 139,
+        "fen": "8/8/8/pk1K4/2p5/2B5/1Q6/8 b - - 3 70",
+        "best_move": "b5a6",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 140,
+        "fen": "8/8/8/p2K4/k1p5/2B5/1Q6/8 w - - 4 71",
+        "best_move": "b2a2",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 141,
+        "fen": "8/8/8/p2K4/k1p5/2B5/Q7/8 b - - 5 71",
+        "best_move": "a4b5",
+        "eval": {
+            "type": "mate",
+            "value": 1
+        }
+    },
+    {
+        "move_no": 142,
+        "fen": "8/8/8/pk1K4/2p5/2B5/Q7/8 w - - 6 72",
+        "best_move": "a2a5",
+        "eval": {
+            "type": "mate",
+            "value": 1
+        }
+    },
+    {
+        "move_no": 143,
+        "fen": "8/8/8/pk1K4/2Q5/2B5/8/8 b - - 0 72",
+        "best_move": "b5b6",
+        "eval": {
+            "type": "mate",
+            "value": 4
+        }
+    },
+    {
+        "move_no": 144,
+        "fen": "8/8/1k6/p2K4/2Q5/2B5/8/8 w - - 1 73",
+        "best_move": "c4c6",
+        "eval": {
+            "type": "mate",
+            "value": 4
+        }
+    },
+    {
+        "move_no": 145,
+        "fen": "8/8/1kQ5/p2K4/8/2B5/8/8 b - - 2 73",
+        "best_move": "b6a7",
+        "eval": {
+            "type": "mate",
+            "value": 3
+        }
+    },
+    {
+        "move_no": 146,
+        "fen": "8/k7/2Q5/p2K4/8/2B5/8/8 w - - 3 74",
+        "best_move": "c6c7",
+        "eval": {
+            "type": "mate",
+            "value": 3
+        }
+    },
+    {
+        "move_no": 147,
+        "fen": "8/k7/2Q5/p2K4/3B4/8/8/8 b - - 4 74",
+        "best_move": "a7b8",
+        "eval": {
+            "type": "mate",
+            "value": 4
+        }
+    },
+    {
+        "move_no": 148,
+        "fen": "1k6/8/2Q5/p2K4/3B4/8/8/8 w - - 5 75",
+        "best_move": "c6e8",
+        "eval": {
+            "type": "mate",
+            "value": 3
+        }
+    },
+    {
+        "move_no": 149,
+        "fen": "1k6/8/2Q5/p2KB3/8/8/8/8 b - - 6 75",
+        "best_move": "b8a7",
+        "eval": {
+            "type": "mate",
+            "value": 3
+        }
+    },
+    {
+        "move_no": 150,
+        "fen": "8/k7/2Q5/p2KB3/8/8/8/8 w - - 7 76",
+        "best_move": "c6c8",
+        "eval": {
+            "type": "mate",
+            "value": 3
+        }
+    },
+    {
+        "move_no": 151,
+        "fen": "8/k1Q5/8/p2KB3/8/8/8/8 b - - 8 76",
+        "best_move": "a7a6",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 152,
+        "fen": "8/2Q5/k7/p2KB3/8/8/8/8 w - - 9 77",
+        "best_move": "e5d4",
+        "eval": {
+            "type": "mate",
+            "value": 2
+        }
+    },
+    {
+        "move_no": 153,
+        "fen": "8/2Q5/k7/p1K1B3/8/8/8/8 b - - 10 77",
+        "best_move": "a5a4",
+        "eval": {
+            "type": "mate",
+            "value": 1
+        }
+    },
+    {
+        "move_no": 154,
+        "fen": "8/2Q5/k7/2K1B3/p7/8/8/8 w - - 0 78",
+        "best_move": "c7b6",
+        "eval": {
+            "type": "mate",
+            "value": 1
+        }
+    },
+    {
+        "move_no": 155,
+        "fen": "8/8/kQ6/2K1B3/p7/8/8/8 b - - 1 78",
+        "best_move": null,
+        "eval": {
+            "type": "mate",
+            "value": 0
+        }
     }
 ]
