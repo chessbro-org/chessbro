@@ -1,4 +1,6 @@
-depth - 14  |   time = 15 secs
-depth - 15  |   time = 24 secs
-depth - 16  |   time = 35 secs
-depth - 17  |   time = 
+Best Move 
+Excellent Move
+Good Move
+Inaccuracy
+Mistake
+Blunder
