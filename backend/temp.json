@@ -1,192 +1,158 @@
 [
-    {
-        "move_no": 0,
-        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
-        "best_move": "e4",
-        "eval": {
-            "type": "cp",
-            "value": 0.47
-        },
-        "move": null
-    },
-    {
-        "move_no": 1,
-        "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
-        "best_move": "c5",
-        "eval": {
-            "type": "cp",
-            "value": 0.03
-        },
-        "move": "e4"
-    },
-    {
-        "move_no": 2,
-        "fen": "rnbqkbnr/ppppp1pp/5p2/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
-        "best_move": "d4",
-        "eval": {
-            "type": "cp",
-            "value": 2.17
-        },
-        "move": "f6"
-    },
-    {
-        "move_no": 3,
-        "fen": "rnbqkbnr/ppppp1pp/5p2/8/4P3/1P6/P1PP1PPP/RNBQKBNR b KQkq - 0 2",
-        "best_move": "Nc6",
-        "eval": {
-            "type": "cp",
-            "value": 0.54
-        },
-        "move": "b3"
-    },
-    {
-        "move_no": 4,
-        "fen": "rnbqkbnr/ppppp2p/5p2/6p1/4P3/1P6/P1PP1PPP/RNBQKBNR w KQkq - 0 3",
-        "best_move": "Qh5#",
-        "eval": {
-            "type": "mate",
-            "value": 1
-        },
-        "move": "g5"
-    },
-    {
-        "move_no": 5,
-        "fen": "rnbqkbnr/ppppp2p/5p2/6p1/4P3/PP6/2PP1PPP/RNBQKBNR b KQkq - 0 3",
-        "best_move": "h5",
-        "eval": {
-            "type": "cp",
-            "value": 2.25
-        },
-        "move": "a3"
-    },
-    {
-        "move_no": 6,
-        "fen": "rnbqkbnr/1pppp2p/p4p2/6p1/4P3/PP6/2PP1PPP/RNBQKBNR w KQkq - 0 4",
-        "best_move": "Qh5#",
-        "eval": {
-            "type": "mate",
-            "value": 1
-        },
-        "move": "a6"
-    },
-    {
-        "move_no": 7,
-        "fen": "rnbqkbnr/1pppp2p/p4p2/6p1/1P2P3/P7/2PP1PPP/RNBQKBNR b KQkq - 0 4",
-        "best_move": "Bg7",
-        "eval": {
-            "type": "cp",
-            "value": 1.81
-        },
-        "move": "b4"
-    },
-    {
-        "move_no": 8,
-        "fen": "rnbqkbnr/2ppp2p/pp3p2/6p1/1P2P3/P7/2PP1PPP/RNBQKBNR w KQkq - 0 5",
-        "best_move": "Qh5#",
-        "eval": {
-            "type": "mate",
-            "value": 1
-        },
-        "move": "b6"
-    },
-    {
-        "move_no": 9,
-        "fen": "rnbqkbnr/2ppp2p/pp3p2/6p1/PP2P3/8/2PP1PPP/RNBQKBNR b KQkq - 0 5",
-        "best_move": "h5",
-        "eval": {
-            "type": "cp",
-            "value": 1.18
-        },
-        "move": "a4"
-    },
-    {
-        "move_no": 10,
-        "fen": "rnbqkbnr/3pp2p/ppp2p2/6p1/PP2P3/8/2PP1PPP/RNBQKBNR w KQkq - 0 6",
-        "best_move": "Qh5#",
-        "eval": {
-            "type": "mate",
-            "value": 1
-        },
-        "move": "c6"
-    },
-    {
-        "move_no": 11,
-        "fen": "rnbqkbnr/3pp2p/ppp2p2/6p1/PPP1P3/8/3P1PPP/RNBQKBNR b KQkq - 0 6",
-        "best_move": "Nh6",
-        "eval": {
-            "type": "cp",
-            "value": 1.44
-        },
-        "move": "c4"
-    },
-    {
-        "move_no": 12,
-        "fen": "rn1qkbnr/1b1pp2p/ppp2p2/6p1/PPP1P3/8/3P1PPP/RNBQKBNR w KQkq - 1 7",
-        "best_move": "Qh5#",
-        "eval": {
-            "type": "mate",
-            "value": 1
-        },
-        "move": "Bb7"
-    },
-    {
-        "move_no": 13,
-        "fen": "rn1qkbnr/1b1pp2p/ppp2p2/6p1/PPP1P3/8/1B1P1PPP/RN1QKBNR b KQkq - 2 7",
-        "best_move": "Nh6",
-        "eval": {
-            "type": "cp",
-            "value": 2.23
-        },
-        "move": "Bb2"
-    },
-    {
-        "move_no": 14,
-        "fen": "rnbqkbnr/3pp2p/ppp2p2/6p1/PPP1P3/8/1B1P1PPP/RN1QKBNR w KQkq - 3 8",
-        "best_move": "Qh5#",
-        "eval": {
-            "type": "mate",
-            "value": 1
-        },
-        "move": "Bc8"
-    },
-    {
-        "move_no": 15,
-        "fen": "rnbqkbnr/3pp2p/ppp2p2/6p1/PPP1P3/B7/3P1PPP/RN1QKBNR b KQkq - 4 8",
-        "best_move": "Bg7",
-        "eval": {
-            "type": "cp",
-            "value": 1.71
-        },
-        "move": "Ba3"
-    },
-    {
-        "move_no": 16,
-        "fen": "rn1qkbnr/1b1pp2p/ppp2p2/6p1/PPP1P3/B7/3P1PPP/RN1QKBNR w KQkq - 5 9",
-        "best_move": "Qh5#",
-        "eval": {
-            "type": "mate",
-            "value": 1
-        },
-        "move": "Bb7"
-    },
-    {
-        "move_no": 17,
-        "fen": "rn1qkbnr/1b1pp2p/ppp2p2/6p1/PPP1P3/8/1B1P1PPP/RN1QKBNR b KQkq - 6 9",
-        "best_move": "e5",
-        "eval": {
-            "type": "cp",
-            "value": 1.5
-        },
-        "move": "Bb2"
-    },
-    {
-        "move_no": 18,
-        "fen": "1n1qkbnr/rb1pp2p/ppp2p2/6p1/PPP1P3/8/1B1P1PPP/RN1QKBNR w KQk - 7 10",
-        "best_move": "Qh5#",
-        "eval": {
-            "type": "mate",
-            "value": 1
-        },
-        "move": "Ra7"
-    }
+    null,
+    0.02,
+    0.04,
+    0.33,
+    0.06,
+    0.08,
+    0.2,
+    0.0,
+    0.05,
+    0.32,
+    0.62,
+    0.05,
+    0.12,
+    0.27,
+    0.34,
+    0.75,
+    1.92,
+    1.33,
+    2.52,
+    0.29,
+    0.09,
+    0.09,
+    1.66,
+    0.22,
+    1.07,
+    0.13,
+    1.62,
+    3.54,
+    0.33,
+    0.12,
+    0.3,
+    0.2,
+    0.06,
+    0.35,
+    0.25,
+    0.05,
+    1.85,
+    1.56,
+    2.23,
+    0.21,
+    0.08,
+    1.87,
+    0.31,
+    1.17,
+    0.5,
+    1.59,
+    1.78,
+    0.87,
+    1.19,
+    2.26,
+    2.01,
+    0.53,
+    0.79,
+    0.33,
+    1.62,
+    1.21,
+    1.08,
+    0.11,
+    0.18,
+    9.03,
+    10.86,
+    0.04,
+    0.91,
+    0.22,
+    0.29,
+    0.12,
+    0.17,
+    0.01,
+    0.37,
+    0.09,
+    0.01,
+    3.55,
+    3.62,
+    0.15,
+    3.24,
+    0.52,
+    0.3,
+    0.31,
+    2.18,
+    0.59,
+    1.43,
+    1.21,
+    0.02,
+    0.0,
+    2.07,
+    2.47,
+    0.31,
+    0.83,
+    0.26,
+    0.1,
+    0.41,
+    2.66,
+    0.17,
+    0.13,
+    0.16,
+    0.55,
+    0.46,
+    11.73,
+    0.92,
+    0.29,
+    15.2,
+    0.49,
+    0.18,
+    0.53,
+    0.52,
+    0.08,
+    0.62,
+    0.3,
+    0.2,
+    0.16,
+    0.74,
+    2.67,
+    1.67,
+    2.86,
+    2.34,
+    4.19,
+    3.94,
+    3.97,
+    1.25,
+    47.34,
+    0.65,
+    3.1,
+    2.65,
+    0.0,
+    0.02,
+    1.63,
+    13.41,
+    0.68,
+    "good",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    "excellent",
+    null
 ]
