@@ -4,7 +4,7 @@ import chess.pgn
 from stockfish import Stockfish
 from classifymoves import classifyMoves
 
-stockfish = Stockfish(path=r"/usr/games/stockfish", depth=16, parameters={"Threads": 1, "Minimum Thinking Time": 1, "Hash": 512, "Slow Mover": 30})
+stockfish = Stockfish(path=r"stockfish\stockfish-windows-x86-64-avx2.exe", depth=8, parameters={"Threads": 1, "Minimum Thinking Time": 1, "Hash": 32, "Slow Mover": 10})
 
 def getEngineAnalysis(FENs):
     response = []

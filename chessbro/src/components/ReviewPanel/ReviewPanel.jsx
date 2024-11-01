@@ -1,7 +1,15 @@
 import React from "react";
 import "./ReviewPanel.css";
+import review_game from "./../../scripts/index";
 
-const ReviewPanel = () => {
+const ReviewPanel = ({ setPGN }) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const input = document.getElementById("game-input").value;
+    const input_type = document.getElementById("game-input-type").value;
+    const reviewed_game = await review_game(input, input_type);
+    setPGN(reviewed_game);
+  };
   return (
     <div id="review-panel">
       <div id="review-panel-header">
@@ -9,7 +17,7 @@ const ReviewPanel = () => {
       </div>
       <hr />
       <div id="game-input-container">
-        <form id="game-input-form">
+        <form id="game-input-form" onSubmit={handleSubmit}>
           <div id="game-input-box">
             <textarea
               type="text"

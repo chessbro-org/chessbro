@@ -10,6 +10,8 @@ const validatePGN = async (pgn) => {
   return valid;
 };
 
-export const invalidPGN = () => {};
+export const invalidPGN = () => {
+  console.log("invalid pgn");
+};
 export const validPGN = () => {};
 export default validatePGN;

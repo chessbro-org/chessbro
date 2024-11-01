@@ -1,30 +1,35 @@
-const save = (e) => {};
-const next = (currentMove, setCurrentMove, currentPGN) => {
-  if (currentPGN.length === 0 || currentPGN === null) {
-    return;
-  }
-  setCurrentMove(() => {
-    if ((currentMove === 0) | (currentMove === null)) {
-      return 1;
+const save = (PGN) => {
+  const blob = new Blob([JSON.stringify(PGN, null, 4)], {
+    type: "application/json",
+  });
+  const url = URL.createObjectURL(blob);
+  window.open(url, "_blank");
+};
+const next = (setCurrentMove, PGN) => {
+  setCurrentMove((prev) => {
+    console.log(PGN.length, prev);
+    if (PGN.length == prev + 1) {
+      return prev;
     } else {
-      return currentMove++;
+      return prev + 1;
     }
   });
 };
-const previous = (currentMove, setCurrentMove, currentPGN) => {
-    if (currentPGN.length === 0 || currentPGN === null) {
-      return;
+const previous = (setCurrentMove) => {
+  setCurrentMove((prev) => {
+    if (prev == 0) {
+      return prev;
+    } else {
+      return prev - 1;
     }
-    setCurrentMove(() => {
-      if ((currentMove === 0) | (currentMove === null)) {
-        return 0;
-      } else {
-        return currentMove-1;
-      }
-    });
-  };
-const lastMove = (e) => {};
-const firstMove = (e) => {};
+  });
+};
+const lastMove = (setCurrentMove, PGN) => {
+  setCurrentMove(PGN.length - 1);
+};
+const firstMove = (setCurrentMove) => {
+  setCurrentMove(0);
+};
 const reverse = (e) => {};
 
 export { save, next, previous, lastMove, firstMove, reverse };
