@@ -1,14 +1,18 @@
 import React from "react";
 import "./ReviewPanel.css";
 import review_game from "./../../scripts/index";
-
+import gameLoaded from "../../assets/sound/game-loaded.mp3";
 const ReviewPanel = ({ setPGN }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const input = document.getElementById("game-input").value;
-    const input_type = document.getElementById("game-input-type").value;
-    const reviewed_game = await review_game(input, input_type);
+    const input = document.getElementById("game-input");
+    const input_type = document.getElementById("game-input-type");
+    const reviewed_game = await review_game(input.value, input_type.value);
     setPGN(reviewed_game);
+    input.value = "";
+    input_type.value = "pgn";
+    const sound = new Audio(gameLoaded);
+    sound.play();
   };
   return (
     <div id="review-panel">
