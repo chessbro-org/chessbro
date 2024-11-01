@@ -2,18 +2,18 @@
   display: grid;
   padding: 20px;
   margin: 20px;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 60% 40%;
 }
 .chessboard-container {
   display: flex;
-  margin-right: 10px;
+  margin-right: 100px;
   align-items: center;
   justify-content: center;
   border-radius: 20px;
   justify-self: end;
   border: 2px solid white;
-  width: calc(600px);
-  height: calc(600px);
+  width: calc((100vh) - (90.33px));
+  width: calc((100vh) - (90.33px));
   background-color: var(--theme_1);
 }
 
@@ -24,6 +24,7 @@
   border: 2px solid white;
   margin-left: 30px;
   width: 400px;
+  height: calc((100vh) - (90.33px));
   border-radius: 20px;
   padding: 15px;
   display: flex;
@@ -34,6 +35,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-  height: 300px;
-  bottom: 0px;
+  bottom: -8px;
+
 }

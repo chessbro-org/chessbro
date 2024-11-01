@@ -29,6 +29,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+
   background-color: var(--background_color);
   color: var(--color);
   font-family: "Montserrat", sans-serif;

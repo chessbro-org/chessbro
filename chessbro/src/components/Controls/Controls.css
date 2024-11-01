@@ -1,10 +1,9 @@
-.controls{
-    display: flex;
-    position: absolute;
-    bottom: 0px;
-    margin: 15px;
-    width: 380px;
-    border-radius: 10px;
-    border: 2px solid #31a431;
-    background-color: #101010;
+.controls {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  width: 380px;
+  border-radius: 10px;
+  border: 2px solid #31a431;
+  background-color: #101010;
 }
