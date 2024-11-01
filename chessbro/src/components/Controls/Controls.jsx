@@ -1,32 +1,26 @@
 import React from "react";
-import IndividualControl from "./IndividualControl";
-import "./Controls.css"
 import {
   faForward,
   faBackward,
   faFloppyDisk,
   faRetweet,
   faFastBackward,
-  faFastForward,  
+  faFastForward,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Controls = ({ save, firstMove, previous, next, lastMove, reverse }) => {
+import IndividualControl from "./IndividualControl";
+
+import "./Controls.css";
+
+const Controls = () => {
   return (
     <div className="controls">
-      <IndividualControl name="save" onclick={save} fasfa={faFloppyDisk} />
-      <IndividualControl
-        name="first-move"
-        onclick={firstMove}
-        fasfa={faFastBackward}
-      />
-      <IndividualControl
-        name="previous"
-        onclick={previous}
-        fasfa={faBackward}
-      />
-      <IndividualControl name="next" onclick={next} fasfa={faForward} />
-      <IndividualControl name="last-move" onclick={lastMove} fasfa={faFastForward} />
-      <IndividualControl name="reverse" onclick={reverse} fasfa={faRetweet} />
+      <IndividualControl name="save" fasfa={faFloppyDisk} />
+      <IndividualControl name="first-move" fasfa={faFastBackward} />
+      <IndividualControl name="previous" fasfa={faBackward} />
+      <IndividualControl name="next" fasfa={faForward} />
+      <IndividualControl name="last-move" fasfa={faFastForward} />
+      <IndividualControl name="reverse" fasfa={faRetweet} />
     </div>
   );
 };

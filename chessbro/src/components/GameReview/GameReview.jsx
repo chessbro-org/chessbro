@@ -1,8 +1,11 @@
 import React from "react";
+
 import ChessboardComponent from "../ChessboardComponent/ChessboardComponent";
 import ReviewPanel from "../ReviewPanel/ReviewPanel";
 import Controls from "../Controls/Controls";
+
 import "./GameReview.css";
+
 const GameReview = () => {
   return (
     <div className="game-review">

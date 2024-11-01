@@ -1,15 +1,6 @@
 import React from "react";
 import "./ReviewPanel.css";
-import { validPGN, invalidPGN } from "../../scripts/validation";
-import pgnValidation from "../../scripts/index";
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const input = document.getElementById("game-input").value;
-  const type = document.getElementById("game-input-type").value;
-  const reply = await pgnValidation(input, type);
-  reply ? validPGN() : invalidPGN();
-};
 const ReviewPanel = () => {
   return (
     <div id="review-panel">
@@ -18,7 +9,7 @@ const ReviewPanel = () => {
       </div>
       <hr />
       <div id="game-input-container">
-        <form id="game-input-form" onSubmit={handleSubmit}>
+        <form id="game-input-form">
           <div id="game-input-box">
             <textarea
               type="text"
