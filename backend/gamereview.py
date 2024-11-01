@@ -1,5 +1,6 @@
 import chess
 import io
+import chess.pgn
 from stockfish import Stockfish
 from classifymoves import classifyMoves
 

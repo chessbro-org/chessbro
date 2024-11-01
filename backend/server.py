@@ -13,7 +13,7 @@ def validatePGN():
     return jsonify(state)
     
 @app.route('/api/review-game', methods=['POST'])
-def toFEN():
+def reviewGame():
     pgn = request.get_json()['pgn']
     reviewed_game = chessbro.gamereview.review_game(pgn)
     return jsonify(reviewed_game)
