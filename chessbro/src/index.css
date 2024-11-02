@@ -19,17 +19,20 @@
 ::-webkit-scrollbar-track {
   border-radius: 11px;
   background: #101820;
+  width: 3px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #d5e9c3;
   border-radius: 10px;
+  width: 1px;
 }
 
 html {
   scroll-behavior: smooth;
 }
 body {
-
+  transform: scale(0.9);
+  transform-origin: top left;
   background-color: var(--background_color);
   color: var(--color);
   font-family: "Montserrat", sans-serif;

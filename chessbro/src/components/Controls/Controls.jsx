@@ -34,7 +34,7 @@ const Controls = ({ setCurrentMove, PGN }) => {
       <IndividualControl
         name="previous"
         fasfa={faBackward}
-        onClick={() => previous(setCurrentMove)}
+        onClick={() => previous(setCurrentMove, PGN)}
       />
       <IndividualControl
         name="next"

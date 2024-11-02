@@ -4,9 +4,9 @@ import chess.pgn
 from stockfish import Stockfish
 from classifymoves import classifyMoves
 
-stockfish = Stockfish(path=r"stockfish\stockfish-windows-x86-64-avx2.exe", depth=8, parameters={"Threads": 1, "Minimum Thinking Time": 1, "Hash": 32, "Slow Mover": 10})
 
 def getEngineAnalysis(FENs):
+    stockfish = Stockfish(path=r"stockfish\stockfish-windows-x86-64-avx2.exe", depth=8, parameters={"Threads": 1, "Minimum Thinking Time": 1, "Hash": 32, "Slow Mover": 10})
     response = []
     for count, FEN in enumerate(FENs):
 
@@ -55,5 +55,4 @@ def review_game (pgn):
     analysis = getEngineAnalysis(moves_fens)
     analysis = changeFormat(pgn, analysis, moves_san)
     analysis = classifyMoves(analysis)
-
     return analysis

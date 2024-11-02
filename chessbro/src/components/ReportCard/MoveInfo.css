@@ -1,0 +1,14 @@
+.move-info{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    background-color: #101010;
+    border-radius: 10px;
+    padding: 5px 0;
+    font-size: 22px;
+    width: 315px;
+    color: chartreuse;
+    margin: 10px 0;
+    text-align: center;
+    border: 1px solid white;
+}

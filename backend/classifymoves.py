@@ -67,7 +67,7 @@ def classifyMoves(analysis):
     for counter, (move_type, opening) in enumerate(zip(evalDiffs, openings)):
         analysis[counter]['opening'] = opening
         analysis[counter]['move_type'] = move_type
-
+    analysis = countMoveCategories(analysis)
     return analysis
     
 def cp_and_cp(current, previous):
@@ -76,8 +76,6 @@ def cp_and_cp(current, previous):
     return gradeMove(abs(diff)) 
 
 def cp_and_mate(current, previous):
-    # TODO replace the move name    
-    # ! replace it with eval value
     current_eval = current['eval']['value']
     if (current_eval >= 20):
         return ("excellent")
@@ -122,3 +120,21 @@ def mate_and_mate(current, previous):
                     return ("blunder")
             elif (previous_mate_in > 0):
                 return ("excellent")
+            
+def countMoveCategories(analysedFENs):
+    move_types = []
+    for FEN in analysedFENs:
+        move_types.append(FEN['move_type'])
+    analysedFENs = {
+    "number_of_move_types": {
+            "best_move" : move_types.count('best_move'),
+            "excellent" : move_types.count('excellent'),
+            "good" : move_types.count('good'),
+            "inaccuracy" : move_types.count('inaccuracy'),
+            "mistake" : move_types.count('mistake'),
+            "blunder" : move_types.count('blunder'),
+            "book_move" : move_types.count('book_move'),
+        },
+        "move_evaluations": analysedFENs
+    }
+    return analysedFENs

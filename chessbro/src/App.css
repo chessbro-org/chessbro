@@ -1,4 +1,6 @@
 .app {
-  display: grid;
-  grid-template-rows: 80px auto;
+  width: 110.5vw;
+}
+.app::after{
+  width: 100vw;
 }

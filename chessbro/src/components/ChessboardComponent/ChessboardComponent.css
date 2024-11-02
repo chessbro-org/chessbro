@@ -1,4 +1,4 @@
 #chessboard {
   border-radius: 100px;
-  width: calc(calc((97vh) - (90.33px)) + 0.5vh);
+  width: calc(110vh - 105.33px);
 }

@@ -12,19 +12,19 @@
   border-radius: 20px;
   justify-self: end;
   border: 2px solid white;
-  width: calc((100vh) - (90.33px));
-  width: calc((100vh) - (90.33px));
+  width: calc((110vh) - (90.33px));
+  height: calc((110vh) - (90.33px));
   background-color: var(--theme_1);
 }
 
 .review-panel-container {
   display: grid !important;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 42% 58%;
   background: var(--theme_1);
   border: 2px solid white;
   margin-left: 30px;
   width: 400px;
-  height: calc((100vh) - (90.33px));
+  height: calc((110vh) - (90.33px));
   border-radius: 20px;
   padding: 15px;
   display: flex;
@@ -36,5 +36,10 @@
   justify-content: center;
   position: relative;
   bottom: -8px;
+}
 
+.report-card-container {
+  height: 200px;
+  justify-items: center;
+  align-self: top;
 }
