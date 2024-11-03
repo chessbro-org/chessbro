@@ -19,34 +19,44 @@ const MoveInfo = ({ PGN, currentMove }) => {
     const move_type = PGN.move_evaluations[currentMove].move_type;
     console.log(move_type);
     let move_type_text = "";
+    let img = null;
     switch (move_type) {
       case "book_move":
         move_type_text = "Theory";
+        img = BookMoveImg;
         break;
       case "best_move":
         move_type_text = "Best";
+        img = BestMoveImg;
         break;
       case "good":
         move_type_text = "Good";
+        img = GoodImg;
         break;
       case "excellent":
         move_type_text = "Excellent";
+        img = ExcellentImg;
         break;
       case "inaccuracy":
         move_type_text = "an Inaccuracy";
+        img = InaccuracyImg;
         break;
       case "mistake":
         move_type_text = "a Mistake";
+        img = MistakeImg;
         break;
       case "blunder":
         move_type_text = "a Blunder";
+        img = BlunderImg;
         break;
     }
+    var image = img;
     text = `${move} is ${move_type_text}`;
   }
   return (
     <div id="move-info" className="move-info">
-      <a>{text}</a>
+      <a id="move-info-text">{text}</a>
+      <img id="move-info-image" src={image}></img>
     </div>
   );
 };
