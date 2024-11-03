@@ -17,7 +17,6 @@ const MoveInfo = ({ PGN, currentMove }) => {
     text = "Starting Position";
   } else {
     const move_type = PGN.move_evaluations[currentMove].move_type;
-    console.log(move_type);
     let move_type_text = "";
     let img = null;
     switch (move_type) {

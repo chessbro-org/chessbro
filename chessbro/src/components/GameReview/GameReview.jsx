@@ -24,10 +24,15 @@ const GameReview = () => {
   });
   const [currentMove, setCurrentMove] = useState(0);
   const move_numbers = PGN.number_of_move_types;
+  const [flipped, setFlipped] = useState(false);
   return (
     <div className="game-review">
       <div className="chessboard-container">
-        <ChessboardComponent PGN={PGN} currentMove={currentMove} />
+        <ChessboardComponent
+          PGN={PGN}
+          currentMove={currentMove}
+          flipped={flipped}
+        />
       </div>
       <div className="review-panel-container">
         <ReviewPanel setPGN={setPGN} />
@@ -36,7 +41,11 @@ const GameReview = () => {
           <ReportCard move_numbers={move_numbers} />
         </div>
         <div className="controls-container">
-          <Controls setCurrentMove={setCurrentMove} PGN={PGN} />
+          <Controls
+            setCurrentMove={setCurrentMove}
+            PGN={PGN}
+            setFlipped={setFlipped}
+          />
         </div>
       </div>
     </div>

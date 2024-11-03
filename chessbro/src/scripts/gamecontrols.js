@@ -69,7 +69,9 @@ const firstMove = (setCurrentMove) => {
   });
 };
 
-const reverse = (e) => {};
+const reverse = (setFlipped) => {
+  setFlipped((prev) => !prev);
+};
 
 const stopAudio = () => {
   move_played.pause();

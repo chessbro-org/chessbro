@@ -14,11 +14,12 @@ import {
   lastMove,
   next,
   previous,
+  reverse,
   save,
 } from "../../scripts/gamecontrols";
 import "./Controls.css";
 
-const Controls = ({ setCurrentMove, PGN }) => {
+const Controls = ({ setCurrentMove, PGN, setFlipped }) => {
   return (
     <div className="controls">
       <IndividualControl
@@ -46,7 +47,13 @@ const Controls = ({ setCurrentMove, PGN }) => {
         onClick={() => lastMove(setCurrentMove, PGN)}
         fasfa={faFastForward}
       />
-      <IndividualControl name="reverse" fasfa={faRetweet} />
+      <IndividualControl
+        name="reverse"
+        fasfa={faRetweet}
+        onClick={() => {
+          reverse(setFlipped);
+        }}
+      />
     </div>
   );
 };
