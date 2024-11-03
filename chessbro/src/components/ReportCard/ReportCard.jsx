@@ -16,33 +16,44 @@ const ReportCard = ({ move_numbers }) => {
     <div className="report-card">
       <ul className="move_quality_list">
         <MoveQuality
-          number={move_numbers.book_move}
+          numberW={move_numbers.w.book_move}
+          numberB={move_numbers.b.book_move}
           name="Book Move"
           image={BookMoveImg}
         />
         <MoveQuality
-          number={move_numbers.best_move}
+          numberW={move_numbers.b.best_move}
+          numberB={move_numbers.b.best_move}
           name="Best"
           image={BestMoveImg}
         />
         <MoveQuality
-          number={move_numbers.excellent}
+          numberW={move_numbers.w.excellent}
+          numberB={move_numbers.b.excellent}
           name="Excellent"
           image={ExcellentImg}
         />
-        <MoveQuality number={move_numbers.good} name="Good" image={GoodImg} />
         <MoveQuality
-          number={move_numbers.inaccuracy}
+          numberB={move_numbers.b.good}
+          numberW={move_numbers.w.good}
+          name="Good"
+          image={GoodImg}
+        />
+        <MoveQuality
+          numberW={move_numbers.w.inaccuracy}
+          numberB={move_numbers.b.inaccuracy}
           name="Inaccuracy"
           image={InaccuracyImg}
         />
         <MoveQuality
           name="Mistake"
-          number={move_numbers.mistake}
+          numberW={move_numbers.w.mistake}
+          numberB={move_numbers.b.mistake}
           image={MistakeImg}
         />
         <MoveQuality
-          number={move_numbers.blunder}
+          numberW={move_numbers.w.blunder}
+          numberB={move_numbers.b.blunder}
           name="Blunder"
           image={BlunderImg}
         />

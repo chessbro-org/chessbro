@@ -7,8 +7,17 @@
   align-items: center;
   width: 300px;
 }
-.quality_value {
-  margin-left: 90px;
+.right_value {
+  margin-left: 40px;
+}
+.left_value{
+  margin-right: 45px;
+}
+#move-info-name{
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .quality_text{
   display: flex;

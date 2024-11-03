@@ -67,6 +67,7 @@ def classifyMoves(analysis):
     for counter, (move_type, opening) in enumerate(zip(evalDiffs, openings)):
         analysis[counter]['opening'] = opening
         analysis[counter]['move_type'] = move_type
+    analysis = correctBookMoves(analysis)
     analysis = countMoveCategories(analysis)
     return analysis
     
@@ -122,19 +123,76 @@ def mate_and_mate(current, previous):
                 return ("excellent")
             
 def countMoveCategories(analysedFENs):
-    move_types = []
+    move_types_b = []
+    move_types_w = []
     for FEN in analysedFENs:
-        move_types.append(FEN['move_type'])
+        if FEN['move_no']%2==0:
+            move_types_b.append(FEN['move_type'])
+        else:
+            move_types_w.append(FEN['move_type'])
     analysedFENs = {
-    "number_of_move_types": {
-            "best_move" : move_types.count('best_move'),
-            "excellent" : move_types.count('excellent'),
-            "good" : move_types.count('good'),
-            "inaccuracy" : move_types.count('inaccuracy'),
-            "mistake" : move_types.count('mistake'),
-            "blunder" : move_types.count('blunder'),
-            "book_move" : move_types.count('book_move'),
-        },
+        "number_of_move_types": {
+                "w":{
+                    "best_move" : move_types_w.count('best_move'),
+                    "excellent" : move_types_w.count('excellent'),
+                    "good" : move_types_w.count('good'),
+                    "inaccuracy" : move_types_w.count('inaccuracy'),
+                    "mistake" : move_types_w.count('mistake'),
+                    "blunder" : move_types_w.count('blunder'),
+                    "book_move" : move_types_w.count('book_move'),
+                },
+                "b": {
+                    "best_move" : move_types_b.count('best_move'),
+                    "excellent" : move_types_b.count('excellent'),
+                    "good" : move_types_b.count('good'),
+                    "inaccuracy" : move_types_b.count('inaccuracy'),
+                    "mistake" : move_types_b.count('mistake'),
+                    "blunder" : move_types_b.count('blunder'),
+                    "book_move" : move_types_b.count('book_move'),
+                }
+            },
         "move_evaluations": analysedFENs
     }
     return analysedFENs
+
+def correctBookMoves(analysis):
+    # this is an algorithm to add 'book_move' title to the missed FENs
+    # in the openings list, not all FENs are mentioned
+    # however if a move leads to a book-move
+    # it is also a book move
+    # this algo fills up those missing moves
+    opening = []
+    
+    for position in (analysis):
+        # ? this makes a list of lists containg, move_no and opening name
+        opening.append([position['move_no'], position['opening']])
+    
+    opening_reversed = []
+
+    for x in range(len(opening)-1, 0, -1):
+        # ! makes a list that is the reversal of the first one, this one doesnt include the starting position though
+        opening_reversed.append(opening[x])
+    
+    index = None
+    for move in opening_reversed:
+        # * this gets the index of the last book_move
+        if (move[1]):
+            index = move[0]
+            break
+
+    if (index):
+        # ? checks if there is any book move and then 
+        # ! makes all moves a book move until that move
+        for count, position in enumerate(opening):
+            if (position[0] <= index and not position[1]):
+                position[1] = opening[count-1][1]
+
+    opening[0][1] = None
+
+    for (position, individualOpening) in zip(analysis, opening):
+        # this adds the new openings to the analysis and returns that variable
+        if (individualOpening[1]):
+            position['move_type'] = 'book_move'
+            position['opening'] = individualOpening[1]
+
+    return analysis

@@ -12,13 +12,24 @@ const GameReview = () => {
   const defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
   const [PGN, setPGN] = useState({
     number_of_move_types: {
-      best_move: "??",
-      blunder: "??",
-      book_move: "??",
-      excellent: "??",
-      good: "??",
-      inaccuracy: "??",
-      mistake: "??",
+      w: {
+        best_move: "??",
+        blunder: "??",
+        book_move: "??",
+        excellent: "??",
+        good: "??",
+        inaccuracy: "??",
+        mistake: "??",
+      },
+      b: {
+        best_move: "??",
+        blunder: "??",
+        book_move: "??",
+        excellent: "??",
+        good: "??",
+        inaccuracy: "??",
+        mistake: "??",
+      },
     },
     move_evaluations: [{ fen: defaultFen }],
   });
