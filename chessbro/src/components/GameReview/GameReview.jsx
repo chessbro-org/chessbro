@@ -7,6 +7,7 @@ import Controls from "../Controls/Controls";
 import "./GameReview.css";
 import ReportCard from "./../ReportCard/ReportCard";
 import MoveInfo from "./../ReportCard/MoveInfo";
+import EvalBar from "../EvalBar/EvalBar";
 
 const GameReview = () => {
   const defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -39,6 +40,9 @@ const GameReview = () => {
   return (
     <div className="game-review">
       <div className="chessboard-container">
+        <div className="eval-bar-container">
+          <EvalBar PGN={PGN} currentMove={currentMove} flipped={flipped} />
+        </div>
         <ChessboardComponent
           PGN={PGN}
           currentMove={currentMove}

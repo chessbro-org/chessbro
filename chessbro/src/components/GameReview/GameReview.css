@@ -8,13 +8,13 @@
   display: flex;
   margin-right: 100px;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   border-radius: 20px;
   justify-self: end;
-  border: 2px solid white;
-  width: calc((110vh) - (90.33px));
+  width: calc((113vh) - (90.33px));
   height: calc((110vh) - (90.33px));
   background-color: var(--theme_1);
+  padding: 5px;
 }
 
 .review-panel-container {
@@ -42,4 +42,12 @@
   height: 200px;
   justify-items: center;
   align-self: top;
+}
+
+.eval-bar-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: max-content;
 }
