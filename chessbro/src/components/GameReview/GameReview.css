@@ -11,10 +11,12 @@
   justify-content: left;
   border-radius: 20px;
   justify-self: end;
-  width: calc((113vh) - (90.33px));
-  height: calc((110vh) - (90.33px));
+  width: calc((113vh) - (80.33px));
+  height: calc((110vh) - (80.33px));
   background-color: var(--theme_1);
   padding: 5px;
+  padding: 10px;
+  border: 2px solid white;
 }
 
 .review-panel-container {
@@ -24,7 +26,7 @@
   border: 2px solid white;
   margin-left: 30px;
   width: 400px;
-  height: calc((110vh) - (90.33px));
+  height: calc((110vh) - (80.33px));
   border-radius: 20px;
   padding: 15px;
   display: flex;

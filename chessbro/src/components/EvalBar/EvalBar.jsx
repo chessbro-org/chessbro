@@ -6,8 +6,8 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
   const [evalStyle, setEvalStyle] = useState([
     { height: "50%" },
     { height: "50%" },
-    "",
-    "",
+    "0.0",
+    "0.0",
   ]);
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
           }
         } else if (evalType === "cp") {
           if (evalValue === 0) {
-            setEvalStyle([{ height: "50%" }, { height: "50%" }, "", ""]);
+            setEvalStyle([{ height: "50%" }, { height: "50%" }, "0.0", "0.0"]);
           }
           evalValue > 0
             ? setEvalStyle([

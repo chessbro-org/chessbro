@@ -13,10 +13,22 @@
 .left_value{
   margin-right: 45px;
 }
-#move-info-name{
-  width: 100px;
+.quality_value{
+  background-color: #199199;
+  width: 20px;
+  height: min-content;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+#move-info-name{
+  width: 100px;
+  text-align: left;
+  display: flex;
+  justify-content: left;
   align-items: center;
 }
 .quality_text{
@@ -24,4 +36,5 @@
   justify-content: left;
   align-items: center;
   width: 180px;
+  margin: 0 10px;
 }
