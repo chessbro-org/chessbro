@@ -1,21 +1,23 @@
-.eval-bar{
-    background-color: white;
-    height:    calc(110vh - 106.33px);
-    width: 22px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border: 1px solid #ffe400;
+.eval-bar {
+  background-color: white;
+  height: calc(110vh - 106.33px);
+  width: 22px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #ffe400;
 }
 
-.black{
-    width: inherit;
-    background-color: darkslategray;
-    border-top-left-radius: inherit;
-    border: inherit;
+.black {
+  width: inherit;
+  background-color: darkslategray;
+  border-top-left-radius: inherit;
+  border: inherit;
+  transition: all 0.4s ease-in-out;
 }
-.white{
-    width: inherit;
-    border-bottom-left-radius: inherit;
-    border: inherit;
-    background-color: lightslategray;
+.white {
+  width: inherit;
+  border-bottom-left-radius: inherit;
+  border: inherit;
+  background-color: lightslategray;
+  transition: all 0.4s ease-in-out;
 }
