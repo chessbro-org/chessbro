@@ -19,7 +19,7 @@
   background-color: #2a2a2a;
   border-top-left-radius: inherit;
   border: inherit;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
   color: white;
 }
 .white {
@@ -32,6 +32,6 @@
   border-bottom-left-radius: inherit;
   border: inherit;
   background-color: #c0c0c0;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.5s ease-in-out;
   color: black;
 }

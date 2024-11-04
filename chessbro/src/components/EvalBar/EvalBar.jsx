@@ -20,13 +20,23 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
           if (evalValue === 0) {
             const winner = PGN.move_evaluations[currentMove].move_no % 2 === 0;
             if (winner) {
-              setEvalStyle([{ height: "100%" }, { height: "0" }, `0-1`, ""]);
+              setEvalStyle([
+                { height: "100%" },
+                { transition: "none", display: "none" },
+                `0-1`,
+                "",
+              ]);
             } else {
-              setEvalStyle([{ height: "0" }, { height: "100%" }, "", `1-0`]);
+              setEvalStyle([
+                { transition: "none", display: "none" },
+                { height: "100%" },
+                "",
+                `1-0`,
+              ]);
             }
           } else if (evalValue > 0) {
             setEvalStyle([
-              { height: "0" },
+              { transition: "none", display: "none" },
               { height: "100%" },
               "",
               `M${Math.abs(evalValue)}`,
@@ -34,7 +44,7 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
           } else if (evalValue < 0) {
             setEvalStyle([
               { height: "100%" },
-              { height: "0" },
+              { transition: "none", display: "none" },
               `M${Math.abs(evalValue)}`,
               "",
             ]);
