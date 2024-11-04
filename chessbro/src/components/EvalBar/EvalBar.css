@@ -1,23 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 .eval-bar {
   background-color: white;
-  height: calc(110vh - 106.33px);
-  width: 22px;
+  height: calc(110vh - 117.33px);
+  width: 33px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  border: 1px solid #ffe400;
+  border-left: 1px solid #ffe400;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
 }
 
 .black {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  text-align: center;
+  padding: 5px;
   width: inherit;
-  background-color: darkslategray;
+  background-color: #2a2a2a;
   border-top-left-radius: inherit;
   border: inherit;
   transition: all 0.4s ease-in-out;
+  border-top: 1px solid #ffe400;
+  color: white;
 }
 .white {
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+  text-align: center;
+  padding: 5px;
   width: inherit;
   border-bottom-left-radius: inherit;
   border: inherit;
-  background-color: lightslategray;
+  background-color: #c0c0c0;
+  border-bottom: 1px solid #ffe400;
   transition: all 0.4s ease-in-out;
+  color: black;
 }

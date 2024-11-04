@@ -48,12 +48,12 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
                 { height: `calc(50% - ${Math.abs(evalValue) * 4}%)` },
                 { height: `calc(50% + ${Math.abs(evalValue) * 4}%)` },
                 "",
-                `${Math.abs(evalValue)}`,
+                `${Math.round(Math.abs(evalValue * 10)) / 10}`,
               ])
             : setEvalStyle([
                 { height: `calc(50% + ${Math.abs(evalValue) * 4}%)` },
                 { height: `calc(50% - ${Math.abs(evalValue) * 4}%)` },
-                `${Math.abs(evalValue)}`,
+                `${Math.round(Math.abs(evalValue * 10)) / 10}`,
                 "",
               ]);
         }
