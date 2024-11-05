@@ -10,11 +10,11 @@
 .right_value {
   margin-left: 40px;
 }
-.left_value{
+.left_value {
   margin-right: 45px;
 }
-.quality_value{
-  background-color: #199199;
+.quality_value {
+  background-color: #3da35d;
   width: 25px;
   height: min-content;
   display: flex;
@@ -24,14 +24,14 @@
   border-radius: 5px;
   border: 1px solid white;
 }
-#move-info-name{
+#move-info-name {
   width: 100px;
   text-align: left;
   display: flex;
   justify-content: left;
   align-items: center;
 }
-.quality_text{
+.quality_text {
   display: flex;
   justify-content: left;
   align-items: center;

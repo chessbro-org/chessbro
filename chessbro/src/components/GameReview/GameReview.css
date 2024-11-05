@@ -21,7 +21,7 @@
 
 .review-panel-container {
   display: grid !important;
-  grid-template-rows: 42% 58%;
+  grid-template-rows: 38% 50% 12%;
   background: var(--theme_1);
   border: 2px solid white;
   margin-left: 30px;
@@ -34,22 +34,38 @@
 }
 
 .controls-container {
-  display: flex;
+  margin: 0;
+  padding: 0;
   justify-content: center;
-  position: relative;
-  bottom: -8px;
+  align-items: center;
+  display: flex;
+  height: max-content;
 }
 
 .report-card-container {
-  height: 200px;
+  height: max-content;
   justify-items: center;
-  align-self: top;
+  margin: 0;
+  padding: 0;
 }
 
-.eval-bar-container{
+.eval-bar-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: max-content;
   height: max-content;
+}
+
+.opening-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: max-content;
+}
+
+.reporter-opener-container {
+  overflow: auto;
+  margin-top: 5vh;
+  height: 35vh;
 }

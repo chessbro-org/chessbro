@@ -1,7 +1,7 @@
 .controls {
   display: flex;
-  position: absolute;
-  bottom: 0px;
+  position: relative;
+  top: 0px;
   width: 380px;
   border-radius: 10px;
   border: 2px solid #31a431;

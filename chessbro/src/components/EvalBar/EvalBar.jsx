@@ -8,8 +8,9 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
     { height: "50%" },
     "0.0",
     "0.0",
+    {},
   ]);
-
+  
   useEffect(() => {
     var x = PGN.move_evaluations[currentMove].eval;
     if (x) {
@@ -72,7 +73,7 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
   }, [currentMove]);
 
   return (
-    <div className="eval-bar">
+    <div className="eval-bar" style={evalStyle[4]}>
       <div className="black" style={evalStyle[0]}>
         <a className="eval-value" id="black-eval">
           {evalStyle[2]}

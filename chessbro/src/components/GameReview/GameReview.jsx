@@ -8,6 +8,7 @@ import "./GameReview.css";
 import ReportCard from "./../ReportCard/ReportCard";
 import MoveInfo from "./../ReportCard/MoveInfo";
 import EvalBar from "../EvalBar/EvalBar";
+import Openings from "../Openings/Openings";
 
 const GameReview = () => {
   const defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -49,11 +50,17 @@ const GameReview = () => {
           flipped={flipped}
         />
       </div>
+
       <div className="review-panel-container">
         <ReviewPanel setPGN={setPGN} />
-        <div className="report-card-container">
-          <MoveInfo PGN={PGN} currentMove={currentMove} />
-          <ReportCard move_numbers={move_numbers} />
+        <div className="reporter-opener-container">
+          <div className="report-card-container">
+            <MoveInfo PGN={PGN} currentMove={currentMove} />
+            <ReportCard move_numbers={move_numbers} />
+          </div>
+          <div className="opening-container">
+            <Openings />
+          </div>
         </div>
         <div className="controls-container">
           <Controls
