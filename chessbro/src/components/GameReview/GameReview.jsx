@@ -54,12 +54,12 @@ const GameReview = () => {
       <div className="review-panel-container">
         <ReviewPanel setPGN={setPGN} />
         <div className="reporter-opener-container">
+          <div className="opening-container">
+            <Openings PGN={PGN} currentMove={currentMove} />
+          </div>
           <div className="report-card-container">
             <MoveInfo PGN={PGN} currentMove={currentMove} />
             <ReportCard move_numbers={move_numbers} />
-          </div>
-          <div className="opening-container">
-            <Openings PGN={PGN} currentMove={currentMove} />
           </div>
         </div>
         <div className="controls-container">

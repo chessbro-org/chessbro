@@ -5,7 +5,7 @@
   grid-template-columns: 20% 80%;
   justify-content: center;
   align-items: center;
-  background-color: #101010;
+  background-color: transparent;
   border-radius: 10px;
   padding: 5px 0;
   font-size: 22px;
@@ -13,16 +13,14 @@
   color: rgb(199, 255, 230);
   margin: 10px 0;
   text-align: center;
-  border: 1px solid white;
 }
 
 #opening-info-text {
   text-align: start;
   font-family: "Lato", sans-serif;
   font-size: auto;
-  overflow: auto;
-  align-content: center;
-  height: 6vh;
+  word-wrap: normal;
+  text-wrap: wrap;
 }
 
 #opening-info-image {
