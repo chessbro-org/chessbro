@@ -160,7 +160,7 @@ def correctBookMoves(analysis):
     # in the openings list, not all FENs are mentioned
     # however if a move leads to a book-move
     # it is also a book move
-    # this algo fills up those missing moves
+    # this algo fills up those missing moves and it also makes the subsequent move to have the same opening-name
     opening = []
     
     for position in (analysis):
@@ -194,5 +194,12 @@ def correctBookMoves(analysis):
         if (individualOpening[1]):
             position['move_type'] = 'book_move'
             position['opening'] = individualOpening[1]
+
+    with open("temp.json", "w") as file:
+        json.dump(analysis, file, indent=4)
+    for count, move in enumerate(analysis):
+        if (not move['opening']):
+            move['opening'] = analysis[count-1]['opening']
+
 
     return analysis

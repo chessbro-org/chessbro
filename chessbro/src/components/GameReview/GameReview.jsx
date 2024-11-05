@@ -33,7 +33,7 @@ const GameReview = () => {
         mistake: "??",
       },
     },
-    move_evaluations: [{ fen: defaultFen }],
+    move_evaluations: [{ fen: defaultFen, opening: "Starting Position" }],
   });
   const [currentMove, setCurrentMove] = useState(0);
   const move_numbers = PGN.number_of_move_types;
@@ -59,7 +59,7 @@ const GameReview = () => {
             <ReportCard move_numbers={move_numbers} />
           </div>
           <div className="opening-container">
-            <Openings />
+            <Openings PGN={PGN} currentMove={currentMove} />
           </div>
         </div>
         <div className="controls-container">

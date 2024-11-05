@@ -65,7 +65,7 @@
 }
 
 .reporter-opener-container {
-  overflow: auto;
+  overflow: hidden auto;
   margin-top: 5vh;
   height: 35vh;
 }

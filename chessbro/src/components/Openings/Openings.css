@@ -1,28 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 .opening-info {
-    display: grid;
-    grid-template-columns: 85% 15%;
-    justify-content: center;
-    align-items: center;
-    background-color: #101010;
-    border-radius: 10px;
-    padding: 5px 0;
-    font-size: 22px;
-    width: 315px;
-    color: rgb(199, 255, 230);
-    margin: 10px 0;
-    text-align: center;
-    border: 1px solid white;
-  }
-  
-  #opening-info-text {
-    text-align: start;
-    margin-left: 10px;
-  }
-  
-  #opening-info-image {
-    width: 40px;
-    margin-right: 10px;
-    padding: 0px 0px 0px 15px;
-    border-left: 3px solid #123456;
-  }
-  
+  display: grid;
+  grid-template-columns: 20% 80%;
+  justify-content: center;
+  align-items: center;
+  background-color: #101010;
+  border-radius: 10px;
+  padding: 5px 0;
+  font-size: 22px;
+  width: 315px;
+  color: rgb(199, 255, 230);
+  margin: 10px 0;
+  text-align: center;
+  border: 1px solid white;
+}
+
+#opening-info-text {
+  text-align: start;
+  font-family: "Lato", sans-serif;
+  font-size: auto;
+  overflow: auto;
+  align-content: center;
+  height: 6vh;
+}
+
+#opening-info-image {
+  width: 35px;
+  margin: 0 10px;
+}
