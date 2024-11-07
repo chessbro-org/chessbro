@@ -56,7 +56,7 @@ const GameReview = () => {
         <ReviewPanel setPGN={setPGN} />
         <div className="reporter-opener-container">
           <div className="accuracy-container">
-            <Accuracy />
+            <Accuracy PGN={PGN} />
           </div>
           <div className="report-card-container">
             <MoveInfo PGN={PGN} currentMove={currentMove} />

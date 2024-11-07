@@ -2,14 +2,16 @@ import React from "react";
 import "./Accuracy.css";
 
 const Accuracy = ({ PGN }) => {
+  const white = PGN.accuracy ? PGN.accuracy.white : 100;
+  const black = PGN.accuracy ? PGN.accuracy.black : 100;
   return (
     <div className="accuracy">
       <div className="accuracy-color" id="black-accuracy">
-        100%
+        {`${black}%`}
       </div>
       <a id="accuracy-heading">Accuracy</a>
       <div className="accuracy-color" id="white-accuracy">
-        100%
+        {`${white}%`}
       </div>
     </div>
   );

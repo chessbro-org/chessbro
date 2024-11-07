@@ -130,7 +130,12 @@ def countMoveCategories(analysedFENs):
             move_types_b.append(FEN['move_type'])
         else:
             move_types_w.append(FEN['move_type'])
+    accuracy = [(move_types_w.count('best_move') + move_types_w.count('excellent'))/len(move_types_w), (move_types_b.count('best_move') + move_types_b.count('excellent'))/(len(move_types_b)-1)]
     analysedFENs = {
+        "accuracy": {
+            "white": math.floor(accuracy[0]*100*100)/100,
+            "black": math.floor(accuracy[1]*100*100)/100,
+        },
         "number_of_move_types": {
                 "w":{
                     "best_move" : move_types_w.count('best_move'),
@@ -195,8 +200,7 @@ def correctBookMoves(analysis):
             position['move_type'] = 'book_move'
             position['opening'] = individualOpening[1]
 
-    with open("temp.json", "w") as file:
-        json.dump(analysis, file, indent=4)
+
     for count, move in enumerate(analysis):
         if (not move['opening']):
             move['opening'] = analysis[count-1]['opening']
