@@ -10,6 +10,7 @@ import MoveInfo from "./../ReportCard/MoveInfo";
 import EvalBar from "../EvalBar/EvalBar";
 import Openings from "../Openings/Openings";
 import Accuracy from "../Accuracy/Accuracy";
+import Nameplate from "../Nameplate/Nameplate";
 
 const GameReview = () => {
   const defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -45,11 +46,33 @@ const GameReview = () => {
         <div className="eval-bar-container">
           <EvalBar PGN={PGN} currentMove={currentMove} flipped={flipped} />
         </div>
-        <ChessboardComponent
-          PGN={PGN}
-          currentMove={currentMove}
-          flipped={flipped}
-        />
+        <div className="chessboard-container-90">
+          <div className="nameplate-container">
+            <Nameplate
+              player_info={{
+                rating: 1200,
+                color: "black",
+                name: "daamin",
+              }}
+            />
+          </div>
+          <div className="chessboard-component-container">
+            <ChessboardComponent
+              PGN={PGN}
+              currentMove={currentMove}
+              flipped={flipped}
+            />
+          </div>
+          <div className="nameplate-container">
+            <Nameplate
+              player_info={{
+                rating: 1100,
+                color: "white",
+                name: "suresh",
+              }}
+            />
+          </div>
+        </div>
       </div>
 
       <div className="review-panel-container">

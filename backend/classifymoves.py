@@ -130,7 +130,7 @@ def countMoveCategories(analysedFENs):
             move_types_b.append(FEN['move_type'])
         else:
             move_types_w.append(FEN['move_type'])
-    accuracy = [(move_types_w.count('best_move') + move_types_w.count('excellent'))/len(move_types_w), (move_types_b.count('best_move') + move_types_b.count('excellent'))/(len(move_types_b)-1)]
+    accuracy = [(move_types_w.count('best_move') + move_types_w.count('best_move') + move_types_w.count('excellent'))/len(move_types_w), (move_types_b.count('best_move') + move_types_b.count('good') + move_types_b.count('excellent'))/(len(move_types_b)-1)]
     analysedFENs = {
         "accuracy": {
             "white": math.floor(accuracy[0]*100*100)/100,

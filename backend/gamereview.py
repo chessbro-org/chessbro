@@ -6,7 +6,7 @@ from classifymoves import classifyMoves
 
 
 def getEngineAnalysis(FENs):
-    stockfish = Stockfish(path=r"stockfish\stockfish-windows-x86-64-avx2.exe", depth=8, parameters={"Threads": 1, "Minimum Thinking Time": 1, "Hash": 512, "Slow Mover": 30})
+    stockfish = Stockfish(path=r"stockfish\stockfish-windows-x86-64-avx2.exe", depth=16, parameters={"Threads": 1, "Minimum Thinking Time": 1, "Hash": 512, "Slow Mover": 30})
     response = []
     for count, FEN in enumerate(FENs):
         if (count == 0):

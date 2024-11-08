@@ -1,0 +1,21 @@
+.nameplate {
+  background-color: #101010;
+  font-size: 22px;
+  width: calc(110vh - 109.33px);
+}
+#white-nameplate {
+  padding: 4px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+#black-nameplate {
+  padding: 4px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
