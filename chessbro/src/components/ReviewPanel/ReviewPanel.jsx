@@ -1,16 +1,14 @@
 import React from "react";
 import "./ReviewPanel.css";
 import review_game from "./../../scripts/index";
-const ReviewPanel = ({ setPGN }) => {
+const ReviewPanel = ({ setPGN, setIsLoading }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const input = document.getElementById("game-input");
     const input_type = document.getElementById("game-input-type");
-    const reviewed_game = await review_game(
-      input.value,
-      input_type.value,
-      setPGN
-    );
+    setIsLoading(true);
+    await review_game(input.value, input_type.value, setPGN);
+    setIsLoading(false);
     input.value = "";
     input_type.value = "pgn";
   };

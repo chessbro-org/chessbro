@@ -2,6 +2,8 @@
   background-color: #101010;
   font-size: 22px;
   width: calc((99.5vh) - (80.33px));
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 #white-nameplate {
   padding: 4px;
@@ -19,9 +21,17 @@
   border-left: 1px solid white;
   border-right: 1px solid white;
 }
-#player-rating{
-  margin-left:2px;
+#player-rating {
+  margin-left: 2px;
   background-color: grey;
   padding: 0 10px;
   border-radius: 8px;
+  text-align: right;
+  width: fit-content;
+}
+
+#rating-holder{
+  display: flex;
+  justify-content: end;
+  padding: 0 5px;
 }

@@ -12,7 +12,7 @@ import Openings from "../Openings/Openings";
 import Accuracy from "../Accuracy/Accuracy";
 import Nameplate from "../Nameplate/Nameplate";
 
-const GameReview = () => {
+const GameReview = ({ setIsLoading }) => {
   const defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
   const [PGN, setPGN] = useState({
     number_of_move_types: {
@@ -36,7 +36,12 @@ const GameReview = () => {
       },
     },
     move_evaluations: [{ fen: defaultFen, opening: "Starting Position" }],
-    info: {"white_player": "White", "black_player": "Black", "white_rating": "??", "black_rating": "??"}
+    info: {
+      white_player: "White",
+      black_player: "Black",
+      white_rating: "??",
+      black_rating: "??",
+    },
   });
   const [currentMove, setCurrentMove] = useState(0);
   const move_numbers = PGN.number_of_move_types;
@@ -51,9 +56,9 @@ const GameReview = () => {
           <div className="nameplate-container">
             <Nameplate
               player_info={{
-                "name": PGN.info.black_player,
-                "rating": PGN.info.black_rating,
-                "color": "black"
+                name: PGN.info.black_player,
+                rating: PGN.info.black_rating,
+                color: "black",
               }}
             />
           </div>
@@ -67,9 +72,9 @@ const GameReview = () => {
           <div className="nameplate-container">
             <Nameplate
               player_info={{
-                "name": PGN.info.white_player,
-                "rating": PGN.info.white_rating,
-                "color": "white"
+                name: PGN.info.white_player,
+                rating: PGN.info.white_rating,
+                color: "white",
               }}
             />
           </div>
@@ -77,7 +82,7 @@ const GameReview = () => {
       </div>
 
       <div className="review-panel-container">
-        <ReviewPanel setPGN={setPGN} />
+        <ReviewPanel setPGN={setPGN} setIsLoading={setIsLoading} />
         <div className="reporter-opener-container">
           <div className="accuracy-container">
             <Accuracy PGN={PGN} />
