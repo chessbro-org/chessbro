@@ -14,13 +14,16 @@ const review_game = async (input, type, setPGN) => {
 };
 const analyse = async (input, setPGN) => {
   try {
-    const response = await fetch("http://127.0.0.1:5000/api/review-game", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ pgn: input }),
-    });
+    const response = await fetch(
+      "https://chessbro.onrender.com/api/review-game",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ pgn: input }),
+      }
+    );
     const analysedGame = await response.json();
     setPGN(analysedGame);
     const sound = new Audio(gameLoaded);

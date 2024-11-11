@@ -1,7 +1,7 @@
 import errorMessageSound from "../assets/sound/error-message.mp3";
 const validatePGN = async (pgn) => {
   try {
-    const response = await fetch("http://127.0.0.1:5000/api/validate-pgn", {
+    const response = await fetch("https://chessbro.onrender.com/api/validate-pgn", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
