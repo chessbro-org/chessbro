@@ -1,6 +1,6 @@
 .app {
   width: 110.5vw;
 }
-.app::after{
+.app::after {
   width: 100vw;
 }
