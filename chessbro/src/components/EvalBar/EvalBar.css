@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 .eval-bar {
   background-color: white;
-  height: calc(110vh - 109.77px);
+  height: calc((100vh) - (80.33px));
   width: 33px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;

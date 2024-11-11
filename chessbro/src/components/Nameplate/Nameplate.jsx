@@ -7,7 +7,7 @@ const Nameplate = ({ player_info }) => {
   const player_rating = player_info.rating;
   return (
     <div className="nameplate" id={`${player_color}-nameplate`}>
-      <a id="player-name">{player_name}</a>
+      <a id="player-name">{player_name} - </a>
       <a id="player-rating">{player_rating}</a>
     </div>
   );

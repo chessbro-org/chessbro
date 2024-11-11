@@ -1,6 +1,7 @@
 import math
 import json
 import chess
+from inforetriever import player_info
 
 def isBookMove(fen):
     board = chess.Board()
@@ -68,7 +69,6 @@ def classifyMoves(analysis):
         analysis[counter]['opening'] = opening
         analysis[counter]['move_type'] = move_type
     analysis = correctBookMoves(analysis)
-    analysis = countMoveCategories(analysis)
     return analysis
     
 def cp_and_cp(current, previous):
@@ -122,7 +122,7 @@ def mate_and_mate(current, previous):
             elif (previous_mate_in > 0):
                 return ("excellent")
             
-def countMoveCategories(analysedFENs):
+def countMoveCategories(analysedFENs, pgn):
     move_types_b = []
     move_types_w = []
     for FEN in analysedFENs:
@@ -132,6 +132,7 @@ def countMoveCategories(analysedFENs):
             move_types_w.append(FEN['move_type'])
     accuracy = [(move_types_w.count('best_move') + move_types_w.count('best_move') + move_types_w.count('excellent'))/len(move_types_w), (move_types_b.count('best_move') + move_types_b.count('good') + move_types_b.count('excellent'))/(len(move_types_b)-1)]
     analysedFENs = {
+        "info": player_info(pgn),
         "accuracy": {
             "white": math.floor(accuracy[0]*100*100)/100,
             "black": math.floor(accuracy[1]*100*100)/100,

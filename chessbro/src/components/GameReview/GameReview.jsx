@@ -36,6 +36,7 @@ const GameReview = () => {
       },
     },
     move_evaluations: [{ fen: defaultFen, opening: "Starting Position" }],
+    info: {"white_player": "White", "black_player": "Black", "white_rating": "??", "black_rating": "??"}
   });
   const [currentMove, setCurrentMove] = useState(0);
   const move_numbers = PGN.number_of_move_types;
@@ -50,9 +51,9 @@ const GameReview = () => {
           <div className="nameplate-container">
             <Nameplate
               player_info={{
-                rating: 1200,
-                color: "black",
-                name: "daamin",
+                "name": PGN.info.black_player,
+                "rating": PGN.info.black_rating,
+                "color": "black"
               }}
             />
           </div>
@@ -66,9 +67,9 @@ const GameReview = () => {
           <div className="nameplate-container">
             <Nameplate
               player_info={{
-                rating: 1100,
-                color: "white",
-                name: "suresh",
+                "name": PGN.info.white_player,
+                "rating": PGN.info.white_rating,
+                "color": "white"
               }}
             />
           </div>
