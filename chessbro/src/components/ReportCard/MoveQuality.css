@@ -14,15 +14,14 @@
   margin-right: 45px;
 }
 .quality_value {
-  background-color: #3da35d;
+  background-color: darkslategrey;
   width: 25px;
   height: min-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 5px;
+  padding: 1px 5px;
   border-radius: 5px;
-  border: 1px solid white;
 }
 #move-info-name {
   width: 100px;
