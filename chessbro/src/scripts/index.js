@@ -15,7 +15,7 @@ const review_game = async (input, type, setPGN) => {
 const analyse = async (input, setPGN) => {
   try {
     const response = await fetch(
-      "https://chessbro.onrender.com/api/review-game",
+      "https://obnoxious-jyoti-daamin-c6a01a27.koyeb.app/api/review-game",
       {
         method: "POST",
         headers: {
