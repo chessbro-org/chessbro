@@ -47,7 +47,7 @@ export const analyse = async (input, setPGN) => {
   }
 };
 export const getGames = async (username, month, year) => {
-  const resp = await fetch("http://127.0.0.1:5000/api/get-chesscom-games", {
+  const resp = await fetch("https://obnoxious-jyoti-daamin-c6a01a27.koyeb.app/api/get-chesscom-games", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
