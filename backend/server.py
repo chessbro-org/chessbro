@@ -21,9 +21,9 @@ def reviewGame():
 @app.route('/api/get-chesscom-games', methods=['POST'])
 def getChesscomGames():
     username = request.get_json()['username']
-    start = request.get_json()['start_date']
-    end = request.get_json()['end_date']
-    games = chessbro.webscraper.getGames(username=username, start_date=start, end_date=end)
+    year = request.get_json()['year']
+    month = request.get_json()['month']
+    games = chessbro.getGames.scrape(username=username, month=month, year=year)
     return jsonify(games)
 
 if __name__ == '__main__':
