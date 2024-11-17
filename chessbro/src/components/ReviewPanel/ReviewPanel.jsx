@@ -3,7 +3,7 @@ import "./ReviewPanel.css";
 import review_game from "./../../scripts/index";
 import GameList from "../GameList/GameList";
 const ReviewPanel = ({ setPGN, setIsLoading }) => {
-  const [currentType, setCurrentType] = useState("pgn");
+  const [currentType, setCurrentType] = useState("chess.com");
   const [username, setUsername] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const date_obj = new Date();
@@ -38,7 +38,7 @@ const ReviewPanel = ({ setPGN, setIsLoading }) => {
     );
     setIsLoading(false);
     input.value = "";
-    input_type.value = "pgn";
+    input_type.value = "chess.com";
   };
   return (
     <>
@@ -62,8 +62,8 @@ const ReviewPanel = ({ setPGN, setIsLoading }) => {
                 onChange={(e) => setCurrentType(e.target.value)}
                 id="game-input-type"
               >
-                <option value="pgn">PGN</option>
                 <option value="chess.com">chess.com</option>
+                <option value="pgn">PGN</option>
               </select>
             </div>
             <div id="game-input-button-container">
