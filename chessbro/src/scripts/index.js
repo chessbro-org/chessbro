@@ -1,7 +1,16 @@
 import validatePGN, { invalidPGN, showErrorMessage } from "./validation.js";
 import gameLoaded from "../assets/sound/game-loaded.mp3";
 
-const review_game = async (input, type, setPGN) => {
+const review_game = async (
+  input,
+  type,
+  setPGN,
+  month,
+  year,
+  setGames,
+  setIsOpen,
+  setUsername
+) => {
   switch (type) {
     case "pgn":
       const valid = await validatePGN(input);
@@ -10,9 +19,14 @@ const review_game = async (input, type, setPGN) => {
       } else if (valid === "no") {
         invalidPGN();
       }
+    case "chess.com":
+      const games = await getGames(input, month, year);
+      setUsername(input);
+      setIsOpen(true);
+      setGames(games);
   }
 };
-const analyse = async (input, setPGN) => {
+export const analyse = async (input, setPGN) => {
   try {
     const response = await fetch(
       "https://obnoxious-jyoti-daamin-c6a01a27.koyeb.app/api/review-game",
@@ -30,6 +44,21 @@ const analyse = async (input, setPGN) => {
     sound.play();
   } catch {
     showErrorMessage("Error 405 - Couldn't Connect To Server.");
+  }
+};
+export const getGames = async (username, month, year) => {
+  const resp = await fetch("http://127.0.0.1:5000/api/get-chesscom-games", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username: username, month: month, year: year }),
+  });
+  const games = resp.json();
+  if (games) {
+    return games;
+  } else {
+    return false;
   }
 };
 export default review_game;

@@ -26,7 +26,8 @@ def scrape(username, month, year):
                 "username": game['white']['username'],
                 "rating": game['white']['rating']
             },
-            "pgn": game['pgn']
+            "pgn": game['pgn'],
+            "username": username
         }
         gameInfoList.append(gameInfo)
     return gameInfoList
