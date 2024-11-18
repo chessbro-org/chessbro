@@ -47,13 +47,16 @@ export const analyse = async (input, setPGN) => {
   }
 };
 export const getGames = async (username, month, year) => {
-  const resp = await fetch("https://obnoxious-jyoti-daamin-c6a01a27.koyeb.app/api/get-chesscom-games", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ username: username, month: month, year: year }),
-  });
+  const resp = await fetch(
+    "https://obnoxious-jyoti-daamin-c6a01a27.koyeb.app/api/get-chesscom-games",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username: username, month: month, year: year }),
+    }
+  );
   const games = resp.json();
   if (games) {
     return games;
