@@ -12,24 +12,28 @@ const review_game = async (
   setUsername
 ) => {
   switch (type) {
-    case "pgn":
+    case "pgn": {
       const valid = await validatePGN(input);
       if (valid === "yes") {
-        const reviewed_game = await analyse(input, setPGN);
+        await analyse(input, setPGN);
       } else if (valid === "no") {
         invalidPGN();
       }
-    case "chess.com":
+      break;
+    }
+    case "chess.com": {
       const games = await getGames(input, month, year);
       setUsername(input);
       setIsOpen(true);
       setGames(games);
+      break;
+    }
   }
 };
 export const analyse = async (input, setPGN) => {
   try {
     const response = await fetch(
-      "https://obnoxious-jyoti-daamin-c6a01a27.koyeb.app/api/review-game",
+      "https://chessbro.daamin.hackclub.app/api/review-game",
       {
         method: "POST",
         headers: {
@@ -48,7 +52,7 @@ export const analyse = async (input, setPGN) => {
 };
 export const getGames = async (username, month, year) => {
   const resp = await fetch(
-    "https://obnoxious-jyoti-daamin-c6a01a27.koyeb.app/api/get-chesscom-games",
+    "https://chessbro.daamin.hackclub.app/api/get-chesscom-games",
     {
       method: "POST",
       headers: {
