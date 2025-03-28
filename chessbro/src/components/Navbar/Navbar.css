@@ -11,14 +11,16 @@
   margin-top: 7px;
   display: flex;
   align-items: center;
-  font-size: 34px;
+  font-size: 44px;
   color: var(--theme_2);
   cursor: pointer;
 }
 
 #logo {
-  height: 35px;
-  margin-right: 1px;
+  height: 45px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
 }
 .navbar_links {
   display: flex;

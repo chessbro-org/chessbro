@@ -8,13 +8,6 @@ const Navbar = () => {
         <img src={Logo} id="logo" />
         ChessBro
       </h1>
-      {/* // TODO decide navbar_links and further UI
-      // ? sidebar or top navbar? */}
-      {/* <div className="navbar_links">
-        <a href=""></a>
-        <a href=""></a>
-        <a href=""></a>
-      </div> */}
     </nav>
   );
 };
