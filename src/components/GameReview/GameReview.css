@@ -21,18 +21,17 @@
 }
 
 .review-panel-container {
-  display: grid !important;
-  grid-template-rows: 38% 50% 12%;
+  display: flex;
+  flex-direction: column;
   background: var(--theme_1);
   border: 2px solid white;
   margin-left: 30px;
   width: 400px;
-  height: calc((113vh) - (80.33px));
   border-radius: 20px;
-  padding: 15px;
+  padding: 10px;
   display: flex;
-  justify-content: center;
-  position: relative; /* Required for absolute positioning within the container */
+  justify-content: space-between;
+  position: relative;
 }
 
 .controls-container {
@@ -70,6 +69,6 @@
 
 .reporter-opener-container {
   overflow: hidden auto;
-  margin-top: 5vh;
-  height: 35vh;
+  margin-top: 1vh;
+  height: 50vh;
 }

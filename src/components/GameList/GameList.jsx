@@ -26,7 +26,13 @@ const GameList = ({
       setIsLoading(false);
       setGames(newGames);
     });
+
   }, [date]);
+  useEffect(() => {
+    if (!games){
+      handleClick(0, setDate, date)
+    }
+  }, [games])
   const handleClick = (f_or_b, setDate, date) => {
     switch (f_or_b) {
       case 1:
@@ -56,9 +62,7 @@ const GameList = ({
   return (
     <div className="game-list">
       <div className="info-panel">
-        {games
-          ? `Games for ${username} for ${date[1]}/${date[0]}`
-          : `No Games Found for ${date[1]}/${date[0]}`}
+        {`Games for ${username} for ${date[1]}/${date[0]}`}
         <button
           id="close-btn"
           className="controls-game-list"

@@ -46,18 +46,24 @@ const ReviewPanel = ({ setPGN, setIsLoading }) => {
         <div id="review-panel-header">
           <h2>Game Review</h2>
         </div>
-        <hr />
         <div id="game-input-container">
           <form id="game-input-form" onSubmit={handleSubmit}>
             <div id="game-input-box">
-              <textarea
-                type="text"
-                id="game-input"
-                placeholder={
-                  currentType === "pgn" ? "Enter PGN" : "Enter Username"
-                }
-                required
-              ></textarea>
+              {currentType === "pgn" ? (
+                <textarea
+                  type="text"
+                  id="game-input"
+                  placeholder={"Enter PGN"}
+                  required
+                ></textarea>
+              ) : (
+                <input
+                  type="text"
+                  id="game-input"
+                  placeholder={"Enter Username"}
+                  required
+                ></input>
+              )}
               <select
                 onChange={(e) => setCurrentType(e.target.value)}
                 id="game-input-type"

@@ -15,48 +15,7 @@
   align-items: center;
   font-size: 24px;
   width: 135px;
-  border-radius: 100px;
   transition: all 0.3s ease-in-out;
-  border-top: 1.5px solid white;
-  border-left: 1px solid white;
-  border-right: 2px solid white;
-  border-bottom: 1.5px solid white;
-  animation: swivel 800ms ease-in-out infinite;
-}
-@keyframes swivel {
-  0% {
-    transform: rotateY(10deg);
-  }
-  10% {
-    transform: rotateY(25deg);
-  }
-  20% {
-    transform: rotateY(40deg);
-  }
-  30% {
-    transform: rotateY(55deg);
-  }
-  40% {
-    transform: rotateY(70deg);
-  }
-  50% {
-    transform: rotateY(85deg);
-  }
-  60% {
-    transform: rotateY(70deg);
-  }
-  70% {
-    transform: rotateY(55deg);
-  }
-  80% {
-    transform: rotateY(40deg);
-  }
-  90% {
-    transform: rotateY(25deg);
-  }
-  100% {
-    transform: rotateY(10deg);
-  }
 }
 #black-accuracy {
   font-weight: 600;
@@ -70,6 +29,6 @@
   display: grid;
   grid-template-columns: 30% 40% 30%;
   height: 70px;
-  padding: 5px 2px;
+  padding: 5px 0px;
   margin-bottom: 3px;
 }

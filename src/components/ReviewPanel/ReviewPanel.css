@@ -56,7 +56,6 @@
   display: flex;
   justify-content: space-around;
   padding: 8px;
-  width: 380px;
   border-radius: 10px;
 }
 #game-input-button-container {
