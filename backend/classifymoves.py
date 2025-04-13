@@ -121,7 +121,21 @@ def mate_and_mate(current, previous):
                     return ("blunder")
             elif (previous_mate_in > 0):
                 return ("excellent")
-            
+def calculate_accuracy(move_types):
+    score_map = {
+        'best_move': 1.0,
+        'excellent': 0.9,
+        'good': 0.8,
+        'book': 0.7,
+        'inaccuracy': 0.5,
+        'mistake': 0.3,
+        'blunder': 0.0
+    }
+    total_score = sum(score_map.get(move, 0.5) for move in move_types)
+    accuracy = (total_score / len(move_types)) * 100 if move_types else 0
+    return round(accuracy, 1)
+
+ 
 def countMoveCategories(analysedFENs, pgn):
     move_types_b = []
     move_types_w = []
@@ -129,8 +143,8 @@ def countMoveCategories(analysedFENs, pgn):
         if FEN['move_no']%2==0:
             move_types_b.append(FEN['move_type'])
         else:
-            move_types_w.append(FEN['move_type'])
-    accuracy = [(move_types_w.count('best_move') + move_types_w.count('best_move') + move_types_w.count('excellent'))/len(move_types_w), (move_types_b.count('best_move') + move_types_b.count('good') + move_types_b.count('excellent'))/(len(move_types_b)-1)]
+            move_types_w.append(FEN['move_type'])   
+    accuracy = [calculate_accuracy(move_types_w), calculate_accuracy(move_types_b)]
     analysedFENs = {
         "info": player_info(pgn),
         "accuracy": {

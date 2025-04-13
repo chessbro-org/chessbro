@@ -1,7 +1,6 @@
 <p align="center">
   <img src="src/assets/branding/logo.png" height="200px">
 </p>
-<br/>
 <h1 align="center" style="font-size: 52px; font-family: 'system-ui';"> ChessBro </h1>
 <p align="center">
  <img src ="https://img.shields.io/badge/License-CC%20BY--NC%204.0--Modified-blue.svg">
