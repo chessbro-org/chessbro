@@ -7,7 +7,7 @@
  <img src ="https://img.shields.io/badge/version-1.0.0-green.svg">
  <img src="https://img.shields.io/github/stars/daamin909/chessbro?style=social?color" alt="GitHub Stars">
  <img src ="https://img.shields.io/github/deployments/daamin909/chessbro/production?color=purple">
- <img src ="https://badge.pbhak.hackclub.app/U07GLQY6UN4/ChessBro?color=red&label=Time%20Spent">
+ <img src ="https://hackatime-badge.hackclub.com/U07GLQY6UN4/ChessBro?color=red&label=Time%20Spent">
 </p>
 
 ChessBro is a chess game analysis tool designed to help players improve their skills by evaluating and grading each move they make during a game. The application provides instant feedback, categorizing moves into various levels such as `Best`, `Inaccurate`, and `Blunder` This detailed analysis allows players to learn from their mistakes and improve their strategy in real-time.
