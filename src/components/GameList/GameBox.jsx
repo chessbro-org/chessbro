@@ -1,5 +1,6 @@
 import React from "react";
-import { analyse } from "../../scripts";
+import { analyse } from "../../scripts/gamereview";
+
 const GameBox = ({ game, setPGN, setIsLoading, setIsOpen, setUsername, setDate }) => {
   return (
     <div

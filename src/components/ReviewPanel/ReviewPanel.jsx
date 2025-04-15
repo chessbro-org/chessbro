@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./ReviewPanel.css";
-import review_game from "./../../scripts/index";
+
 import GameList from "../GameList/GameList";
+import review_game from "../../scripts/gamereview";
 const ReviewPanel = ({ setPGN, setIsLoading }) => {
-  const [currentType, setCurrentType] = useState("chess.com");
+  const [currentType, setCurrentType] = useState("pgn");
   const [username, setUsername] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const date_obj = new Date();
@@ -68,8 +69,8 @@ const ReviewPanel = ({ setPGN, setIsLoading }) => {
                 onChange={(e) => setCurrentType(e.target.value)}
                 id="game-input-type"
               >
-                <option value="chess.com">chess.com</option>
                 <option value="pgn">PGN</option>
+                <option value="chess.com">chess.com</option>
               </select>
             </div>
             <div id="game-input-button-container">

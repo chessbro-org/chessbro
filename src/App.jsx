@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import GameReview from "./components/GameReview/GameReview";
-
 import "./App.css";
 import Loading from "./components/Common/Loading";
 const App = () => {
