@@ -171,7 +171,7 @@ const calculate_accuracy = (move_types) => {
   return Math.round(accuracy * 10) / 10;
 };
 
-const countMoveCategories = (analysedFENs, pgn) => {
+export const countMoveCategories = (analysedFENs, pgn) => {
   let move_types_b = [];
   let move_types_w = [];
   for (let FEN of analysedFENs) {
@@ -276,3 +276,5 @@ const correctBookMoves = (analysis) => {
 
   return analysis;
 };
+
+export default classifyMoves;

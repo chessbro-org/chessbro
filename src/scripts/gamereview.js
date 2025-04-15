@@ -3,6 +3,7 @@ import validatePGN from "./validation.js";
 import { Chess } from "chess.js";
 import gameLoaded from "../assets/sound/game-loaded.mp3";
 import showErrorMessage from "./errorMessage";
+import classifyMoves, { countMoveCategories } from "./classifymoves.js";
 
 const STOCKFISH_URL =
   "https://cdn.jsdelivr.net/npm/stockfish.js@10.0.2/stockfish.js";
@@ -40,7 +41,15 @@ const review_game = async (
 export const analyse = async (input, setPGN) => {
   try {
     const FENs = getFENs(input);
-    const analysis = await getEngineAnalysis(FENs);
+    let analysis = await getEngineAnalysis(FENs);
+    let moves_san = [null];
+    for (let l = 1; l <= analysis.length; l++) {
+      moves_san.push(analysis[l]);
+    }
+    // analysis = changeFormat(input, analysis, moves_san);
+    // analysis = classifyMoves(analysis)
+    // analysis = countMoveCategories(analysis, input)
+    // setPGN(analysis)
     const sound = new Audio(gameLoaded);
     sound.play();
   } catch (e) {
@@ -76,6 +85,7 @@ const getEngineAnalysis = async (FENs) => {
   const waitForKeyword = (worker, keyword) => {
     return new Promise((resolve) => {
       worker.onmessage = (event) => {
+        console.log(event.data)
         if (event.data.startsWith(keyword)) {
           if (keyword === "bestmove") {
             resolve(event.data.split(" ")[1]);
@@ -109,7 +119,7 @@ const getEngineAnalysis = async (FENs) => {
     const evalValue = await waitForKeyword(worker, "Total evaluation:");
     // convert the best move from UCI to SAN
     if (bestmove) {
-      const tempchessboard = new Chess(FENs[count-1]);
+      const tempchessboard = new Chess(FENs[count - 1]);
       const move = tempchessboard.move({
         from: bestmove.slice(0, 2),
         to: bestmove.slice(2, 4),
@@ -126,7 +136,6 @@ const getEngineAnalysis = async (FENs) => {
     };
     response.push(compiled);
   }
-  console.log(response);
   return response;
 };
 
@@ -144,39 +153,38 @@ const getFENs = (pgn) => {
   return FENs;
 };
 
-// const changeFormat = (pgn, infos, moves) => {
-//     game = chess.pgn.read_game(io.StringIO(pgn))
-//     board = game.board()
-//     default_fen = board.fen()
-//     for counter, (info, move) in enumerate(zip(infos, moves)):
+const changeFormat = (pgn, infos, moves) => {
+  const chess = new Chess();
+  chess.loadPgn(pgn);
+  const default_fen = chess.fen();
+  for (let counter = 0; counter < infos.length; counter++) {
+    const info = infos[counter];
+    const move = moves[counter];
+    if (info.eval.type !== "mate") {
+      info.eval.value /= 100;
+    }
+    if (!info.best_move) {
+      info.best_move = null;
+    } else {
+      if (counter > 0) {
+        chess.load(infos[counter - 1].fen);
+      } else {
+        chess.load(default_fen);
+      }
+      const move_obj = chess.move(
+        {
+          from: info.best_move.slice(0, 2),
+          to: info.best_move.slice(2, 4),
+          promotion: info.best_move.length > 4 ? info.best_move[4] : undefined,
+        }
+      );
+      info.best_move = move_obj ? move_obj.san : null;
+      chess.load(default_fen);
+    }
+    info.move = move;
+  }
 
-//         if (info['eval']['type']!='mate'):
-//             info['eval']['value']/=100
-//         if (not info['best_move']):
-//             info['best_move'] = (None)
-//         else:
-//             board.set_fen(infos[counter-1]['fen'])
-//             info['best_move'] = (board.san(chess.Move.from_uci(info['best_move'])))
-//             board.set_fen(default_fen)
-//         info['move'] = move
-//     return infos
-// }
-
-// def review_game (pgn):
-//     const game = chess.pgn.read_game(io.StringIO(pgn))
-//     board = game.board()
-//     moves = game.mainline_moves()
-//     moves_fens = [board.fen()]
-//     moves_san = [None]
-
-//     for move in moves:
-//         moves_san.append(board.san_and_push(move))
-//         moves_fens.append(board.fen())
-
-//     analysis = getEngineAnalysis(moves_fens)
-//     analysis = changeFormat(pgn, analysis, moves_san)
-//     analysis = classifyMoves(analysis)
-//     analysis = countMoveCategories(analysis, pgn)
-//     return analysis
+  return infos;
+};
 
 export default review_game;
