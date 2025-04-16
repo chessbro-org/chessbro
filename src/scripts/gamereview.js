@@ -1,3 +1,4 @@
+/* eslint-disable no-empty */
 /* eslint-disable no-unused-vars */
 import validatePGN from "./validation.js";
 import { Chess } from "chess.js";
@@ -7,6 +8,23 @@ import classifyMoves, { countMoveCategories } from "./classifymoves.js";
 
 const STOCKFISH_URL =
   "https://cdn.jsdelivr.net/npm/stockfish.js@10.0.2/stockfish.js";
+
+const extractEval = (engineMessage, depth) => {
+  const depthRegex = new RegExp(`^.*info depth ${depth}\\b.*$`, "gm");
+  const depthLine = engineMessage.match(depthRegex);
+  if (!depthLine) {
+    return "nuh uh";
+  }
+  const scoreRegex = /score (cp|mate) (-?\d+)/;
+  const match = depthLine[0].match(scoreRegex);
+  if (match) {
+    return {
+      type: match[1], // 'cp' or 'mate'
+      value: Number(match[2]),
+    };
+  }
+  return null; // depth found but no score
+};
 
 const review_game = async (
   input,
@@ -22,7 +40,8 @@ const review_game = async (
     case "pgn": {
       const valid = validatePGN(input);
       if (valid) {
-        await analyse(input, setPGN);
+        let depth = 15;
+        await analyse(input, setPGN, depth);
       } else {
         showErrorMessage("Invalid PGN");
       }
@@ -38,18 +57,19 @@ const review_game = async (
   }
 };
 
-export const analyse = async (input, setPGN) => {
+export const analyse = async (input, setPGN, depth) => {
   try {
     const FENs = getFENs(input);
-    let analysis = await getEngineAnalysis(FENs);
+    let analysis = await getEngineAnalysis(FENs, depth);
+    console.log(analysis);
     let moves_san = [null];
     for (let l = 1; l <= analysis.length; l++) {
       moves_san.push(analysis[l]);
     }
-    // analysis = changeFormat(input, analysis, moves_san);
-    // analysis = classifyMoves(analysis)
-    // analysis = countMoveCategories(analysis, input)
-    // setPGN(analysis)
+    analysis = changeFormat(input, analysis, moves_san);
+    analysis = classifyMoves(analysis);
+    analysis = countMoveCategories(analysis, input);
+    setPGN(analysis);
     const sound = new Audio(gameLoaded);
     sound.play();
   } catch (e) {
@@ -57,7 +77,7 @@ export const analyse = async (input, setPGN) => {
   }
 };
 
-const getEngineAnalysis = async (FENs) => {
+const getEngineAnalysis = async (FENs, depth) => {
   let worker = null;
 
   // ! this is setting the engine up, which loads the cdn js script
@@ -82,23 +102,21 @@ const getEngineAnalysis = async (FENs) => {
   }
 
   // promise resolver based on keyword
-  const waitForKeyword = (worker, keyword) => {
+  const waitForKeyword = (worker, keyword, depth) => {
     return new Promise((resolve) => {
       worker.onmessage = (event) => {
         console.log(event.data)
-        if (event.data.startsWith(keyword)) {
-          if (keyword === "bestmove") {
+        if (keyword === "bestmove") {
+          if (event.data.startsWith(keyword)) {
             resolve(event.data.split(" ")[1]);
+          }
+        } else {
+          const extractedEval = extractEval(event.data, depth);
+          if (extractedEval === "nuh uh") {
+          } else if (extractedEval) {
+            resolve(extractedEval);
           } else {
-            const match = event.data.match(
-              /Total evaluation:\s*([-+]?[0-9]*\.?[0-9]+)\s+\((white|black) side\)/
-            );
-            if (match) {
-              const number = parseFloat(match[1]);
-              resolve(number);
-            } else {
-              showErrorMessage("Stockfish decided to not work ☹️");
-            }
+            showErrorMessage("Stockfish decided to not work ☹️");
           }
         }
       };
@@ -110,13 +128,16 @@ const getEngineAnalysis = async (FENs) => {
     let bestmove = false;
     if (count !== 0) {
       worker.postMessage("position fen " + FENs[count - 1]);
-      worker.postMessage("go depth 15");
+      worker.postMessage("go depth " + depth.toString());
       bestmove = await waitForKeyword(worker, "bestmove");
     }
     worker.postMessage("position fen " + FENs[count]);
-    worker.postMessage("go depth 15");
-    worker.postMessage("eval");
-    const evalValue = await waitForKeyword(worker, "Total evaluation:");
+    worker.postMessage("go depth " + depth.toString());
+    const evalValue = await waitForKeyword(
+      worker,
+      "depth " + depth.toString(),
+      depth
+    );
     // convert the best move from UCI to SAN
     if (bestmove) {
       const tempchessboard = new Chess(FENs[count - 1]);
@@ -136,6 +157,7 @@ const getEngineAnalysis = async (FENs) => {
     };
     response.push(compiled);
   }
+  worker.terminate();
   return response;
 };
 
@@ -171,13 +193,11 @@ const changeFormat = (pgn, infos, moves) => {
       } else {
         chess.load(default_fen);
       }
-      const move_obj = chess.move(
-        {
-          from: info.best_move.slice(0, 2),
-          to: info.best_move.slice(2, 4),
-          promotion: info.best_move.length > 4 ? info.best_move[4] : undefined,
-        }
-      );
+      const move_obj = chess.move({
+        from: info.best_move.slice(0, 2),
+        to: info.best_move.slice(2, 4),
+        promotion: info.best_move.length > 4 ? info.best_move[4] : undefined,
+      });
       info.best_move = move_obj ? move_obj.san : null;
       chess.load(default_fen);
     }
