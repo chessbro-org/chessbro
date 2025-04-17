@@ -1,16 +1,11 @@
 import { Chess } from "chess.js";
 import { player_info } from "./inforetriever";
+import openingsList from "./openings";
+
 const isBookMove = async (fen) => {
-  let board = new Chess();
-  board.load(fen);
-  // board_fen equivalent: extract the board position part of the FEN string
-  fen = board.fen().split(" ")[0];
-  const openings = await (
-    await fetch(
-      "https://hc-cdn.hel1.your-objectstorage.com/s/v3/24ed775105c180064cf2c4bb857954fca416eb41_openings.json"
-    )
-  ).json();
-  for (let opening of openings) {
+  let board = new Chess(fen);
+  fen = board.fen().split(" ")[0].trim();
+  for (let opening of openingsList) {
     if (opening["fen"] === fen) {
       return [true, opening["name"]];
     }
@@ -50,7 +45,7 @@ const classifyMoves = (analysis) => {
     let previous_type = previous["eval"]["type"];
 
     let book_move = isBookMove(current["fen"]);
-
+    console.log(book_move)
     if (book_move[0]) {
       evalDiffs.push("book_move");
       openings.push(book_move[1]);
@@ -222,6 +217,7 @@ const correctBookMoves = (analysis) => {
   // however if a move leads to a book-move
   // it is also a book move
   // this algo fills up those missing moves and it also makes the subsequent move to have the same opening-name
+  console.log(analysis)
   let opening = [];
 
   for (let position of analysis) {

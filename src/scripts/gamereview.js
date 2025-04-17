@@ -6,10 +6,12 @@ import gameLoaded from "../assets/sound/game-loaded.mp3";
 import showErrorMessage from "./errorMessage";
 import classifyMoves, { countMoveCategories } from "./classifymoves.js";
 
+let engineMessagesForEval = [];
 const STOCKFISH_URL =
   "https://cdn.jsdelivr.net/npm/stockfish.js@10.0.2/stockfish.js";
 
-const extractEval = (engineMessage, depth) => {
+const extractEval = (engineMessage, depth, engineMessagesForEval) => {
+  engineMessage = engineMessagesForEval[engineMessagesForEval.length - 2];
   const depthRegex = new RegExp(`^.*info depth ${depth}\\b.*$`, "gm");
   const depthLine = engineMessage.match(depthRegex);
   if (!depthLine) {
@@ -61,14 +63,16 @@ export const analyse = async (input, setPGN, depth) => {
   try {
     const FENs = getFENs(input);
     let analysis = await getEngineAnalysis(FENs, depth);
-    console.log(analysis);
     let moves_san = [null];
-    for (let l = 1; l <= analysis.length; l++) {
-      moves_san.push(analysis[l]);
-    }
+
+    const tempChess = new Chess();
+    tempChess.loadPgn(input);
+    moves_san = moves_san.concat(tempChess.history());
+
     analysis = changeFormat(input, analysis, moves_san);
     analysis = classifyMoves(analysis);
     analysis = countMoveCategories(analysis, input);
+    
     setPGN(analysis);
     const sound = new Audio(gameLoaded);
     sound.play();
@@ -79,7 +83,9 @@ export const analyse = async (input, setPGN, depth) => {
 
 const getEngineAnalysis = async (FENs, depth) => {
   let worker = null;
-
+  const sendMessage = (message) => {
+    worker.postMessage(message);
+  };
   // ! this is setting the engine up, which loads the cdn js script
   try {
     const response = await fetch(STOCKFISH_URL);
@@ -95,28 +101,35 @@ const getEngineAnalysis = async (FENs, depth) => {
     worker.onerror = (err) => {
       console.error(` error: ${err.message || "Unknown error"}`);
     };
-    worker.postMessage("uci");
-    worker.postMessage("isready");
+    sendMessage("uci");
+    sendMessage("isready");
   } catch (err) {
     console.error(`error: ${err.message || "Unknown error"}`);
   }
 
   // promise resolver based on keyword
-  const waitForKeyword = (worker, keyword, depth) => {
+  const waitForKeyword = (worker, keyword, depth, engineMessagesForEval) => {
     return new Promise((resolve) => {
       worker.onmessage = (event) => {
-        console.log(event.data)
         if (keyword === "bestmove") {
           if (event.data.startsWith(keyword)) {
             resolve(event.data.split(" ")[1]);
           }
         } else {
-          const extractedEval = extractEval(event.data, depth);
-          if (extractedEval === "nuh uh") {
-          } else if (extractedEval) {
-            resolve(extractedEval);
-          } else {
-            showErrorMessage("Stockfish decided to not work ☹️");
+          engineMessagesForEval.push(event.data);
+          if (event.data.startsWith("bestmove")) {
+            const extractedEval = extractEval(
+              event.data,
+              depth,
+              engineMessagesForEval
+            );
+            if (extractedEval === "nuh uh") {
+              showErrorMessage("depth not reached for some reason");
+            } else if (extractedEval) {
+              resolve(extractedEval);
+            } else {
+              showErrorMessage("depth reached but not found");
+            }
           }
         }
       };
@@ -127,17 +140,20 @@ const getEngineAnalysis = async (FENs, depth) => {
   for (let count = 0; count < FENs.length; count++) {
     let bestmove = false;
     if (count !== 0) {
-      worker.postMessage("position fen " + FENs[count - 1]);
-      worker.postMessage("go depth " + depth.toString());
+      sendMessage("position fen " + FENs[count - 1]);
+      sendMessage("go depth " + depth.toString());
       bestmove = await waitForKeyword(worker, "bestmove");
     }
-    worker.postMessage("position fen " + FENs[count]);
-    worker.postMessage("go depth " + depth.toString());
+    sendMessage("position fen " + FENs[count]);
+    sendMessage("go depth " + depth.toString());
+    engineMessagesForEval = [];
     const evalValue = await waitForKeyword(
       worker,
       "depth " + depth.toString(),
-      depth
+      depth,
+      engineMessagesForEval
     );
+    engineMessagesForEval = [];
     // convert the best move from UCI to SAN
     if (bestmove) {
       const tempchessboard = new Chess(FENs[count - 1]);
@@ -178,32 +194,21 @@ const getFENs = (pgn) => {
 const changeFormat = (pgn, infos, moves) => {
   const chess = new Chess();
   chess.loadPgn(pgn);
-  const default_fen = chess.fen();
-  for (let counter = 0; counter < infos.length; counter++) {
-    const info = infos[counter];
-    const move = moves[counter];
-    if (info.eval.type !== "mate") {
-      info.eval.value /= 100;
-    }
-    if (!info.best_move) {
-      info.best_move = null;
-    } else {
-      if (counter > 0) {
-        chess.load(infos[counter - 1].fen);
-      } else {
-        chess.load(default_fen);
+  try {
+    for (let counter = 0; counter < infos.length; counter++) {
+      const info = infos[counter];
+      const move = moves[counter];
+      if (info.eval.type !== "mate") {
+        info.eval.value /= 100;
       }
-      const move_obj = chess.move({
-        from: info.best_move.slice(0, 2),
-        to: info.best_move.slice(2, 4),
-        promotion: info.best_move.length > 4 ? info.best_move[4] : undefined,
-      });
-      info.best_move = move_obj ? move_obj.san : null;
-      chess.load(default_fen);
+      if (!info.best_move) {
+        info.best_move = null;
+      }
+      info.move = move;
     }
-    info.move = move;
+  } catch (e) {
+    showErrorMessage(e);
   }
-
   return infos;
 };
 

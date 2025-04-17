@@ -28,7 +28,6 @@ def changeFormat(pgn, infos, moves):
     board = game.board()
     default_fen = board.fen()
     for counter, (info, move) in enumerate(zip(infos, moves)):
-
         if (info['eval']['type']!='mate'):
             info['eval']['value']/=100
         if (not info['best_move']):
