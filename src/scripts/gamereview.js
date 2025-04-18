@@ -5,6 +5,7 @@ import { Chess } from "chess.js";
 import gameLoaded from "../assets/sound/game-loaded.mp3";
 import showErrorMessage from "./errorMessage";
 import classifyMoves, { countMoveCategories } from "./classifymoves.js";
+import { getGames } from './index';
 
 let engineMessagesForEval = [];
 const STOCKFISH_URL =
@@ -41,8 +42,7 @@ const review_game = async (
     case "pgn": {
       const valid = validatePGN(input);
       if (valid) {
-        let depth = 8;
-        await analyse(input, setPGN, depth);
+        await analyse(input, setPGN);
       } else {
         showErrorMessage("Invalid PGN");
       }
@@ -58,7 +58,8 @@ const review_game = async (
   }
 };
 
-export const analyse = async (input, setPGN, depth) => {
+export const analyse = async (input, setPGN) => {
+  let depth = 8;
   try {
     const FENs = getFENs(input);
     let analysis = await getEngineAnalysis(FENs, depth);
