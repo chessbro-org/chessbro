@@ -9,7 +9,6 @@ import classifyMoves, { countMoveCategories } from "./classifymoves.js";
 let engineMessagesForEval = [];
 const STOCKFISH_URL =
   "https://cdn.jsdelivr.net/npm/stockfish.js@10.0.2/stockfish.js";
-
 const extractEval = (engineMessage, depth, engineMessagesForEval) => {
   engineMessage = engineMessagesForEval[engineMessagesForEval.length - 2];
   const depthRegex = new RegExp(`^.*info depth ${depth}\\b.*$`, "gm");
@@ -42,7 +41,7 @@ const review_game = async (
     case "pgn": {
       const valid = validatePGN(input);
       if (valid) {
-        let depth = 15;
+        let depth = 18;
         await analyse(input, setPGN, depth);
       } else {
         showErrorMessage("Invalid PGN");
@@ -72,7 +71,7 @@ export const analyse = async (input, setPGN, depth) => {
     analysis = changeFormat(input, analysis, moves_san);
     analysis = classifyMoves(analysis);
     analysis = countMoveCategories(analysis, input);
-    
+
     setPGN(analysis);
     const sound = new Audio(gameLoaded);
     sound.play();
@@ -111,6 +110,7 @@ const getEngineAnalysis = async (FENs, depth) => {
   const waitForKeyword = (worker, keyword, depth, engineMessagesForEval) => {
     return new Promise((resolve) => {
       worker.onmessage = (event) => {
+        console.log(event.data);
         if (keyword === "bestmove") {
           if (event.data.startsWith(keyword)) {
             resolve(event.data.split(" ")[1]);
@@ -136,8 +136,11 @@ const getEngineAnalysis = async (FENs, depth) => {
     });
   };
 
-  const response = [];
+  let response = [];
   for (let count = 0; count < FENs.length; count++) {
+    if (count % 5 === 0 && count > 0) {
+      console.log(`Analyzing position ${count}/${FENs.length}`);
+    }
     let bestmove = false;
     if (count !== 0) {
       sendMessage("position fen " + FENs[count - 1]);

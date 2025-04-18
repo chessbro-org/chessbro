@@ -2,7 +2,7 @@ import { Chess } from "chess.js";
 import { player_info } from "./inforetriever";
 import openingsList from "./openings";
 
-const isBookMove = async (fen) => {
+const isBookMove = (fen) => {
   let board = new Chess(fen);
   fen = board.fen().split(" ")[0].trim();
   for (let opening of openingsList) {
@@ -45,7 +45,6 @@ const classifyMoves = (analysis) => {
     let previous_type = previous["eval"]["type"];
 
     let book_move = isBookMove(current["fen"]);
-    console.log(book_move)
     if (book_move[0]) {
       evalDiffs.push("book_move");
       openings.push(book_move[1]);
@@ -145,25 +144,69 @@ const mate_and_mate = (current, previous) => {
   }
 };
 
-const calculate_accuracy = (move_types) => {
-  const score_map = {
-    best_move: 1.0,
+const calculate_accuracy = (ListWithFENs) => {
+  let FENs = [];
+  let usableList = ListWithFENs.slice(1)
+  for (let FEN of usableList) {
+    FENs.push(FEN);
+  }
+  const weightage = {
+    blunder: 0,
+    mistake: 0.2,
+    inaccuracy: 0.4,
+    good: 0.65,
     excellent: 0.9,
-    good: 0.8,
-    book: 0.7,
-    inaccuracy: 0.5,
-    mistake: 0.3,
-    blunder: 0.0,
+    best_move: 1,
+    book_move: 1,
   };
-  let total_score = move_types.reduce(
-    (acc, move) =>
-      acc + (score_map.hasOwnProperty(move) ? score_map[move] : 0.5),
-    0
-  );
-  let accuracy = move_types.length
-    ? (total_score / move_types.length) * 100
-    : 0;
-  return Math.round(accuracy * 10) / 10;
+  let accuracyList = {
+    white: {
+      current: 0,
+      maximum: 0,
+    },
+    black: {
+      current: 0,
+      maximum: 0,
+    },
+  };
+
+  let moveTypesList = {
+    white: {
+      best_move: 0,
+      excellent: 0,
+      good: 0,
+      inaccuracy: 0,
+      mistake: 0,
+      blunder: 0,
+      book_move: 0,
+    },
+    black: {
+      best_move: 0,
+      excellent: 0,
+      good: 0,
+      inaccuracy: 0,
+      mistake: 0,
+      blunder: 0,
+      book_move: 0,
+    },
+  };
+
+  for (let i = 0; i < FENs.length; i++) {
+    const fen = FENs[i];
+    const moveColour = fen.fen.includes(" b ") ? "white" : "black";
+    accuracyList[moveColour].current += weightage[fen.move_type];
+    accuracyList[moveColour].maximum++;
+
+    moveTypesList[moveColour][fen.move_type] += 1;
+  } 
+  return [
+    accuracyList.white.maximum
+      ? accuracyList.white.current / accuracyList.white.maximum
+      : 0,
+    accuracyList.black.maximum
+      ? accuracyList.black.current / accuracyList.black.maximum
+      : 0,
+  ];
 };
 
 export const countMoveCategories = (analysedFENs, pgn) => {
@@ -176,10 +219,7 @@ export const countMoveCategories = (analysedFENs, pgn) => {
       move_types_w.push(FEN["move_type"]);
     }
   }
-  let accuracy = [
-    calculate_accuracy(move_types_w),
-    calculate_accuracy(move_types_b),
-  ];
+  let accuracy = [...calculate_accuracy(analysedFENs)];
   analysedFENs = {
     info: player_info(pgn),
     accuracy: {
@@ -217,7 +257,6 @@ const correctBookMoves = (analysis) => {
   // however if a move leads to a book-move
   // it is also a book move
   // this algo fills up those missing moves and it also makes the subsequent move to have the same opening-name
-  console.log(analysis)
   let opening = [];
 
   for (let position of analysis) {
