@@ -41,7 +41,7 @@ const review_game = async (
     case "pgn": {
       const valid = validatePGN(input);
       if (valid) {
-        let depth = 18;
+        let depth = 8;
         await analyse(input, setPGN, depth);
       } else {
         showErrorMessage("Invalid PGN");
