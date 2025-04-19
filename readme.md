@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/assets/branding/logo.png" height="200px">
+  <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/6fe585a7d09a994ff31e0811c35d802af0b272b2_image.png" height="200px">
 </p>
 <h1 align="center" style="font-size: 52px; font-family: 'system-ui';"> ChessBro </h1>
 <p align="center">
