@@ -12,7 +12,6 @@ const STOCKFISH_URL =
   "https://cdn.jsdelivr.net/npm/stockfish.js@10.0.2/stockfish.js";
 const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
   engineMessage = engineMessagesForEval[engineMessagesForEval.length - 2];
-  console.log(engineMessage);
   const depthRegex = new RegExp(`^.*info depth ${depth}\\b.*$`, "gm");
   const depthLine = engineMessage.match(depthRegex);
   if (!depthLine) {
@@ -20,16 +19,18 @@ const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
   }
   const scoreRegex = /score (cp|mate) (-?\d+)/;
   const match = depthLine[0].match(scoreRegex);
-  let cpOrMateValue = 0;
   if (match) {
+    let cpOrMateValue = Number(match[2]);
     if (fen.includes(" b ")) {
-      cpOrMateValue = -1 * Number(match[2]);
+      cpOrMateValue = -1 * cpOrMateValue;
     }
+    console.log(match[1], cpOrMateValue);
     return {
-      type: match[1], // 'cp' or 'mate'
+      type: match[1],
       value: cpOrMateValue,
     };
   }
+
   return null; // depth found but no score
 };
 
@@ -64,7 +65,7 @@ const review_game = async (
 };
 
 export const analyse = async (input, setPGN) => {
-  let depth = 14;
+  let depth = 8;
   try {
     const FENs = getFENs(input);
     let analysis = await getEngineAnalysis(FENs, depth);
