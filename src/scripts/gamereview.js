@@ -5,13 +5,14 @@ import { Chess } from "chess.js";
 import gameLoaded from "../assets/sound/game-loaded.mp3";
 import showErrorMessage from "./errorMessage";
 import classifyMoves, { countMoveCategories } from "./classifymoves.js";
-import { getGames } from './index';
+import { getGames } from "./index";
 
 let engineMessagesForEval = [];
 const STOCKFISH_URL =
   "https://cdn.jsdelivr.net/npm/stockfish.js@10.0.2/stockfish.js";
-const extractEval = (engineMessage, depth, engineMessagesForEval) => {
+const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
   engineMessage = engineMessagesForEval[engineMessagesForEval.length - 2];
+  console.log(engineMessage);
   const depthRegex = new RegExp(`^.*info depth ${depth}\\b.*$`, "gm");
   const depthLine = engineMessage.match(depthRegex);
   if (!depthLine) {
@@ -19,10 +20,14 @@ const extractEval = (engineMessage, depth, engineMessagesForEval) => {
   }
   const scoreRegex = /score (cp|mate) (-?\d+)/;
   const match = depthLine[0].match(scoreRegex);
+  let cpOrMateValue = 0;
   if (match) {
+    if (fen.includes(" b ")) {
+      cpOrMateValue = -1 * Number(match[2]);
+    }
     return {
       type: match[1], // 'cp' or 'mate'
-      value: Number(match[2]),
+      value: cpOrMateValue,
     };
   }
   return null; // depth found but no score
@@ -59,7 +64,7 @@ const review_game = async (
 };
 
 export const analyse = async (input, setPGN) => {
-  let depth = 8;
+  let depth = 14;
   try {
     const FENs = getFENs(input);
     let analysis = await getEngineAnalysis(FENs, depth);
@@ -102,16 +107,22 @@ const getEngineAnalysis = async (FENs, depth) => {
       console.error(` error: ${err.message || "Unknown error"}`);
     };
     sendMessage("uci");
+    sendMessage("setoption name MultiPV value 2");
     sendMessage("isready");
   } catch (err) {
     console.error(`error: ${err.message || "Unknown error"}`);
   }
 
   // promise resolver based on keyword
-  const waitForKeyword = (worker, keyword, depth, engineMessagesForEval) => {
+  const waitForKeyword = (
+    worker,
+    keyword,
+    depth,
+    engineMessagesForEval,
+    fen
+  ) => {
     return new Promise((resolve) => {
       worker.onmessage = (event) => {
-        console.log(event.data);
         if (keyword === "bestmove") {
           if (event.data.startsWith(keyword)) {
             resolve(event.data.split(" ")[1]);
@@ -122,7 +133,8 @@ const getEngineAnalysis = async (FENs, depth) => {
             const extractedEval = extractEval(
               event.data,
               depth,
-              engineMessagesForEval
+              engineMessagesForEval,
+              fen
             );
             if (extractedEval === "nuh uh") {
               showErrorMessage("depth not reached for some reason");
@@ -155,7 +167,8 @@ const getEngineAnalysis = async (FENs, depth) => {
       worker,
       "depth " + depth.toString(),
       depth,
-      engineMessagesForEval
+      engineMessagesForEval,
+      FENs[count]
     );
     engineMessagesForEval = [];
     // convert the best move from UCI to SAN
