@@ -65,7 +65,7 @@ const review_game = async (
 };
 
 export const analyse = async (input, setPGN) => {
-  let depth = 8;
+  let depth = 14;
   try {
     const FENs = getFENs(input);
     let analysis = await getEngineAnalysis(FENs, depth);
@@ -124,11 +124,7 @@ const getEngineAnalysis = async (FENs, depth) => {
   ) => {
     return new Promise((resolve) => {
       worker.onmessage = (event) => {
-        if (keyword === "bestmove") {
-          if (event.data.startsWith(keyword)) {
-            resolve(event.data.split(" ")[1]);
-          }
-        } else {
+        if (keyword === "eval") {
           engineMessagesForEval.push(event.data);
           if (event.data.startsWith("bestmove")) {
             const extractedEval = extractEval(
@@ -145,42 +141,77 @@ const getEngineAnalysis = async (FENs, depth) => {
               showErrorMessage("depth reached but not found");
             }
           }
+        } else {
+          engineMessagesForEval.push(event.data);
+          if (event.data.startsWith("bestmove")) {
+            const foundBestmove = event.data.split(" ")[1];
+            const extractedEval = extractEval(
+              event.data,
+              depth,
+              engineMessagesForEval,
+              fen
+            );
+            if (extractedEval === "nuh uh") {
+              showErrorMessage("depth not reached for some reason");
+            } else if (extractedEval) {
+              resolve([foundBestmove, extractedEval]);
+            } else {
+              showErrorMessage("depth reached but not found");
+            }
+          }
         }
       };
     });
   };
 
   let response = [];
+  let listOfBestmoves = [];
   for (let count = 0; count < FENs.length; count++) {
     if (count % 5 === 0 && count > 0) {
       console.log(`Analyzing position ${count}/${FENs.length}`);
     }
-    let bestmove = false;
-    if (count !== 0) {
+    let bestmove = false,
+      evalValue;
+    if (count == FENs.length - 1) {
       sendMessage("position fen " + FENs[count - 1]);
       sendMessage("go depth " + depth.toString());
-      bestmove = await waitForKeyword(worker, "bestmove");
+      evalValue = await waitForKeyword(
+        worker,
+        "eval",
+        depth,
+        engineMessagesForEval,
+        FENs[count]
+      );
+    } else {
+      sendMessage("position fen " + FENs[count]);
+      sendMessage("go depth " + depth.toString());
+      engineMessagesForEval = [];
+      const reply = await waitForKeyword(
+        worker,
+        "bestmove and eval",
+        depth,
+        engineMessagesForEval,
+        FENs[count]
+      );
+      listOfBestmoves.push(reply[0]);
+      evalValue = reply[1];
+      engineMessagesForEval = [];
     }
-    sendMessage("position fen " + FENs[count]);
-    sendMessage("go depth " + depth.toString());
-    engineMessagesForEval = [];
-    const evalValue = await waitForKeyword(
-      worker,
-      "depth " + depth.toString(),
-      depth,
-      engineMessagesForEval,
-      FENs[count]
-    );
-    engineMessagesForEval = [];
+
     // convert the best move from UCI to SAN
-    if (bestmove) {
+    if (listOfBestmoves[count - 1]) {
       const tempchessboard = new Chess(FENs[count - 1]);
       const move = tempchessboard.move({
-        from: bestmove.slice(0, 2),
-        to: bestmove.slice(2, 4),
-        promotion: bestmove.length === 5 ? bestmove[4] : undefined,
+        from: listOfBestmoves[count - 1].slice(0, 2),
+        to: listOfBestmoves[count - 1].slice(2, 4),
+        promotion:
+          listOfBestmoves[count - 1].length === 5
+            ? listOfBestmoves[count - 1][4]
+            : undefined,
       });
       bestmove = move.san;
+    } else {
+      bestmove = false;
     }
     // compile this shit frfr
     const compiled = {
