@@ -1,5 +1,5 @@
 .nameplate {
-  background-color: #101010;
+  background-color: #072434;
   font-size: 22px;
   width: calc((99.5vh) - (80.33px));
   display: grid;
@@ -30,7 +30,7 @@
   width: fit-content;
 }
 
-#rating-holder{
+#rating-holder {
   display: flex;
   justify-content: end;
   padding: 0 5px;

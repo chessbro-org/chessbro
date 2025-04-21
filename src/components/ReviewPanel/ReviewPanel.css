@@ -5,13 +5,12 @@
 }
 #review-panel > hr {
   margin: 10px 0;
-  border: 1px solid #134611;
 }
 #game-input {
   display: flex;
   justify-content: center;
   background-color: black;
-  color: white;
+  color: #e3eef4;
   font-size: 16px;
   border: 1px solid #f9f9f9;
   margin-right: 10px;
@@ -31,8 +30,8 @@
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #3e8914;
-  color: white;
+  background-color: #072434;
+  color: #e3eef4;
   margin-top: 30px;
   justify-content: center;
   transition: all 0.3s ease-in-out;
@@ -42,7 +41,7 @@
 }
 #game-input-type {
   background-color: black;
-  color: white;
+  color: #e3eef4;
   font-size: 16px;
   border: 1px solid #f1f1f1;
   margin-right: 10px;
@@ -51,7 +50,7 @@
 }
 #game-input-box {
   margin-top: 20px;
-  background-color: #3e8914;
+  background-color: #072434;
   color: black;
   display: flex;
   justify-content: space-around;
@@ -67,11 +66,10 @@
   justify-self: center;
   font-size: 14px;
   font-family: monospace !important;
-  background-color: #3e8914;
+  background-color: #072434;
   padding: 10px;
   text-wrap: wrap;
   text-align: center;
-  border: 4px solid #134611;
   border-radius: 8px;
   cursor: pointer;
 }

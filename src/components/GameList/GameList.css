@@ -26,7 +26,7 @@
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  color: white;
+  color: #e3eef4;
   text-align: center;
   height: 6vh;
   font-size: 3vh;
@@ -42,7 +42,7 @@
   right: 0;
   width: 100%;
   background-color: #555;
-  color: white;
+  color: #e3eef4;
   padding: 6px;
   text-align: center;
   border-top: 2px solid #333;
@@ -60,7 +60,7 @@
   margin-bottom: 10px;
   padding: 10px;
   background-color: darkslategray;
-  color: white;
+  color: #e3eef4;
   font-weight: 600;
   font-size: 26px;
   text-align: center;
@@ -75,7 +75,7 @@
   padding: 10px 15px;
   margin-bottom: 10px;
   border-radius: 5px;
-  color: white;
+  color: #e3eef4;
   text-align: center;
 }
 
@@ -86,7 +86,7 @@
 .controls-game-list {
   font-size: 32px;
   background-color: transparent;
-  color: white;
+  color: #e3eef4;
   border: none;
 
   padding: 5px;

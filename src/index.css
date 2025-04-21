@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
-  --background_color: #101010;
+  --background_color: #072434;
   --color: white;
   --theme_1: #101820;
   --theme_2: #fee715;
@@ -34,7 +34,7 @@ body {
   transform: scale(0.9);
   transform-origin: top left;
   background-color: var(--background_color);
-  color: var(--color);
+  color: #e3eef4;
   font-family: "Montserrat", sans-serif;
   margin: 0;
   height: 100%;

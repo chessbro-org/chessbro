@@ -7,9 +7,9 @@
   display: flex;
   justify-content: left;
   align-items: top;
-  background-color: #101010;
+  background-color: #072434;
 }
-.move_quality_list{
+.move_quality_list {
   align-self: flex-start;
   justify-content: start;
   list-style: none;

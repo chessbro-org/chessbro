@@ -20,7 +20,7 @@
   border-top-left-radius: inherit;
   border: inherit;
   transition: all 0.5s ease-in-out;
-  color: white;
+  color: #e3eef4;
 }
 .white {
   display: flex;

@@ -23,7 +23,6 @@
 .review-panel-container {
   display: flex;
   flex-direction: column;
-  background: var(--theme_1);
   border: 2px solid white;
   margin-left: 30px;
   width: 400px;

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
 .navbar {
   display: flex;
   align-items: center;
@@ -12,7 +13,8 @@
   display: flex;
   align-items: center;
   font-size: 44px;
-  color: var(--theme_2);
+  font-family: "Winky Rough", system-ui;
+  color: #e3eef4;
   cursor: pointer;
 }
 
