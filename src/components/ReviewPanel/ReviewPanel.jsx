@@ -39,7 +39,7 @@ const ReviewPanel = ({ setPGN, setIsLoading }) => {
     );
     setIsLoading(false);
     input.value = "";
-    input_type.value = "chess.com";
+    input_type.value = "pgn";
   };
   return (
     <>
