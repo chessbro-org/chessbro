@@ -3,14 +3,18 @@ import showErrorMessage from "./errorMessage";
 import getThreads from "../utils/getThreads";
 
 let engineMessagesForEval = [];
-
+const chooseEngine = () => {
+  if (window.crossOriginIsolated) {
+    return "/stockfish-17-lite.js";
+  } else {
+    return typeof WebAssembly == "object"
+      ? "/stockfish-17-lite-single.js"
+      : "/stockfish-17-asm.js";
+  }
+};
 const getEngineAnalysis = async (FENs, depth) => {
   let threads = getThreads();
-  const worker = new Worker(
-    typeof WebAssembly == "object"
-      ? "/stockfish-17-lite-single.js"
-      : "/stockfish.js"
-  );
+  const worker = new Worker(chooseEngine());
   worker.addEventListener("error", (err) => {
     console.error(` error: ${err.message || "Unknown error"}`);
   });
@@ -75,7 +79,6 @@ const getEngineAnalysis = async (FENs, depth) => {
         value: "0",
       };
     }
-
 
     // compile this shit frfr
     const compiled = {

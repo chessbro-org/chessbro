@@ -10,7 +10,7 @@ const ChessboardComponent = ({ PGN, currentMove, flipped }) => {
       position: PGN.move_evaluations[currentMove].fen,
       draggable: false,
       pieceTheme:
-        "https://chessboardjs.com/img/chesspieces/wikipedia/{piece}.png",
+        "/piece_images/{piece}.png",
     });
     if (flipped) {
       chessboardInstance.current.orientation("black");

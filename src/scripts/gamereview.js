@@ -37,7 +37,7 @@ const review_game = async (
 };
 
 export const analyse = async (input, setPGN) => {
-  let depth = 22;
+  let depth = 16;
   try {
     const FENs = getFENs(input);
     let analysis = await getEngineAnalysis(FENs, depth);
