@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getGames } from "../../scripts";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowCircleLeft,
@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./GameList.css";
 import GameBox from "./GameBox";
+import getGames from "../../scripts/getgames";
 const GameList = ({
   games,
   setDate,
@@ -26,13 +27,12 @@ const GameList = ({
       setIsLoading(false);
       setGames(newGames);
     });
-
   }, [date]);
   useEffect(() => {
-    if (!games){
-      handleClick(0, setDate, date)
+    if (!games) {
+      handleClick(0, setDate, date);
     }
-  }, [games])
+  }, [games]);
   const handleClick = (f_or_b, setDate, date) => {
     switch (f_or_b) {
       case 1:

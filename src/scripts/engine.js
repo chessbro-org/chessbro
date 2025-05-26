@@ -1,17 +1,21 @@
 import { Chess } from "chess.js";
 import showErrorMessage from "./errorMessage";
+import getThreads from "../utils/getThreads";
 
 let engineMessagesForEval = [];
 
 const getEngineAnalysis = async (FENs, depth) => {
+  let threads = getThreads();
   const worker = new Worker(
-    typeof WebAssembly == "object" ? "/stockfish-nnue-16.js" : "/stockfish.js"
+    typeof WebAssembly == "object"
+      ? "/stockfish-17-lite-single.js"
+      : "/stockfish.js"
   );
   worker.addEventListener("error", (err) => {
     console.error(` error: ${err.message || "Unknown error"}`);
   });
   worker.postMessage("uci");
-
+  worker.postMessage(`setoption name Threads value ${threads}`);
   let response = [];
   let listOfBestmoves = [];
   for (let count = 0; count < FENs.length; count++) {
@@ -61,6 +65,18 @@ const getEngineAnalysis = async (FENs, depth) => {
     } else {
       bestmove = false;
     }
+
+    // change eval if it is checkmate
+    const checker = new Chess(FENs[count]);
+    const checkmate = checker.isCheckmate();
+    if (checkmate) {
+      evalValue = {
+        type: "mate",
+        value: "0",
+      };
+    }
+
+
     // compile this shit frfr
     const compiled = {
       move_no: count,
@@ -68,6 +84,7 @@ const getEngineAnalysis = async (FENs, depth) => {
       best_move: bestmove,
       eval: evalValue,
     };
+    console.log(compiled);
     response.push(compiled);
   }
   return response;
@@ -132,7 +149,6 @@ const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
     if (fen.includes(" b ")) {
       cpOrMateValue = -1 * cpOrMateValue;
     }
-    console.log(match[1], cpOrMateValue);
     return {
       type: match[1],
       value: cpOrMateValue,

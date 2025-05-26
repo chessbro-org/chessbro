@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 
 import "./EvalBar.css";
@@ -10,16 +11,17 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
     "0.0",
     {},
   ]);
-  
+
   useEffect(() => {
     var x = PGN.move_evaluations[currentMove].eval;
     if (x) {
       if (x.type) {
         const evalType = PGN.move_evaluations[currentMove].eval.type;
         const evalValue = PGN.move_evaluations[currentMove].eval.value;
-        if (evalType === "mate") {
-          if (evalValue === 0) {
-            const winner = PGN.move_evaluations[currentMove].move_no % 2 === 0;
+        if (evalType == "mate") {
+          if (evalValue == 0) {
+            console.log(x);
+            const winner = PGN.move_evaluations[currentMove].move_no % 2 == 0;
             if (winner) {
               setEvalStyle([
                 { height: "100%" },
@@ -50,8 +52,8 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
               "",
             ]);
           }
-        } else if (evalType === "cp") {
-          if (evalValue === 0) {
+        } else if (evalType == "cp") {
+          if (evalValue == 0) {
             setEvalStyle([{ height: "50%" }, { height: "50%" }, "0.0", "0.0"]);
           }
           evalValue > 0

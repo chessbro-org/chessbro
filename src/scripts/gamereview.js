@@ -1,11 +1,10 @@
 import validatePGN from "./validation.js";
-import { Chess } from "chess.js";
 import gameLoaded from "../assets/sound/game-loaded.mp3";
 import showErrorMessage from "./errorMessage";
 import classifyMoves, { countMoveCategories } from "./classifymoves.js";
-import { getGames } from "./index";
 import getEngineAnalysis from "./engine.js";
-
+import { Chess } from "chess.js";
+import getGames from "./getgames.js";
 
 const review_game = async (
   input,
@@ -38,7 +37,7 @@ const review_game = async (
 };
 
 export const analyse = async (input, setPGN) => {
-  let depth = 14;
+  let depth = 22;
   try {
     const FENs = getFENs(input);
     let analysis = await getEngineAnalysis(FENs, depth);

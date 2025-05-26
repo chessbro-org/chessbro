@@ -19,6 +19,8 @@
 }
 #black-accuracy {
   font-weight: 600;
+  background-color: black;
+  color: #f9f9f9;
 }
 #white-accuracy {
   background-color: #f9f9f9;
