@@ -28,32 +28,28 @@ const getEngineAnalysis = async (FENs, depth) => {
   for (count = 0; count < FENs.length; count++) {
     let bestmove = false,
       evalValue;
-    console.log(`Analyzing position ${count}`);
+    // console.log(`Analyzing position ${count}`);
     if (count == FENs.length - 1) {
       worker.postMessage("position fen " + FENs[FENs.length - 1]);
       worker.postMessage("go depth " + depth.toString());
-      const thingy = waitForKeyword(
+      evalValue = await waitForKeyword(
         worker,
         "eval",
         depth,
         engineMessagesForEval,
         FENs[count]
       );
-      console.log(thingy);
-      evalValue = await thingy;
     } else {
       worker.postMessage("position fen " + FENs[count]);
       worker.postMessage("go depth " + depth.toString());
       engineMessagesForEval = [];
-      const thingy2 = waitForKeyword(
+      const reply = await waitForKeyword(
         worker,
         "bestmove and eval",
         depth,
         engineMessagesForEval,
         FENs[count]
       );
-      console.log(thingy2);
-      const reply = await thingy2;
 
       listOfBestmoves.push(reply[0]);
       evalValue = reply[1];
@@ -95,16 +91,17 @@ const getEngineAnalysis = async (FENs, depth) => {
     };
     response.push(compiled);
   }
-  const jsonStr = JSON.stringify(allMessages, null, 2); // pretty-print with indentation
-  const blob = new Blob([jsonStr], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
 
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "logs.json";
-  a.click();
+  // const jsonStr = JSON.stringify(allMessages, null, 2);
+  // const blob = new Blob([jsonStr], { type: "application/json" });
+  // const url = URL.createObjectURL(blob);
 
-  URL.revokeObjectURL(url);
+  // const a = document.createElement("a");
+  // a.href = url;
+  // a.download = "logs.json";
+  // a.click();
+
+  // URL.revokeObjectURL(url);
   return response;
 };
 
@@ -113,23 +110,18 @@ const waitForKeyword = (worker, keyword, depth, engineMessagesForEval, fen) => {
     const handler = (event) => {
       allMessages.push(event.data);
       engineMessagesForEval.push(event.data);
-
       if (!event.data.startsWith("bestmove")) return;
-
       const extractedEval = extractEval(
         event.data,
         depth,
         engineMessagesForEval,
         fen
       );
-
       if (extractedEval === "nuh uh") {
         showErrorMessage("depth not reached for some reason");
         return;
       }
-
-      worker.removeEventListener("message", handler); // 👈 FIX: remove listener
-
+      worker.removeEventListener("message", handler);
       if (keyword === "eval") {
         if (extractedEval) {
           resolve(extractedEval);
@@ -145,7 +137,6 @@ const waitForKeyword = (worker, keyword, depth, engineMessagesForEval, fen) => {
         }
       }
     };
-
     worker.addEventListener("message", handler);
   });
 };
@@ -161,11 +152,7 @@ const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
   const match = depthLine[0].match(scoreRegex);
   if (match) {
     let cpOrMateValue = Number(match[2]);
-    console.log({
-      fen,
-      type: match[1],
-      value: cpOrMateValue,
-    });
+    console.log(fen);
     if (fen.includes(" b ")) {
       cpOrMateValue = -1 * cpOrMateValue;
     }
