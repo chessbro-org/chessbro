@@ -20,7 +20,6 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
         const evalValue = PGN.move_evaluations[currentMove].eval.value;
         if (evalType == "mate") {
           if (evalValue == 0) {
-            console.log(x);
             const winner = PGN.move_evaluations[currentMove].move_no % 2 == 0;
             if (winner) {
               setEvalStyle([

@@ -3,15 +3,18 @@ import showErrorMessage from "./errorMessage";
 import getThreads from "../utils/getThreads";
 
 let engineMessagesForEval = [];
+var count = 0;
+var allMessages = [];
 const chooseEngine = () => {
-  if (window.crossOriginIsolated) {
-    return "/stockfish-17-lite.js";
-  } else {
-    return typeof WebAssembly == "object"
-      ? "/stockfish-17-lite-single.js"
-      : "/stockfish-17-asm.js";
-  }
+  // if (window.crossOriginIsolated) {
+  //   return "/stockfish-17-lite.js";
+  // } else {
+  return typeof WebAssembly == "object"
+    ? "/stockfish-17-lite-single.js"
+    : "/stockfish-17-asm.js";
+  // }
 };
+
 const getEngineAnalysis = async (FENs, depth) => {
   let threads = getThreads();
   const worker = new Worker(chooseEngine());
@@ -22,33 +25,36 @@ const getEngineAnalysis = async (FENs, depth) => {
   worker.postMessage(`setoption name Threads value ${threads}`);
   let response = [];
   let listOfBestmoves = [];
-  for (let count = 0; count < FENs.length; count++) {
-    if (count % 5 === 0 && count > 0) {
-      console.log(`Analyzing position ${count}/${FENs.length}`);
-    }
+  for (count = 0; count < FENs.length; count++) {
     let bestmove = false,
       evalValue;
+    console.log(`Analyzing position ${count}`);
     if (count == FENs.length - 1) {
-      worker.postMessage("position fen " + FENs[count - 1]);
+      worker.postMessage("position fen " + FENs[FENs.length - 1]);
       worker.postMessage("go depth " + depth.toString());
-      evalValue = await waitForKeyword(
+      const thingy = waitForKeyword(
         worker,
         "eval",
         depth,
         engineMessagesForEval,
         FENs[count]
       );
+      console.log(thingy);
+      evalValue = await thingy;
     } else {
       worker.postMessage("position fen " + FENs[count]);
       worker.postMessage("go depth " + depth.toString());
       engineMessagesForEval = [];
-      const reply = await waitForKeyword(
+      const thingy2 = waitForKeyword(
         worker,
         "bestmove and eval",
         depth,
         engineMessagesForEval,
         FENs[count]
       );
+      console.log(thingy2);
+      const reply = await thingy2;
+
       listOfBestmoves.push(reply[0]);
       evalValue = reply[1];
       engineMessagesForEval = [];
@@ -87,54 +93,60 @@ const getEngineAnalysis = async (FENs, depth) => {
       best_move: bestmove,
       eval: evalValue,
     };
-    console.log(compiled);
     response.push(compiled);
   }
+  const jsonStr = JSON.stringify(allMessages, null, 2); // pretty-print with indentation
+  const blob = new Blob([jsonStr], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "logs.json";
+  a.click();
+
+  URL.revokeObjectURL(url);
   return response;
 };
 
-export default getEngineAnalysis;
-
 const waitForKeyword = (worker, keyword, depth, engineMessagesForEval, fen) => {
   return new Promise((resolve) => {
-    worker.addEventListener("message", (event) => {
+    const handler = (event) => {
+      allMessages.push(event.data);
+      engineMessagesForEval.push(event.data);
+
+      if (!event.data.startsWith("bestmove")) return;
+
+      const extractedEval = extractEval(
+        event.data,
+        depth,
+        engineMessagesForEval,
+        fen
+      );
+
+      if (extractedEval === "nuh uh") {
+        showErrorMessage("depth not reached for some reason");
+        return;
+      }
+
+      worker.removeEventListener("message", handler); // 👈 FIX: remove listener
+
       if (keyword === "eval") {
-        engineMessagesForEval.push(event.data);
-        if (event.data.startsWith("bestmove")) {
-          const extractedEval = extractEval(
-            event.data,
-            depth,
-            engineMessagesForEval,
-            fen
-          );
-          if (extractedEval === "nuh uh") {
-            showErrorMessage("depth not reached for some reason");
-          } else if (extractedEval) {
-            resolve(extractedEval);
-          } else {
-            showErrorMessage("depth reached but not found");
-          }
+        if (extractedEval) {
+          resolve(extractedEval);
+        } else {
+          showErrorMessage("depth reached but not found");
         }
       } else {
-        engineMessagesForEval.push(event.data);
-        if (event.data.startsWith("bestmove")) {
-          const foundBestmove = event.data.split(" ")[1];
-          const extractedEval = extractEval(
-            event.data,
-            depth,
-            engineMessagesForEval,
-            fen
-          );
-          if (extractedEval === "nuh uh") {
-            showErrorMessage("depth not reached for some reason");
-          } else if (extractedEval) {
-            resolve([foundBestmove, extractedEval]);
-          } else {
-            showErrorMessage("depth reached but not found");
-          }
+        const foundBestmove = event.data.split(" ")[1];
+        if (extractedEval) {
+          resolve([foundBestmove, extractedEval]);
+        } else {
+          showErrorMessage("depth reached but not found");
         }
       }
-    });
+    };
+
+    worker.addEventListener("message", handler);
   });
 };
 
@@ -149,6 +161,11 @@ const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
   const match = depthLine[0].match(scoreRegex);
   if (match) {
     let cpOrMateValue = Number(match[2]);
+    console.log({
+      fen,
+      type: match[1],
+      value: cpOrMateValue,
+    });
     if (fen.includes(" b ")) {
       cpOrMateValue = -1 * cpOrMateValue;
     }
@@ -158,5 +175,7 @@ const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
     };
   }
 
-  return null; // depth found but no score
+  return null;
 };
+
+export default getEngineAnalysis;
