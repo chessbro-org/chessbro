@@ -72,12 +72,12 @@ const getEngineAnalysis = async (FENs, depth) => {
       bestmove = false;
     }
 
-    // change eval if it is checkmate
+    // change eval if it is draw
     const checker = new Chess(FENs[count]);
-    const checkmate = checker.isCheckmate();
-    if (checkmate) {
+    const draw = checker.isDraw();
+    if (draw) {
       evalValue = {
-        type: "mate",
+        type: "draw",
         value: "0",
       };
     }
@@ -146,11 +146,18 @@ const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
   const depthRegex = new RegExp(`^.*info depth ${depth}\\b.*$`, "gm");
   const depthLine = engineMessage.match(depthRegex);
   if (!depthLine) {
-    if (engineMessage.trim() === "info depth 0 score mate 0")
+    if (engineMessage.trim() === "info depth 0 score mate 0") {
       return {
         type: "mate",
         value: 0,
       };
+    } else if (engineMessage.trim() === "info depth 0 score cp 0") {
+      return {
+        type: "cp",
+        value: 0,
+      };
+    }
+    console.log(engineMessage);
     return "nuh uh";
   }
   const scoreRegex = /score (cp|mate) (-?\d+)/;

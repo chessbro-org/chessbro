@@ -2,7 +2,7 @@
 .eval-bar {
   background-color: white;
   height: calc((100vh) - (80.33px));
-  width: 33px;
+  width: 50px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   font-family: "Lato", sans-serif;

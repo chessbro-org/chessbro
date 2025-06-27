@@ -68,6 +68,8 @@ const EvalBar = ({ PGN, currentMove, flipped }) => {
                 `${Math.round(Math.abs(evalValue * 10)) / 10}`,
                 "",
               ]);
+        } else if (evalType == "draw") {
+          setEvalStyle([{ height: "50%" }, { height: "50%" }, "0-0", "0-0"]);
         }
       }
     }
