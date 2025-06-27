@@ -92,16 +92,16 @@ const getEngineAnalysis = async (FENs, depth) => {
     response.push(compiled);
   }
 
-  // const jsonStr = JSON.stringify(allMessages, null, 2);
-  // const blob = new Blob([jsonStr], { type: "application/json" });
-  // const url = URL.createObjectURL(blob);
+  const jsonStr = JSON.stringify(allMessages, null, 2);
+  const blob = new Blob([jsonStr], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
 
-  // const a = document.createElement("a");
-  // a.href = url;
-  // a.download = "logs.json";
-  // a.click();
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "logs.json";
+  a.click();
 
-  // URL.revokeObjectURL(url);
+  URL.revokeObjectURL(url);
   return response;
 };
 
@@ -146,13 +146,17 @@ const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
   const depthRegex = new RegExp(`^.*info depth ${depth}\\b.*$`, "gm");
   const depthLine = engineMessage.match(depthRegex);
   if (!depthLine) {
+    if (engineMessage.trim() === "info depth 0 score mate 0")
+      return {
+        type: "mate",
+        value: 0,
+      };
     return "nuh uh";
   }
   const scoreRegex = /score (cp|mate) (-?\d+)/;
   const match = depthLine[0].match(scoreRegex);
   if (match) {
     let cpOrMateValue = Number(match[2]);
-    console.log(fen);
     if (fen.includes(" b ")) {
       cpOrMateValue = -1 * cpOrMateValue;
     }
