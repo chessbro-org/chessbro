@@ -1,39 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap");
 .navbar {
   display: flex;
   align-items: center;
-  justify-content:left;
-  padding: 0 5px;
-  border-bottom: 2px solid #e6e6e6;
+  padding: 0 0.25rem;
+  background-color: #d4e8f3;
   width: 100%;
 }
 
-#navbar_heading {
-  margin-top: 7px;
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0 0.75rem;
+  }
+}
+
+.navbar-branding {
   display: flex;
   align-items: center;
-  font-size: 44px;
-  font-family: "Winky Rough", system-ui;
-  color: #e3eef4;
+  justify-content: center;
   cursor: pointer;
+}
+.navbar-heading {
+  font-family: "Faculty Glyphic", system-ui;
+  font-size: 2.1rem;
+  margin: 7px;
+  color: var(--secondary_color);
 }
 
 #logo {
-  height: 45px;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 5px;
+  height: 3rem;
+  margin: 7px;
 }
-.navbar_links {
-  display: flex;
-  align-items: center;
-}
-.navbar_links > a {
-  display: flex;
-  align-items: center;
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--body_color);
-  text-decoration: none;
-  padding: 0 15px;
+
+@media (max-width: 600px) {
+  .navbar-heading {
+    font-size: 1.75rem;
+  }
+
+  #logo {
+    height: 2.5rem;
+  }
 }

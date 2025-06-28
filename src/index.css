@@ -1,17 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
-  --background_color: #072434;
-  --color: white;
-  --theme_1: #101820;
-  --theme_2: #fee715;
+  --primary_color: #072434;
+  --secondary_color: #064162;
+  --background_color: #e3eef4;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
 }
-
 ::-webkit-scrollbar {
   border-radius: 11px;
   width: 3px;
@@ -26,21 +22,9 @@
   background-color: #d5e9c3;
   border-radius: 10px;
 }
-
 html {
   scroll-behavior: smooth;
 }
 body {
-  transform: scale(0.9);
-  transform-origin: top left;
   background-color: var(--background_color);
-  color: #e3eef4;
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  height: 100%;
-  width: 100%;
-  overflow: auto;
-}
-body.loading {
-  overflow: hidden;
 }

@@ -4,10 +4,10 @@ import Logo from "../../assets/branding/logo.png";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h1 id="navbar_heading">
+      <div className="navbar-branding">
         <img src={Logo} id="logo" />
-        ChessBro
-      </h1>
+        <h1 className="navbar-heading">ChessBro</h1>
+      </div>
     </nav>
   );
 };
