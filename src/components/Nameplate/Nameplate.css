@@ -1,33 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Menbere:wght@100..700&display=swap");
 .nameplate {
-  background-color: #072434;
-  font-size: 22px;
-  width: calc((99.5vh) - (80.33px));
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: var(--primary_color);
 }
-#white-nameplate {
-  padding: 4px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
-  border-bottom: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-}
-#black-nameplate {
-  padding: 4px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  border-top: 1px solid white;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
+#player-name {
+  font-family: "Matangi";
+  font-size: 1rem;
+  padding: 10px 40px;
+  background-color: var(--background_color);
+  color: var(--primary_color);
+  border-radius: 25px;
+  font-weight: 800;
 }
 #player-rating {
   margin-left: 2px;
-  background-color: grey;
-  padding: 0 10px;
   border-radius: 8px;
   text-align: right;
-  width: fit-content;
+  padding: 5px 30px;
+  font-family: "Menbere";
+  font-size: 1.5rem;
+  background-color: var(--background_color);
+  color: var(--primary_color);
+  border-radius: 25px;
 }
 
 #rating-holder {

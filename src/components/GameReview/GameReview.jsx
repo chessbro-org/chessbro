@@ -48,20 +48,16 @@ const GameReview = ({ setIsLoading }) => {
   const [flipped, setFlipped] = useState(false);
   return (
     <div className="game-review">
-      <div className="chessboard-container">
-        <div className="eval-bar-container">
+      <div className="">
+        <Nameplate
+          player_info={{
+            name: PGN.info.black_player,
+            rating: PGN.info.black_rating,
+            color: "black",
+          }}
+        />
+        <div className="chessboard-container">
           <EvalBar PGN={PGN} currentMove={currentMove} flipped={flipped} />
-        </div>
-        <div className="chessboard-container-90">
-          <div className="nameplate-container">
-            <Nameplate
-              player_info={{
-                name: PGN.info.black_player,
-                rating: PGN.info.black_rating,
-                color: "black",
-              }}
-            />
-          </div>
           <div className="chessboard-component-container">
             <ChessboardComponent
               PGN={PGN}
@@ -69,18 +65,15 @@ const GameReview = ({ setIsLoading }) => {
               flipped={flipped}
             />
           </div>
-          <div className="nameplate-container">
-            <Nameplate
-              player_info={{
-                name: PGN.info.white_player,
-                rating: PGN.info.white_rating,
-                color: "white",
-              }}
-            />
-          </div>
         </div>
+        <Nameplate
+          player_info={{
+            name: PGN.info.white_player,
+            rating: PGN.info.white_rating,
+            color: "white",
+          }}
+        />
       </div>
-
       <div className="review-panel-container">
         <ReviewPanel setPGN={setPGN} setIsLoading={setIsLoading} />
         <div className="reporter-opener-container">
@@ -94,7 +87,7 @@ const GameReview = ({ setIsLoading }) => {
           <div className="opening-container">
             <Openings PGN={PGN} currentMove={currentMove} />
           </div>
-        </div>
+        </div> 
 
         <div className="controls-container">
           <Controls

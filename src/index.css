@@ -1,7 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Matangi:wght@300..900&display=swap");
 :root {
+  --background_color: #e3eef4;
   --primary_color: #072434;
   --secondary_color: #064162;
-  --background_color: #e3eef4;
 }
 * {
   margin: 0;

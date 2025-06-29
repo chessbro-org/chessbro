@@ -1,35 +1,16 @@
 .game-review {
-  display: grid;
-  padding: 20px;
-  margin: 20px;
-  grid-template-columns: 60% 40%;
+  display: flex;
+  align-items: center;
 }
 .chessboard-container {
-  display: grid;
-  margin-right: 100px;
-  align-items: center;
-  justify-content: left;
-  border-radius: 20px;
-  justify-self: end;
-  width: calc((110vh) - (80.33px));
-  height: calc((113vh) - (80.33px));
-  padding: 5px;
-  padding: 10px;
-  border: 2px solid white;
-  grid-template-columns: 7% 93%;
+  display: flex;
+  margin: 10px;
 }
 
 .review-panel-container {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid white;
-  margin-left: 30px;
   width: 400px;
-  border-radius: 20px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+  height: 100%;
+  margin: 10px;
 }
 
 .controls-container {
