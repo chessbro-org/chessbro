@@ -4,7 +4,7 @@
   padding: 2px;
   margin: 16px;
   cursor: pointer;
-  color: #e3eef4;
+  color: var(--background_color);
   background-color: transparent;
   transition: all 0.3s ease-in-out;
 }

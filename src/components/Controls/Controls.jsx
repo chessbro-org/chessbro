@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   faForward,
   faBackward,
@@ -16,10 +16,38 @@ import {
   previous,
   reverse,
   save,
-} from "../../scripts/gamecontrols";
+} from "../../scripts/controls/controls";
 import "./Controls.css";
 
 const Controls = ({ setCurrentMove, PGN, setFlipped }) => {
+  const controlMacros = (e) => {
+    if (e.key === "ArrowLeft" && !(e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      previous(setCurrentMove, PGN);
+    } else if (e.key === "ArrowRight" && !(e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      next(setCurrentMove, PGN);
+    } else if ((e.key === "s" || e.key === "S") && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      save(PGN);
+    } else if (e.key === "ArrowLeft" && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      firstMove(setCurrentMove);
+    } else if (e.key === "ArrowRight" && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      lastMove(setCurrentMove, PGN);
+    } else if ((e.key === "f" || e.key === "F") && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      reverse(setFlipped);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("keydown", controlMacros);
+    return () => {
+      document.removeEventListener("keydown", controlMacros);
+    };
+  }, []);
+
   return (
     <div className="controls">
       <IndividualControl

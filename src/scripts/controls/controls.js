@@ -1,9 +1,9 @@
-import moveSound from "../assets/sound/move_sounds/move.mp3";
-import checkmateSound from "../assets/sound/move_sounds/checkmate.mp3";
-import captureSound from "../assets/sound/move_sounds/capture.mp3";
-import checkSound from "../assets/sound/move_sounds/check.mp3";
-import castleSound from "../assets/sound/move_sounds/castle.mp3";
-import promoteSound from "../assets/sound/move_sounds/promote.mp3";
+import moveSound from "../../assets/sound/move_sounds/move.mp3";
+import checkmateSound from "../../assets/sound/move_sounds/checkmate.mp3";
+import captureSound from "../../assets/sound/move_sounds/capture.mp3";
+import checkSound from "../../assets/sound/move_sounds/check.mp3";
+import castleSound from "../../assets/sound/move_sounds/castle.mp3";
+import promoteSound from "../../assets/sound/move_sounds/promote.mp3";
 
 const move_played = new Audio(moveSound);
 const checkmate = new Audio(checkmateSound);

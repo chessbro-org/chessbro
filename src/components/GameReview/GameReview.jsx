@@ -5,12 +5,12 @@ import ReviewPanel from "../ReviewPanel/ReviewPanel";
 import Controls from "../Controls/Controls";
 
 import "./GameReview.css";
-import ReportCard from "./../ReportCard/ReportCard";
 import MoveInfo from "./../ReportCard/MoveInfo";
 import EvalBar from "../EvalBar/EvalBar";
 import Openings from "../Openings/Openings";
 import Accuracy from "../Accuracy/Accuracy";
 import Nameplate from "../Nameplate/Nameplate";
+import ReviewCard from '../ReviewPanelVersion2/ReviewCard';
 
 const GameReview = ({ setIsLoading }) => {
   const defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -46,14 +46,15 @@ const GameReview = ({ setIsLoading }) => {
   const [currentMove, setCurrentMove] = useState(0);
   const move_numbers = PGN.number_of_move_types;
   const [flipped, setFlipped] = useState(false);
+  const [isUnderReview, setIsUnderReview] = useState(false);
   return (
     <div className="game-review">
-      <div className="">
+      <div>
         <Nameplate
           player_info={{
-            name: PGN.info.black_player,
-            rating: PGN.info.black_rating,
-            color: "black",
+            name: !flipped ? PGN.info.black_player : PGN.info.white_player,
+            rating: !flipped ? PGN.info.black_rating : PGN.info.white_rating,
+            color: !flipped ? "black" : "white",
           }}
         />
         <div className="chessboard-container">
@@ -68,34 +69,33 @@ const GameReview = ({ setIsLoading }) => {
         </div>
         <Nameplate
           player_info={{
-            name: PGN.info.white_player,
-            rating: PGN.info.white_rating,
-            color: "white",
+            name: !flipped ? PGN.info.white_player : PGN.info.black_player,
+            rating: !flipped ? PGN.info.white_rating : PGN.info.black_rating,
+            color: !flipped ? "white" : "black",
           }}
         />
       </div>
       <div className="review-panel-container">
-        <ReviewPanel setPGN={setPGN} setIsLoading={setIsLoading} />
-        <div className="reporter-opener-container">
-          <div className="accuracy-container">
-            <Accuracy PGN={PGN} />
-          </div>
-          <div className="report-card-container">
-            <MoveInfo PGN={PGN} currentMove={currentMove} />
-            <ReportCard move_numbers={move_numbers} />
-          </div>
-          <div className="opening-container">
-            <Openings PGN={PGN} currentMove={currentMove} />
-          </div>
-        </div> 
-
-        <div className="controls-container">
-          <Controls
-            setCurrentMove={setCurrentMove}
-            PGN={PGN}
-            setFlipped={setFlipped}
+        {!isUnderReview && (
+          <ReviewPanel
+            setPGN={setPGN}
+            setIsLoading={setIsLoading}
+            setIsUnderReview={setIsUnderReview}
           />
-        </div>
+        )}
+        {isUnderReview && (
+          <>
+            <Accuracy PGN={PGN} />
+            <MoveInfo PGN={PGN} currentMove={currentMove} />
+            <ReviewCard move_numbers={move_numbers} />
+            <Openings PGN={PGN} currentMove={currentMove} />
+            <Controls
+              setCurrentMove={setCurrentMove}
+              PGN={PGN}
+              setFlipped={setFlipped}
+            />
+          </>
+        )}
       </div>
     </div>
   );

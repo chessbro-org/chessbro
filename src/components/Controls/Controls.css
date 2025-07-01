@@ -1,8 +1,7 @@
 .controls {
   display: flex;
-  position: relative;
-  top: 0px;
-  width: 380px;
-  border-radius: 10px;
-  background-color: #072434;
+  padding: 5px;
+  width: fit-content;
+  background-color: var(--primary_color);
+  border-radius: 25px;
 }

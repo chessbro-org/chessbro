@@ -14,13 +14,14 @@ const review_game = async (
   year,
   setGames,
   setIsOpen,
-  setUsername
+  setUsername,
+  setIsUnderReview
 ) => {
   switch (type) {
     case "pgn": {
       const valid = validatePGN(input);
       if (valid) {
-        await analyse(input, setPGN);
+        await analyse(input, setPGN, setIsUnderReview);
       } else {
         showErrorMessage("Invalid PGN");
       }
@@ -36,7 +37,7 @@ const review_game = async (
   }
 };
 
-export const analyse = async (input, setPGN) => {
+export const analyse = async (input, setPGN, setIsUnderReview) => {
   let depth = 5;
   try {
     const FENs = getFENs(input);
@@ -52,6 +53,7 @@ export const analyse = async (input, setPGN) => {
     analysis = countMoveCategories(analysis, input);
 
     setPGN(analysis);
+    setIsUnderReview(true);
     const sound = new Audio(gameLoaded);
     sound.play();
   } catch (e) {

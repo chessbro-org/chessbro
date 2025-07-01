@@ -3,7 +3,7 @@ import "./ReviewPanel.css";
 
 import GameList from "../GameList/GameList";
 import review_game from "../../scripts/gamereview";
-const ReviewPanel = ({ setPGN, setIsLoading }) => {
+const ReviewPanel = ({ setPGN, setIsLoading, setIsUnderReview }) => {
   const [currentType, setCurrentType] = useState("pgn");
   const [username, setUsername] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +35,8 @@ const ReviewPanel = ({ setPGN, setIsLoading }) => {
       date[0],
       setGames,
       setIsOpen,
-      setUsername
+      setUsername,
+      setIsUnderReview
     );
     setIsLoading(false);
     input.value = "";
@@ -44,9 +45,6 @@ const ReviewPanel = ({ setPGN, setIsLoading }) => {
   return (
     <>
       <div id="review-panel">
-        <div id="review-panel-header">
-          <h2>Game Review</h2>
-        </div>
         <div id="game-input-container">
           <form id="game-input-form" onSubmit={handleSubmit}>
             <div id="game-input-box">
@@ -75,7 +73,7 @@ const ReviewPanel = ({ setPGN, setIsLoading }) => {
             </div>
             <div id="game-input-button-container">
               <button type="submit" id="game-input-button">
-                <p id="img">🔍</p>| Analyse
+                <p id="img">🔍</p> Analyse
               </button>
             </div>
           </form>

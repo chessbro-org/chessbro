@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono:wght@400;700&display=swap");
+
 .move_quality_img {
   height: 21px;
   margin: 1px 10px;
@@ -5,7 +7,7 @@
 .move_quality_item {
   display: flex;
   align-items: center;
-  width: 300px;
+  justify-content: space-between;
 }
 .right_value {
   margin-left: 40px;
@@ -14,14 +16,12 @@
   margin-right: 45px;
 }
 .quality_value {
-  background-color: darkslategrey;
-  width: 25px;
   height: min-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1px 5px;
-  border-radius: 5px;
+  font-family: "Oxygen Mono";
+  font-size: 1.5rem;
 }
 #move-info-name {
   width: 100px;
@@ -30,10 +30,10 @@
   justify-content: left;
   align-items: center;
 }
-.quality_text {
+.numbers-shi {
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: center;
-  width: 180px;
+  flex-direction: row;
   margin: 0 10px;
 }

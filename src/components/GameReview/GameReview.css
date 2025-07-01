@@ -1,53 +1,24 @@
 .game-review {
   display: flex;
-  align-items: center;
+  align-items: start;
+  justify-content: space-around;
+  gap: 10px;
 }
+
+@media (max-width: 768px) {
+  .game-review {
+    flex-direction: column;
+  }
+}
+
 .chessboard-container {
   display: flex;
   margin: 10px;
 }
 
 .review-panel-container {
-  width: 400px;
-  height: 100%;
-  margin: 10px;
-}
-
-.controls-container {
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  align-items: center;
   display: flex;
-  height: max-content;
-}
-
-.report-card-container {
-  height: max-content;
-  justify-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-.eval-bar-container {
-  display: flex;
-  justify-content: center;
+  margin-top: 50px;
   align-items: center;
-  margin-top: 5.2vh;
-  align-self: flex-start;
-  width: max-content;
-  height: max-content;
-}
-
-.opening-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: max-content;
-}
-
-.reporter-opener-container {
-  overflow: hidden auto;
-  margin-top: 1vh;
-  height: 50vh;
+  flex-direction: column;
 }

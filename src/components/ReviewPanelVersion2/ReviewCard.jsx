@@ -10,8 +10,8 @@ import InaccuracyImg from "../../assets/img/quality_imgs/inaccuracy.png";
 import MistakeImg from "../../assets/img/quality_imgs/mistake.png";
 import BlunderImg from "../../assets/img/quality_imgs/blunder.png";
 
-import "./ReportCard.css";
-const ReportCard = ({ move_numbers }) => {
+import "./ReviewCard.css";
+const ReviewCard = ({ move_numbers }) => {
   return (
     <div className="report-card">
       <ul className="move_quality_list">
@@ -62,4 +62,4 @@ const ReportCard = ({ move_numbers }) => {
   );
 };
 
-export default ReportCard;
+export default ReviewCard;

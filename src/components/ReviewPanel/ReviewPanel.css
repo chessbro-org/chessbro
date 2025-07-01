@@ -1,5 +1,4 @@
 #review-panel {
-  filter: none;
   width: 100%;
   height: 250px;
 }
@@ -9,10 +8,10 @@
 #game-input {
   display: flex;
   justify-content: center;
-  background-color: black;
-  color: #e3eef4;
+  background-color: var(--background_color);
+  color: var(--primary_color);
   font-size: 16px;
-  border: 1px solid #f9f9f9;
+  border: 2px solid var(--primary_color);
   margin-right: 10px;
   border-radius: 5px;
   padding: 10px;
@@ -22,7 +21,7 @@
   resize: none;
 }
 #game-input::placeholder {
-  color: #f9f9f9a8;
+  color: rgb(134, 152, 152);
 }
 #game-input-button {
   font-size: 22px;
@@ -30,8 +29,8 @@
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #072434;
-  color: #e3eef4;
+  background-color: var(--foreground_color);
+  color: var(--primary_color);
   margin-top: 30px;
   justify-content: center;
   transition: all 0.3s ease-in-out;
@@ -40,17 +39,17 @@
   margin-right: 3px;
 }
 #game-input-type {
-  background-color: black;
-  color: #e3eef4;
+  background-color: var(--background_color);
+  color: var(--primary_color);
   font-size: 16px;
-  border: 1px solid #f1f1f1;
+  border: 2px solid var(--primary_color);
   margin-right: 10px;
   border-radius: 5px;
   padding: 3px;
 }
 #game-input-box {
   margin-top: 20px;
-  background-color: #072434;
+  background-color: var(--foreground_color);
   color: black;
   display: flex;
   justify-content: space-around;

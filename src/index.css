@@ -1,26 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Matangi:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 :root {
   --background_color: #e3eef4;
   --primary_color: #072434;
   --secondary_color: #064162;
+  --foreground_color: #6ab9e8;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", "system-ui", "sans serif";
 }
 ::-webkit-scrollbar {
   border-radius: 11px;
-  width: 3px;
-  height: 3px;
+  width: 2px;
+  height: 2px;
 }
 ::-webkit-scrollbar-track {
   border-radius: 11px;
-  background: #101820;
-  width: 3px;
+  background: #064162;
+  width: 2px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #d5e9c3;
+  background-color: #0ea7ff;
   border-radius: 10px;
 }
 html {

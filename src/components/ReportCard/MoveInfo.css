@@ -3,12 +3,12 @@
   grid-template-columns: 85% 15%;
   justify-content: center;
   align-items: center;
-  background-color: #072434;
+  background-color: var(--primary_color);
   border-radius: 10px;
   padding: 5px 0;
   font-size: 22px;
   width: 315px;
-  color: rgb(199, 255, 230);
+  color: var(--background_color);
   margin: 10px 0;
   text-align: center;
 }

@@ -14,7 +14,7 @@ const MoveInfo = ({ PGN, currentMove }) => {
   let move = PGN.move_evaluations[currentMove].move;
   let text = "";
   if (!move) {
-    text = "Review your game!";
+    return null;
   } else {
     const move_type = PGN.move_evaluations[currentMove].move_type;
     let move_type_text = "";
