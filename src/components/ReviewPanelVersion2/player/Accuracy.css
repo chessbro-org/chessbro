@@ -1,0 +1,30 @@
+.accuracy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: var(--secondary_color);
+}
+.accuracy-heading {
+  font-size: 24px;
+}
+.accuracy-value {
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 25px;
+  padding: 5px;
+  width: 70px;
+  text-align: center;
+  font-family: "Oxygen Mono";
+}
+.white-value {
+  background-color: #f9f9f9;
+  color: var(--primary_color);
+}
+.black-value {
+  background-color: black;
+  color: var(--background_color);
+}

@@ -1,7 +1,6 @@
 import React from "react";
 
 import MoveQuality from "./MoveQuality";
-
 import BookMoveImg from "../../assets/img/quality_imgs/book.png";
 import BestMoveImg from "../../assets/img/quality_imgs/best_move.png";
 import ExcellentImg from "../../assets/img/quality_imgs/excellent.png";
@@ -9,11 +8,18 @@ import GoodImg from "../../assets/img/quality_imgs/good.png";
 import InaccuracyImg from "../../assets/img/quality_imgs/inaccuracy.png";
 import MistakeImg from "../../assets/img/quality_imgs/mistake.png";
 import BlunderImg from "../../assets/img/quality_imgs/blunder.png";
-
+import clearImg from "../../assets/img/transparent.png";
 import "./ReviewCard.css";
-const ReviewCard = ({ move_numbers }) => {
+import Accuracy from "./player/Accuracy";
+const ReviewCard = ({ move_numbers, PGN }) => {
+  const white = PGN.accuracy ? PGN.accuracy.white : 100;
+  const black = PGN.accuracy ? PGN.accuracy.black : 100;
+  const format = (num) => {
+    return num % 1 === 0 ? num : parseFloat(num.toFixed(1));
+  };
   return (
     <div className="report-card">
+      <Accuracy white={white} black={black} />
       <ul className="move_quality_list">
         <MoveQuality
           numberW={move_numbers.w.book_move}

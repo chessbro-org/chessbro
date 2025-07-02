@@ -8,6 +8,8 @@
 @media (max-width: 768px) {
   .game-review {
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 

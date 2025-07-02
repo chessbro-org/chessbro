@@ -10,13 +10,14 @@
   justify-content: space-between;
 }
 .right_value {
-  margin-left: 40px;
+  margin-left: 45px;
 }
 .left_value {
   margin-right: 45px;
 }
 .quality_value {
   height: min-content;
+  min-width: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,11 +25,12 @@
   font-size: 1.5rem;
 }
 #move-info-name {
-  width: 100px;
+  width: 200px;
   text-align: left;
   display: flex;
   justify-content: left;
   align-items: center;
+  font-size: 20px;
 }
 .numbers-shi {
   display: flex;

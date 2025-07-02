@@ -1,17 +1,17 @@
 .report-card {
-  height: max-content;
-  overflow: hidden;
-  padding: 7px;
   border-radius: 10px;
   margin-bottom: 10px;
   display: flex;
-  justify-content: left;
-  align-items: top;
   color: var(--background_color);
-  background-color: #072434;
+  background-color: var(--primary_color);
+  align-items: center;
+  flex-direction: column;
 }
 .move_quality_list {
-  align-self: flex-start;
-  justify-content: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   list-style: none;
+  margin: 20px;
 }

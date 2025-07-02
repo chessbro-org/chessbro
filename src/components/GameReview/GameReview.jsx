@@ -8,9 +8,8 @@ import "./GameReview.css";
 import MoveInfo from "./../ReportCard/MoveInfo";
 import EvalBar from "../EvalBar/EvalBar";
 import Openings from "../Openings/Openings";
-import Accuracy from "../Accuracy/Accuracy";
 import Nameplate from "../Nameplate/Nameplate";
-import ReviewCard from '../ReviewPanelVersion2/ReviewCard';
+import ReviewCard from "../ReviewPanelVersion2/ReviewCard";
 
 const GameReview = ({ setIsLoading }) => {
   const defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -85,9 +84,8 @@ const GameReview = ({ setIsLoading }) => {
         )}
         {isUnderReview && (
           <>
-            <Accuracy PGN={PGN} />
             <MoveInfo PGN={PGN} currentMove={currentMove} />
-            <ReviewCard move_numbers={move_numbers} />
+            <ReviewCard move_numbers={move_numbers} PGN={PGN} />
             <Openings PGN={PGN} currentMove={currentMove} />
             <Controls
               setCurrentMove={setCurrentMove}
