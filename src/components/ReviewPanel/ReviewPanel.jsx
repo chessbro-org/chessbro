@@ -90,6 +90,7 @@ const ReviewPanel = ({ setPGN, setIsLoading, setIsUnderReview }) => {
           username={username}
           setIsOpen={setIsOpen}
           setUsername={setUsername}
+          setIsUnderReview={setIsUnderReview}
         />
       )}
     </>

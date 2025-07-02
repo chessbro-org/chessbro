@@ -11,14 +11,14 @@ import BlunderImg from "../../assets/img/quality_imgs/blunder.png";
 import clearImg from "../../assets/img/transparent.png";
 import "./ReviewCard.css";
 import Accuracy from "./player/Accuracy";
+import PlayerCard from "./player/PlayerCard";
 const ReviewCard = ({ move_numbers, PGN }) => {
   const white = PGN.accuracy ? PGN.accuracy.white : 100;
   const black = PGN.accuracy ? PGN.accuracy.black : 100;
-  const format = (num) => {
-    return num % 1 === 0 ? num : parseFloat(num.toFixed(1));
-  };
+
   return (
     <div className="report-card">
+      <PlayerCard info={PGN?.info} />
       <Accuracy white={white} black={black} />
       <ul className="move_quality_list">
         <MoveQuality

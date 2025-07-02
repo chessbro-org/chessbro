@@ -39,3 +39,25 @@
   flex-direction: row;
   margin: 0 10px;
 }
+
+.book-move {
+  color: #d5a47d;
+}
+.best {
+  color: #81b64c;
+}
+.mistake {
+  color: #ffa459;
+}
+.inaccuracy {
+  color: #f7c631;
+}
+.blunder {
+  color: #fa412d;
+}
+.good {
+  color: #95b776;
+}
+.excellent {
+  color: #81b64c;
+}

@@ -1,0 +1,28 @@
+.player-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+.player-pfp {
+  width: 80px;
+  border-radius: 10px;
+  margin: 10px;
+  border: 2px solid white;
+}
+.player-username {
+  font-size: 20px;
+  margin: 10px;
+  margin-bottom: 0;
+}
+.player-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.player-rating {
+  text-align: center;
+  font-family: "Oxygen Mono";
+  margin: 10px;
+}
