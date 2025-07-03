@@ -92,16 +92,16 @@ const getEngineAnalysis = async (FENs, depth) => {
     response.push(compiled);
   }
 
-  const jsonStr = JSON.stringify(allMessages, null, 2);
-  const blob = new Blob([jsonStr], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
+  // const jsonStr = JSON.stringify(allMessages, null, 2);
+  // const blob = new Blob([jsonStr], { type: "application/json" });
+  // const url = URL.createObjectURL(blob);
 
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = "logs.json";
-  a.click();
+  // const a = document.createElement("a");
+  // a.href = url;
+  // a.download = "logs.json";
+  // a.click();
 
-  URL.revokeObjectURL(url);
+  // URL.revokeObjectURL(url);
   return response;
 };
 

@@ -6,13 +6,13 @@ const PlayerCard = ({ info }) => {
     <div className="player-card">
       <div className="player-info white-info">
         <p className="player-username">{white_player}</p>
-        <img src="https://picsum.photos/100" alt="" className="player-pfp" />
+        <img src="/dayeem.jpg" alt="" className="player-pfp" />
         <p className="player-rating">{white_rating}</p>
       </div>
       <p>VS</p>
       <div className="player-info black-info">
         <p className="player-username">{black_player}</p>
-        <img src="https://picsum.photos/100" alt="" className="player-pfp" />
+        <img src="/dayeem.jpg" alt="" className="player-pfp" />
         <p className="player-rating">{black_rating}</p>
       </div>
     </div>
