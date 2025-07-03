@@ -8,18 +8,27 @@ import GoodImg from "../../assets/img/quality_imgs/good.png";
 import InaccuracyImg from "../../assets/img/quality_imgs/inaccuracy.png";
 import MistakeImg from "../../assets/img/quality_imgs/mistake.png";
 import BlunderImg from "../../assets/img/quality_imgs/blunder.png";
-import clearImg from "../../assets/img/transparent.png";
 import "./ReviewCard.css";
 import Accuracy from "./player/Accuracy";
 import PlayerCard from "./player/PlayerCard";
-const ReviewCard = ({ move_numbers, PGN }) => {
+const ReviewCard = ({
+  move_numbers,
+  PGN,
+  setReviewStarted,
+  setCurrentMove,
+}) => {
   const white = PGN.accuracy ? PGN.accuracy.white : 100;
   const black = PGN.accuracy ? PGN.accuracy.black : 100;
-
+  const handleClick = (e) => {
+    setReviewStarted(true);
+    setCurrentMove(1);
+  };
   return (
     <div className="report-card">
-      <PlayerCard info={PGN?.info} />
-      <Accuracy white={white} black={black} />
+      <div className="stats">
+        <PlayerCard info={PGN?.info} />
+        <Accuracy white={white} black={black} />
+      </div>
       <ul className="move_quality_list">
         <MoveQuality
           numberW={move_numbers.w.book_move}
@@ -64,6 +73,9 @@ const ReviewCard = ({ move_numbers, PGN }) => {
           image={BlunderImg}
         />
       </ul>
+      <button className="start-review-btn" onClick={handleClick}>
+        Start Review
+      </button>
     </div>
   );
 };

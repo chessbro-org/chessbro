@@ -46,6 +46,7 @@ const GameReview = ({ setIsLoading }) => {
   const move_numbers = PGN.number_of_move_types;
   const [flipped, setFlipped] = useState(false);
   const [isUnderReview, setIsUnderReview] = useState(false);
+  const [reviewStarted, setReviewStarted] = useState(false);
   return (
     <div className="game-review">
       <div>
@@ -80,12 +81,22 @@ const GameReview = ({ setIsLoading }) => {
             setPGN={setPGN}
             setIsLoading={setIsLoading}
             setIsUnderReview={setIsUnderReview}
+            setReviewStarted={setReviewStarted}
           />
         )}
-        {isUnderReview && (
+        {isUnderReview && !reviewStarted && (
+          <>
+            <ReviewCard
+              move_numbers={move_numbers}
+              PGN={PGN}
+              setReviewStarted={setReviewStarted}
+              setCurrentMove={setCurrentMove}
+            />
+          </>
+        )}
+        {reviewStarted && (
           <>
             <MoveInfo PGN={PGN} currentMove={currentMove} />
-            <ReviewCard move_numbers={move_numbers} PGN={PGN} />
             <Openings PGN={PGN} currentMove={currentMove} />
             <Controls
               setCurrentMove={setCurrentMove}
