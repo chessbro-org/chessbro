@@ -2,14 +2,12 @@ import React, { useState } from "react";
 
 import ChessboardComponent from "../ChessboardComponent/ChessboardComponent";
 import ReviewPanel from "../ReviewPanel/ReviewPanel";
-import Controls from "../Controls/Controls";
-
 import "./GameReview.css";
-import MoveInfo from "./../ReportCard/MoveInfo";
 import EvalBar from "../EvalBar/EvalBar";
-import Openings from "../Openings/Openings";
 import Nameplate from "../Nameplate/Nameplate";
 import ReviewCard from "../ReviewPanelVersion2/ReviewCard";
+import ReportCard from "../ReportCard/ReportCard";
+import Controls from "../Controls/Controls";
 
 const GameReview = ({ setIsLoading }) => {
   const defaultFen = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -96,15 +94,19 @@ const GameReview = ({ setIsLoading }) => {
         )}
         {reviewStarted && (
           <>
-            <MoveInfo PGN={PGN} currentMove={currentMove} />
-            <Openings PGN={PGN} currentMove={currentMove} />
-            <Controls
-              setCurrentMove={setCurrentMove}
+            <ReportCard
               PGN={PGN}
-              setFlipped={setFlipped}
+              currentMove={currentMove}
+              setCurrentMove={setCurrentMove}
+              setReviewStarted={setReviewStarted}
             />
           </>
         )}
+        <Controls
+          setCurrentMove={setCurrentMove}
+          PGN={PGN}
+          setFlipped={setFlipped}
+        />
       </div>
     </div>
   );

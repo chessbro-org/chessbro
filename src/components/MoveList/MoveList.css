@@ -1,0 +1,26 @@
+.move-list {
+  display: flex;
+  width: 80%;
+  height: 40vh;
+  overflow: auto;
+  flex-direction: column;
+}
+.move {
+  display: flex;
+  justify-content: start;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+.notation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 60%;
+  margin: 3px 20%;
+  margin-right: 0;
+}
+.notation-text{
+  cursor: pointer;
+}
