@@ -1,11 +1,13 @@
 .report-card {
-  border-radius: 10px;
+  border-radius: 25px;
   margin-bottom: 10px;
+  width: 100%;
   display: flex;
-  color: var(--background_color);
-  background-color: var(--primary_color);
+  color: var(--primary_color);
+  background-color: var(--colors_incoming);
   align-items: center;
   flex-direction: column;
+  padding: 10px 0;
 }
 .move_quality_list {
   display: flex;
@@ -26,7 +28,7 @@
 }
 .start-review-btn {
   width: 80%;
-  background-color: var(--one-more-color);
+  background-color: var(--one_more_color);
   border: none;
   font-size: 22px;
   margin: 10px;

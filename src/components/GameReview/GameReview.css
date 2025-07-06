@@ -23,4 +23,6 @@
   margin-top: 50px;
   align-items: center;
   flex-direction: column;
+  padding: 5px;
+  max-width: 80%;
 }

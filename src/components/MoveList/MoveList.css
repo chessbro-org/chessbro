@@ -1,9 +1,10 @@
 .move-list {
   display: flex;
-  width: 80%;
-  height: 40vh;
+  width: 100%;
+  max-height: 40vh;
   overflow: auto;
   flex-direction: column;
+  color: var(--primary_color);
 }
 .move {
   display: flex;
@@ -11,6 +12,7 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
+  margin: 1px 0;
 }
 .notation {
   display: flex;
@@ -21,6 +23,15 @@
   margin: 3px 20%;
   margin-right: 0;
 }
-.notation-text{
+.notation-text {
   cursor: pointer;
+  min-width: 45px;
+  text-align: center;
+  padding: 1px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.current-move {
+  background-color: var(--one_more_color);
+  border: 1px solid var(--primary_color);
 }

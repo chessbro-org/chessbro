@@ -4,4 +4,14 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  background-color: var(--colors_incoming);
+  padding: 15px 10px;
+  border-radius: 25px;
+}
+.back-btn {
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  padding: 10px 30px;
+  cursor: pointer;
 }

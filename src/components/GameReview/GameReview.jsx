@@ -106,13 +106,13 @@ const GameReview = ({ setIsLoading }) => {
               setCurrentMove={setCurrentMove}
               setReviewStarted={setReviewStarted}
             />
+            <Controls
+              setCurrentMove={setCurrentMove}
+              PGN={PGN}
+              setFlipped={setFlipped}
+            />
           </>
         )}
-        <Controls
-          setCurrentMove={setCurrentMove}
-          PGN={PGN}
-          setFlipped={setFlipped}
-        />
       </div>
     </div>
   );

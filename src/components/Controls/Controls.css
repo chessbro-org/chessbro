@@ -5,4 +5,6 @@
   background-color: var(--primary_color);
   border-radius: 35px;
   margin-top: 20px;
+  width: 100%;
+  justify-content: center;
 }
