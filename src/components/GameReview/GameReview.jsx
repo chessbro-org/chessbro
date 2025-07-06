@@ -45,6 +45,10 @@ const GameReview = ({ setIsLoading }) => {
   const [flipped, setFlipped] = useState(false);
   const [isUnderReview, setIsUnderReview] = useState(false);
   const [reviewStarted, setReviewStarted] = useState(false);
+  const [profilePics, setProfilePics] = useState([
+    "/profile_pic.jpg",
+    "/profile_pic.jpg",
+  ]);
   return (
     <div className="game-review">
       <div>
@@ -80,6 +84,7 @@ const GameReview = ({ setIsLoading }) => {
             setIsLoading={setIsLoading}
             setIsUnderReview={setIsUnderReview}
             setReviewStarted={setReviewStarted}
+            setProfilePics={setProfilePics}
           />
         )}
         {isUnderReview && !reviewStarted && (
@@ -89,6 +94,7 @@ const GameReview = ({ setIsLoading }) => {
               PGN={PGN}
               setReviewStarted={setReviewStarted}
               setCurrentMove={setCurrentMove}
+              profilePics={profilePics}
             />
           </>
         )}

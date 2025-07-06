@@ -16,6 +16,7 @@ const ReviewCard = ({
   PGN,
   setReviewStarted,
   setCurrentMove,
+  profilePics,
 }) => {
   const white = PGN.accuracy ? PGN.accuracy.white : 100;
   const black = PGN.accuracy ? PGN.accuracy.black : 100;
@@ -26,7 +27,7 @@ const ReviewCard = ({
   return (
     <div className="report-card">
       <div className="stats">
-        <PlayerCard info={PGN?.info} />
+        <PlayerCard info={PGN?.info} profilePics={profilePics} />
         <Accuracy white={white} black={black} />
       </div>
       <ul className="move_quality_list">

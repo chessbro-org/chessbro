@@ -20,7 +20,8 @@ const GameList = ({
   username,
   setIsOpen,
   setUsername,
-  setIsUnderReview
+  setIsUnderReview,
+  setProfilePics,
 }) => {
   useEffect(() => {
     setIsLoading(true);
@@ -90,6 +91,7 @@ const GameList = ({
                 setIsOpen={setIsOpen}
                 setUsername={setUsername}
                 setIsUnderReview={setIsUnderReview}
+                setProfilePics={setProfilePics}
               />
             );
           })

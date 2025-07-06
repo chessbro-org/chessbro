@@ -3,7 +3,12 @@ import "./ReviewPanel.css";
 
 import GameList from "../GameList/GameList";
 import review_game from "../../scripts/gamereview";
-const ReviewPanel = ({ setPGN, setIsLoading, setIsUnderReview }) => {
+const ReviewPanel = ({
+  setPGN,
+  setIsLoading,
+  setIsUnderReview,
+  setProfilePics,
+}) => {
   const [currentType, setCurrentType] = useState("pgn");
   const [username, setUsername] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -91,6 +96,7 @@ const ReviewPanel = ({ setPGN, setIsLoading, setIsUnderReview }) => {
           setIsOpen={setIsOpen}
           setUsername={setUsername}
           setIsUnderReview={setIsUnderReview}
+          setProfilePics={setProfilePics}
         />
       )}
     </>

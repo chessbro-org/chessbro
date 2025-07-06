@@ -157,7 +157,6 @@ const extractEval = (engineMessage, depth, engineMessagesForEval, fen) => {
         value: 0,
       };
     }
-    console.log(engineMessage);
     return "nuh uh";
   }
   const scoreRegex = /score (cp|mate) (-?\d+)/;

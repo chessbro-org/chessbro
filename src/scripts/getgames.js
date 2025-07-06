@@ -12,17 +12,18 @@ const getGames = async (username, month, year) => {
   if (games.length === 0) {
     return false;
   }
-
   const gameInfoList = [];
   for (const game of games) {
     const gameInfo = {
       black: {
         username: game["black"]["username"],
         rating: game["black"]["rating"],
+        id: game["black"]["@id"],
       },
       white: {
         username: game["white"]["username"],
         rating: game["white"]["rating"],
+        id: game["white"]["@id"],
       },
       pgn: game["pgn"],
       username: username,
