@@ -12,6 +12,10 @@
   align-items: center;
   margin: 1px 0;
 }
+.quality-img-list {
+  height: 15px;
+  margin: 5px;
+}
 .notation {
   display: flex;
   justify-content: space-between;
@@ -21,11 +25,25 @@
   margin-left: 20px;
 }
 .notation-text {
+  display: flex;
+  justify-content: start;
+  align-items: center;
   cursor: pointer;
+  width: 100px;
   min-width: 45px;
-  text-align: center;
+  text-align: left;
   padding: 1px 10px;
   margin: 0 50px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.notation-number {
+  cursor: default;
+  min-width: 45px;
+  text-align: left;
+  margin-right: 20px;
+  padding: 1px 10px;
+  margin: 0 5px;
   border-radius: 5px;
   font-size: 16px;
 }

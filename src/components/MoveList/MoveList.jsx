@@ -26,30 +26,33 @@ const MoveList = ({ PGN, setCurrentMove, currentMove }) => {
 
         return (
           <div key={index} className="move">
-            <p
-              className="notation-text"
-              style={{ cursor: "default", textAlign: "left", margin: "1px 5px", marginRight: "20px" }}
-            >
-              {(index + 1) / 2}.
-            </p>
+            <p className="notation-number">{(index + 1) / 2}.</p>
             <div className="notation">
-              <p
+              <div
                 className={`notation-text ${
                   move.move_no === currentMove ? "current-move" : ""
                 }`}
                 onClick={() => handleClick(move)}
               >
+                <img
+                  src={`/quality_imgs/${move.move_type}.png`}
+                  className="quality-img-list"
+                />
                 {move.move}
-              </p>
+              </div>
               {nextMove && (
-                <p
+                <div
                   className={`notation-text ${
                     nextMove.move_no === currentMove ? "current-move" : ""
                   }`}
                   onClick={() => handleClick(nextMove)}
                 >
+                  <img
+                    src={`/quality_imgs/${nextMove.move_type}.png`}
+                    className="quality-img-list"
+                  />
                   {nextMove.move}
-                </p>
+                </div>
               )}
             </div>
           </div>

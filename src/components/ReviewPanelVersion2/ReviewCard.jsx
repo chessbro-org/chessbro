@@ -27,7 +27,7 @@ const ReviewCard = ({
           numberW={move_numbers.w.book_move}
           numberB={move_numbers.b.book_move}
           name="Book Move"
-          image={"/quality_imgs/book.png"}
+          image={"/quality_imgs/book_move.png"}
         />
         <MoveQuality
           numberW={move_numbers.b.best_move}
