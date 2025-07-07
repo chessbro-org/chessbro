@@ -25,11 +25,11 @@
 }
 #game-input-button {
   font-size: 22px;
-  border: 1px solid white;
   padding: 10px;
   border-radius: 10px;
+  border: none;
   cursor: pointer;
-  background-color: var(--foreground_color);
+  background-color: var(--colors_incoming);
   color: var(--primary_color);
   margin-top: 30px;
   justify-content: center;

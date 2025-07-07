@@ -34,3 +34,11 @@ html {
 body {
   background-color: var(--background_color);
 }
+.black-3c85d {
+  background-color: var(--primary_color);
+  color: var(--colors_incoming);
+}
+.white-1e1d7 {
+  background-color: var(--colors_incoming);
+  color: var(--primary_color);
+}
