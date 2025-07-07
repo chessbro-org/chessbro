@@ -36,6 +36,10 @@
   border-radius: 25px;
 }
 
+.start-review-btn:hover {
+  filter: brightness(95%);
+}
 .start-review-btn:active {
   filter: brightness(80%);
+  transform: scale(0.98);
 }

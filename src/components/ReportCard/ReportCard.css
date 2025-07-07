@@ -10,8 +10,17 @@
 }
 .back-btn {
   border: none;
-  background-color: transparent;
+  background-color: var(--colors_incoming);
   font-size: 22px;
-  padding: 10px 30px;
+  margin: 3px;
+  padding: 5px;
+  border-radius: 25px;
   cursor: pointer;
+}
+.back-btn:hover {
+  filter: brightness(95%);
+}
+.back-btn:active {
+  filter: brightness(80%);
+  transform: scale(0.95);
 }

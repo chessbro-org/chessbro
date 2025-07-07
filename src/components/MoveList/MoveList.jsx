@@ -28,7 +28,7 @@ const MoveList = ({ PGN, setCurrentMove, currentMove }) => {
           <div key={index} className="move">
             <p
               className="notation-text"
-              style={{ cursor: "default", textAlign: "left" }}
+              style={{ cursor: "default", textAlign: "left", margin: "1px 5px", marginRight: "20px" }}
             >
               {(index + 1) / 2}.
             </p>

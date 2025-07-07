@@ -1,6 +1,5 @@
 .move-list {
   display: flex;
-  width: 100%;
   max-height: 40vh;
   overflow: auto;
   flex-direction: column;
@@ -11,7 +10,6 @@
   justify-content: start;
   flex-direction: row;
   align-items: center;
-  width: 100%;
   margin: 1px 0;
 }
 .notation {
@@ -19,15 +17,15 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  width: 60%;
-  margin: 3px 20%;
   margin-right: 0;
+  margin-left: 20px;
 }
 .notation-text {
   cursor: pointer;
   min-width: 45px;
   text-align: center;
   padding: 1px 10px;
+  margin: 0 50px;
   border-radius: 5px;
   font-size: 16px;
 }
