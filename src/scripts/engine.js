@@ -14,7 +14,17 @@ const chooseEngine = () => {
     : "/stockfish-17-asm.js";
   // }
 };
-
+const waitForReady = (worker) => {
+  return new Promise((resolve) => {
+    const handler = (event) => {
+      if (event.data.trim() == "readyok") {
+        worker.removeEventListener("message", handler);
+        resolve(true);
+      }
+    };
+    worker.addEventListener("message", handler);
+  });
+};
 const getEngineAnalysis = async (FENs, depth) => {
   let threads = getThreads();
   const worker = new Worker(chooseEngine());
@@ -23,6 +33,12 @@ const getEngineAnalysis = async (FENs, depth) => {
   });
   worker.postMessage("uci");
   worker.postMessage(`setoption name Threads value ${threads}`);
+  const isReadyPromise = waitForReady(worker);
+  worker.postMessage("isready");
+  const isReady = await isReadyPromise;
+  if (!isReady) {
+    showErrorMessage("stockfish is not ready");
+  }
   let response = [];
   let listOfBestmoves = [];
   for (count = 0; count < FENs.length; count++) {
@@ -51,7 +67,7 @@ const getEngineAnalysis = async (FENs, depth) => {
         FENs[count]
       );
       listOfBestmoves.push(reply[0]);
-      evalValue = reply[1]; 
+      evalValue = reply[1];
       engineMessagesForEval = [];
     }
 
