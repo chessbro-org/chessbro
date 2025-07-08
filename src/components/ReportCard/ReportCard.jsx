@@ -4,6 +4,7 @@ import Openings from "../Openings/Openings";
 import "./ReportCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import MoveInfo from "../MoveInfo/MoveInfo";
 
 const ReportCard = ({ PGN, currentMove, setCurrentMove, setReviewStarted }) => {
   return (
@@ -20,6 +21,7 @@ const ReportCard = ({ PGN, currentMove, setCurrentMove, setReviewStarted }) => {
           <FontAwesomeIcon icon={faArrowLeft} color="#072434" />
         </button>
       </div>
+      <MoveInfo PGN={PGN} currentMove={currentMove} />
       <Openings PGN={PGN} currentMove={currentMove} />
       <MoveList
         PGN={PGN}

@@ -1,0 +1,20 @@
+.coach {
+  height: 100px;
+}
+.move-quality-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--one_more_color);
+  padding: 10px;
+  border-radius: 25px;
+}
+.move-text {
+  font-size: 22px;
+}
+.move-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
