@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import GameReview from "./components/GameReview/GameReview";
 import "./App.css";
 import Loading from "./components/Common/Loading";
+import { Analytics } from "@vercel/analytics/react";
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   if (isLoading) {
