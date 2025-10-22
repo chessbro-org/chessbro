@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 
 import ChessboardComponent from "../ChessboardComponent/ChessboardComponent";
-import ReviewPanel from "../ReviewPanel/ReviewPanel";
+import ReviewPanel from "../ReviewPanel/ReviewPanel.jsx";
 import "./GameReview.css";
 import EvalBar from "../EvalBar/EvalBar";
 import Nameplate from "../Nameplate/Nameplate";
