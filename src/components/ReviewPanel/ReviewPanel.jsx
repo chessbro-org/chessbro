@@ -3,6 +3,17 @@ import "./ReviewPanel.css";
 
 import GameList from "../GameList/GameList";
 import review_game from "../../scripts/gamereview";
+
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 const ReviewPanel = ({
   setPGN,
   setIsLoading,
@@ -47,59 +58,75 @@ const ReviewPanel = ({
     input.value = "";
     input_type.value = "pgn";
   };
+  // return (
+  //   <>
+  //     <div id="review-panel">
+  //       <div id="game-input-container">
+  //         <form id="game-input-form" onSubmit={handleSubmit}>
+  //           <div id="game-input-box">
+  //             {currentType === "pgn" ? (
+  //               <textarea
+  //                 type="text"
+  //                 id="game-input"
+  //                 placeholder={"Enter PGN"}
+  //                 required
+  //               ></textarea>
+  //             ) : (
+  //               <input
+  //                 type="text"
+  //                 id="game-input"
+  //                 placeholder={"Enter Username"}
+  //                 required
+  //               ></input>
+  //             )}
+  //             <select
+  //               onChange={(e) => setCurrentType(e.target.value)}
+  //               id="game-input-type"
+  //             >
+  //               <option value="pgn">PGN</option>
+  //               <option value="chess.com">chess.com</option>
+  //             </select>
+  //           </div>
+  //           <div id="game-input-button-container">
+  //             <button type="submit" id="game-input-button">
+  //               <p id="img">🔍</p> Analyse
+  //             </button>
+  //           </div>
+  //         </form>
+  //       </div>
+  //     </div>
+  //     {isOpen && (
+  //       <GameList
+  //         games={games}
+  //         setDate={setDate}
+  //         setPGN={setPGN}
+  //         date={date}
+  //         setGames={setGames}
+  //         setIsLoading={setIsLoading}
+  //         username={username}
+  //         setIsOpen={setIsOpen}
+  //         setUsername={setUsername}
+  //         setIsUnderReview={setIsUnderReview}
+  //         setProfilePics={setProfilePics}
+  //       />
+  //     )}
+  //   </>
+  // );
+
   return (
-    <>
-      <div id="review-panel">
-        <div id="game-input-container">
-          <form id="game-input-form" onSubmit={handleSubmit}>
-            <div id="game-input-box">
-              {currentType === "pgn" ? (
-                <textarea
-                  type="text"
-                  id="game-input"
-                  placeholder={"Enter PGN"}
-                  required
-                ></textarea>
-              ) : (
-                <input
-                  type="text"
-                  id="game-input"
-                  placeholder={"Enter Username"}
-                  required
-                ></input>
-              )}
-              <select
-                onChange={(e) => setCurrentType(e.target.value)}
-                id="game-input-type"
-              >
-                <option value="pgn">PGN</option>
-                <option value="chess.com">chess.com</option>
-              </select>
-            </div>
-            <div id="game-input-button-container">
-              <button type="submit" id="game-input-button">
-                <p id="img">🔍</p> Analyse
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-      {isOpen && (
-        <GameList
-          games={games}
-          setDate={setDate}
-          setPGN={setPGN}
-          date={date}
-          setGames={setGames}
-          setIsLoading={setIsLoading}
-          username={username}
-          setIsOpen={setIsOpen}
-          setUsername={setUsername}
-          setIsUnderReview={setIsUnderReview}
-          setProfilePics={setProfilePics}
-        />
-      )}
-    </>
+    <Card>
+      <CardHeader>
+        <CardTitle>Card Title</CardTitle>
+        <CardDescription>Card Description</CardDescription>
+        <CardAction>Card Action</CardAction>
+      </CardHeader>
+      <CardContent>
+        <p>Card Content</p>
+      </CardContent>
+      <CardFooter>
+        <p>Card Footer</p>
+      </CardFooter>
+    </Card>
   );
 };
 
